@@ -1,0 +1,447 @@
+<root>
+    <params name="basic" label="Default Theme parameters">
+        <param name="skins" type="mixed" default="" label="Skin loader">
+            <param type="skin" label="Theme">
+                <classic label="Classic">
+                    <level1border>0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid</level1border>
+                    <level2border>0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid</level2border>
+                    <level3border>0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid</level3border>
+                    <level4border>0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid</level4border>
+                    <level5border>0|*|0|*|5|*|0|*|px|*|e0e0e0|*|solid</level5border>
+                </classic>
+            </param>
+            <param type="skin" label="Image Align">
+                <resetleft label="Reset left">
+                    <level1minus>exp2.png|*|left|*|d66060ff|*|1</level1minus>
+                    <level1plus>exp2.png|*|left|*|57883bff|*|1</level1plus>
+                    <level2minus>exp2.png|*|left|*|d66060ff|*|1</level2minus>
+                    <level2plus>exp2.png|*|left|*|57883bff|*|1</level2plus>
+                    <level3minus>exp2.png|*|left|*|d66060ff|*|1</level3minus>
+                    <level3plus>exp2.png|*|left|*|57883bff|*|1</level3plus>
+                    <level4minus>exp2.png|*|left|*|d66060ff|*|1</level4minus>
+                    <level4plus>exp2.png|*|left|*|57883bff|*|1</level4plus>
+                    <level5minus>exp2.png|*|left|*|d66060ff|*|1</level5minus>
+                    <level5plus>exp2.png|*|left|*|57883bff|*|1</level5plus>
+                    <level1margin>0|*|0|*|0|*|0|*|px</level1margin>
+                    <level1padding>2|*|0|*|2|*|20|*|px</level1padding>
+                    <level2margin>0|*|0|*|0|*|15|*|px</level2margin>
+                    <level2padding>2|*|0|*|2|*|20|*|px</level2padding>
+                    <level3margin>0|*|0|*|0|*|30|*|px</level3margin>
+                    <level3padding>2|*|0|*|2|*|20|*|px</level3padding>
+                    <level4margin>0|*|0|*|0|*|45|*|px</level4margin>
+                    <level4padding>2|*|0|*|2|*|20|*|px</level4padding>
+                    <level5margin>0|*|0|*|0|*|60|*|px</level5margin>
+                    <level5padding>2|*|0|*|2|*|20|*|px</level5padding>
+                </resetleft>
+                <resetright label="Reset right">
+                    <level1minus>exp2.png|*|right|*|d66060ff|*|1</level1minus>
+                    <level1plus>exp2.png|*|right|*|57883bff|*|1</level1plus>
+                    <level2minus>exp2.png|*|right|*|d66060ff|*|1</level2minus>
+                    <level2plus>exp2.png|*|right|*|57883bff|*|1</level2plus>
+                    <level3minus>exp2.png|*|right|*|d66060ff|*|1</level3minus>
+                    <level3plus>exp2.png|*|right|*|57883bff|*|1</level3plus>
+                    <level4minus>exp2.png|*|right|*|d66060ff|*|1</level4minus>
+                    <level4plus>exp2.png|*|right|*|57883bff|*|1</level4plus>
+                    <level5minus>exp2.png|*|right|*|d66060ff|*|1</level5minus>
+                    <level5plus>exp2.png|*|right|*|57883bff|*|1</level5plus>
+                    <level1margin>0|*|0|*|0|*|0|*|px</level1margin>
+                    <level1padding>2|*|22|*|2|*|5|*|px</level1padding>
+                    <level2margin>0|*|0|*|0|*|15|*|px</level2margin>
+                    <level2padding>2|*|22|*|2|*|5|*|px</level2padding>   
+                    <level3margin>0|*|0|*|0|*|30|*|px</level3margin>
+                    <level3padding>2|*|22|*|2|*|5|*|px</level3padding>
+                    <level4margin>0|*|0|*|0|*|45|*|px</level4margin>
+                    <level4padding>2|*|22|*|2|*|5|*|px</level4padding>
+                    <level4margin>0|*|0|*|0|*|60|*|px</level4margin>
+                    <level4padding>2|*|22|*|2|*|5|*|px</level4padding>
+                </resetright>
+            </param>
+            <param type="skin" label="Font">
+                <reset label="Reset">
+                    <titlefont>{"firsttab":"Text","Text":{"color":"135cae","size":"18||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"21px","bold":1,"italic":0,"underline":0,"align":"center"}}</titlefont>
+                    <level1textfont>{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"bold":"1","color":"135cae"},"Link":{},"Hover":{"color":"135cae"},"firsttab":"Text"}</level1textfont>
+                    <level2textfont>{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"bold":"1","color":"135cae"},"Link":{},"Hover":{"color":"135cae"},"firsttab":"Text"}</level2textfont>
+                    <level3textfont>{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"bold":"1","color":"135cae"},"Link":{},"Hover":{"color":"135cae"},"firsttab":"Text"}</level3textfont>
+                    <level4textfont>{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"bold":"1","color":"135cae"},"Link":{},"Hover":{"color":"135cae"},"firsttab":"Text"}</level4textfont>
+                    <level5textfont>{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"bold":"1","color":"135cae"},"Link":{},"Hover":{"color":"135cae"},"firsttab":"Text"}</level5textfont>
+                </reset>
+                <ltr label="LTR">
+                    <level1textfont>{"Text":{"align":"left"}}</level1textfont>
+                    <level2textfont>{"Text":{"align":"left"}}</level2textfont>
+                    <level3textfont>{"Text":{"align":"left"}}</level3textfont>
+                    <level4textfont>{"Text":{"align":"left"}}</level4textfont>
+                    <level5textfont>{"Text":{"align":"left"}}</level5textfont>
+                </ltr>
+                <rtl label="RTL">
+                    <level1textfont>{"Text":{"align":"right"}}</level1textfont>
+                    <level2textfont>{"Text":{"align":"right"}}</level2textfont>
+                    <level3textfont>{"Text":{"align":"right"}}</level3textfont>
+                    <level4textfont>{"Text":{"align":"right"}}</level4textfont>
+                    <level5textfont>{"Text":{"align":"right"}}</level5textfont>
+                </rtl> 
+                <arial label="Arial">
+                    <titlefont>{"Text":{"afont":"Arial"}}</titlefont>
+                    <level1textfont>{"Text":{"afont":"Arial"}}</level1textfont>
+                    <level2textfont>{"Text":{"afont":"Arial"}}</level2textfont>
+                    <level3textfont>{"Text":{"afont":"Arial"}}</level3textfont>
+                    <level4textfont>{"Text":{"afont":"Arial"}}</level4textfont>
+                    <level5textfont>{"Text":{"afont":"Arial"}}</level5textfont>
+                </arial>
+                <arimo label="Google - Arimo">
+                    <titlefont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),sans-serif"}}</titlefont>
+                    <level1textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),sans-serif"}}</level1textfont>
+                    <level2textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),sans-serif"}}</level2textfont>
+                    <level3textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),sans-serif"}}</level3textfont>
+                    <level4textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),sans-serif"}}</level4textfont>
+                    <level5textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),sans-serif"}}</level5textfont>
+                </arimo>
+                <cabin label="Google - Cabin">
+                    <titlefont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Cabin);),sans-serif"}}</titlefont>
+                    <level1textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Cabin);),sans-serif"}}</level1textfont>
+                    <level2textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Cabin);),sans-serif"}}</level2textfont>
+                    <level3textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Cabin);),sans-serif"}}</level3textfont>
+                    <level4textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Cabin);),sans-serif"}}</level4textfont>
+                    <level5textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Cabin);),sans-serif"}}</level5textfont>
+                </cabin>
+                <opensans label="Google - Open+Sans">
+                    <titlefont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Open+Sans);),sans-serif"}}</titlefont>
+                    <level1textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Open+Sans);),sans-serif"}}</level1textfont>
+                    <level2textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Open+Sans);),sans-serif"}}</level2textfont>
+                    <level3textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Open+Sans);),sans-serif"}}</level3textfont>
+                    <level4textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Open+Sans);),sans-serif"}}</level4textfont>
+                    <level5textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Open+Sans);),sans-serif"}}</level5textfont>
+                </opensans>
+                <ptsans label="Google - PT Sans">
+                    <titlefont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=PT+Sans);),sans-serif"}}</titlefont>
+                    <level1textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=PT+Sans);),sans-serif"}}</level1textfont>
+                    <level2textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=PT+Sans);),sans-serif"}}</level2textfont>
+                    <level3textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=PT+Sans);),sans-serif"}}</level3textfont>
+                    <level4textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=PT+Sans);),sans-serif"}}</level4textfont>
+                    <level5textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=PT+Sans);),sans-serif"}}</level5textfont>
+                </ptsans>
+                <quattrocentosans label="Google - Quattrocento Sans">
+                    <titlefont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);),sans-serif"}}</titlefont>
+                    <level1textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);),sans-serif"}}</level1textfont>
+                    <level2textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);),sans-serif"}}</level2textfont>
+                    <level3textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);),sans-serif"}}</level3textfont>
+                    <level4textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);),sans-serif"}}</level4textfont>
+                    <level5textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);),sans-serif"}}</level5textfont>
+                </quattrocentosans>
+                <rosario label="Google - Rosario">
+                    <titlefont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Rosario);),sans-serif"}}</titlefont>
+                    <level1textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Rosario);),sans-serif"}}</level1textfont>
+                    <level2textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Rosario);),sans-serif"}}</level2textfont>
+                    <level3textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Rosario);),sans-serif"}}</level3textfont>
+                    <level4textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Rosario);),sans-serif"}}</level4textfont>
+                    <level5textfont>{"Text":{"afont":"google(@import url(http://fonts.googleapis.com/css?family=Rosario);),sans-serif"}}</level5textfont>
+                </rosario>
+            </param>
+        </param>
+        <param name="titlefont" tabs="Text" type="fontmanager" default='{"firsttab":"Text","Text":{"color":"135cae","size":"18||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"21px","bold":1,"italic":0,"underline":0,"align":"center"}}' label="Title font" />
+        <param type="mixed" name="margin" default="0|*|0|*|10|*|0|*|px" label="Margin" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+    </params>
+    <params name="level1" label="#1 level parameters">
+        <param type="mixed" name="level1margin" default="0|*|0|*|0|*|0|*|px" label="Margin" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level1padding" default="2|*|0|*|2|*|20|*|px" label="Padding" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level1border" default="0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid" label="Border" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+            <param type="color" label="Color" />
+            <param type="text" label="Style" />
+        </param>
+        <param type="mixed" name="level1minus" default="exp2.png|*|left|*|d66060ff|*|1" label="Opened state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/minus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level1plus" default="exp2.png|*|left|*|57883bff|*|1" label="Closed state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/plus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param name="level1textfont" tabs="Text|Active|Link|Hover" type="fontmanager" default='{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"color":"135cae"},"Link":{},"Hover":{"color":"135cae"}}' label="Text font" />
+    </params>
+    <params name="level2" label="#2 level parameters">
+        <param type="mixed" name="level2margin" default="0|*|0|*|0|*|15|*|px" label="Margin" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level2padding" default="2|*|0|*|2|*|20|*|px" label="Padding" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level2border" default="0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid" label="Border" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+            <param type="color" label="Color" />
+            <param type="text" label="Style" />
+        </param>
+        <param type="mixed" name="level2minus" default="exp2.png|*|left|*|d66060ff|*|1" label="Opened state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/minus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level2plus" default="exp2.png|*|left|*|57883bff|*|1" label="Closed state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/plus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param name="level2textfont" tabs="Text|Active|Link|Hover" type="fontmanager" default='{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"color":"135cae"},"Link":{},"Hover":{"color":"135cae"}}' label="Text font" />
+    </params>
+    <params name="level3" label="#3 level parameters">
+        <param type="mixed" name="level3margin" default="0|*|0|*|0|*|30|*|px" label="Margin" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level3padding" default="2|*|0|*|2|*|20|*|px" label="Padding" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level3border" default="0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid" label="Border" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+            <param type="color" label="Color" />
+            <param type="text" label="Style" />
+        </param>
+        <param type="mixed" name="level3minus" default="exp2.png|*|left|*|d66060ff|*|1" label="Opened state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/minus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level3plus" default="exp2.png|*|left|*|57883bff|*|1" label="Closed state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/plus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param name="level3textfont" tabs="Text|Active|Link|Hover" type="fontmanager" default='{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"color":"135cae"},"Link":{},"Hover":{"color":"135cae"}}' label="Text font" />
+    </params>
+    <params name="level4" label="#4 level parameters">
+        <param type="mixed" name="level4margin" default="0|*|0|*|0|*|45|*|px" label="Margin" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level4padding" default="2|*|0|*|2|*|20|*|px" label="Padding" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level4border" default="0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid" label="Border" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+            <param type="color" label="Color" />
+            <param type="text" label="Style" />
+        </param>
+        <param type="mixed" name="level4minus" default="exp2.png|*|left|*|d66060ff|*|1" label="Opened state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/minus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level4plus" default="exp2.png|*|left|*|57883bff|*|1" label="Closed state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/plus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param name="level4textfont" tabs="Text|Active|Link|Hover" type="fontmanager" default='{"firsttab":"Text","Text":{"color":"333333ff","size":"12||px","tshadow":"0|*|0|*|0|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Arimo);),Arial","lineheight":"20px","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"color":"135cae"},"Link":{},"Hover":{"color":"135cae"}}' label="Text font" />
+    </params>
+    <params name="level5" label="#5 level parameters">
+        <param type="mixed" name="level5margin" default="0|*|0|*|0|*|60|*|px" label="Margin" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level5padding" default="2|*|0|*|2|*|20|*|px" label="Padding" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level5border" default="0|*|0|*|1|*|0|*|px|*|e0e0e0|*|solid" label="Border" description="">
+            <param type="text" style="width: 30px;" label="Top" />
+            <param type="text" style="width: 30px;" label="Right" />
+            <param type="text" style="width: 30px;" label="Bottom" />
+            <param type="text" style="width: 30px;" label="Left" />
+            <param type="switcher" label="-">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+            <param type="color" label="Color" />
+            <param type="text" label="Style" />
+        </param>
+        <param type="mixed" name="level5minus" default="exp2.png|*|left|*|d66060ff|*|1" label="Opened state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/minus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param type="mixed" name="level5plus" default="exp2.png|*|left|*|57883bff|*|1" label="Closed state" description="">
+            <param type="imagelist" label="Image" assetsdir="NEXTEND_ACCORDION_MENU_ASSETS" folder="accordionmenu/images/default/plus" />
+            <param type="radio" label="Position" mixedstyle="clear: both;">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </param>
+            <param type="color" label="Colorize" alpha="1" mixedstyle="clear: both;" />
+            <param type="switcher" label="Colorize">
+                <unit value="1">ON</unit>
+                <unit value="0">OFF</unit>
+            </param>
+        </param>
+        <param name="level5textfont" tabs="Text|Active|Link|Hover" type="fontmanager" default='{"firsttab":"Text","Text":{"color":"ffffffff","size":"13||px","tshadow":"0|*|1|*|2|*|000000FF","afont":"google(@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans);),Arial","lineheight":"normal","bold":0,"italic":0,"underline":0,"align":"left"},"Active":{"color":"135cae"},"Link":{},"Hover":{},"firsttab":"Text"}' label="Text font" />
+    </params>
+</root>

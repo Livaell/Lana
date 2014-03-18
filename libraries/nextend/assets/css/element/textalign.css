@@ -1,0 +1,76 @@
+.nextend-textalign .nextend-radio-option{
+    cursor: pointer;
+    height: 8px;
+    width: 12px;
+    padding:6px 4px 6px 4px;
+    margin: 0;
+    line-height: 20px;
+    float: left;
+    border: 1px solid #D3D3D3;
+    border-left-color: #fbfbfb;
+    background: #e6e9ed; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e6e9ed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e6e9ed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* IE10+ */
+    background: linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e9ed',GradientType=0 ); /* IE6-9 */    
+}
+
+.nextend-textalign .nextend-text-align-left{
+    border: 1px solid #d3d3d3;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.nextend-textalign .nextend-text-align-justify{
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.nextend-textalign .nextend-radio-option.selected {
+    background: #b8b8b8;  
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3) inset, 0 1px 0 #FFFFFF;
+    border-bottom: 1px solid RGBA(0,0,0,0.2);
+    border-top: 1px solid RGBA(0,0,0,0.3);
+    border-right: none;
+    border-left: none;
+    padding:6px 5px 6px 5px;
+}
+
+.nextend-textalign .nextend-radio-option div{
+    width: 11px;
+    height: 8px;
+    background-position: center 0;
+    background-repeat: no-repeat;
+}
+
+.nextend-text-align-left div{
+    background-image: url("../../images/textalign/left.png");
+}
+
+.nextend-text-align-center div{
+    background-image: url("../../images/textalign/center.png");
+}
+
+.nextend-text-align-right div{
+    background-image: url("../../images/textalign/right.png");
+}
+
+.nextend-text-align-justify div{
+    background-image: url("../../images/textalign/justify.png");
+}
+
+
+.nextend-textalign .nextend-radio-option.selected div{
+    background-position: center -8px;
+}

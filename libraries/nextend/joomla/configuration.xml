@@ -1,0 +1,10 @@
+<root>
+    <params name="cache" label="Cache">
+        <param type="clearcache" name="clearcache" label="Clear cache" />
+        <param type="onoff" name="gzip" label="Gzip compression" description="Only enable it, when the mod_deflate not enabled in apache!" />
+        <param type="text" name="cachetime" label="Cache time" default="900" description="1 or higher" style="width: 60px;">
+            <unit>sec</unit>
+        </param>
+        <param type="text" name="cachepath" label="Cache relative path" default="media/nextend/cache/" description="Relative path for a writeable folder. Must be reacheable by browsers!" />
+    </params>
+</root>

@@ -1,0 +1,243 @@
+@import 'elements.less';
+@import 'clear.less';
+(~'div@{id}'){
+    .clear;
+}
+
+.elegantlevelmargin(@level) when (@level > 1){
+    margin-bottom: 0;
+}
+
+(~'div@{id}'){
+    margin: @margin;
+    overflow: visible;
+    
+    .nextend-accordion-menu-inner{
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    /* Light */
+    .productnumbg(@a) when (@a < 0.39){
+      .box-shadow(~"0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.2)");
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .productnumbg(@a) when (@a >= 0.39){    
+      .box-shadow(~"0 3px 4px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2)");
+      background-color: RGBA(0,0,0,0.2);  
+    }
+    
+    .nextend-productnum{
+        line-height: normal !important;
+        font-size: 11px !important;
+        padding-top: 1px;
+        line-height: 17px !important;
+        border: 0;    
+        .productnumbg(@bordera);
+    }
+    
+    
+    
+   dt.level1 .nextend-productnum{ 
+        margin-top: 7px;
+    }
+    
+    .nextend-accordion-menu-inner-container{
+        overflow: hidden;
+        position: relative;
+    }
+    
+    dl,
+    dt,
+    dd{
+        display: block;
+        position: relative;
+    }
+    
+    div div.title{
+        min-height: 36px;
+        .whengradient(@titlegradientenabled, @titlegradientstop, @titlegradientstop, @titlegradientstart);
+        
+        h3{
+            margin: 0;
+            padding-top: 8px !important;
+            padding-bottom: 7px !important;
+            min-height: 26px;
+            border: 1px solid @borderhex;
+            border-color: @borderrgba;
+            .box-shadow(inset 0 0 1px RGBA(255,255,255,0.5));
+            background: transparent;
+            d: e(~"@{titlefont}");
+        }
+    }
+
+    dt.level1{
+        border: 1px solid @borderhex;
+        border-color: @borderrgba;
+        border-width: 0 1px 1px 1px;
+        .box-shadow(0 1px 0 rgba(255, 255, 255, 0.1) inset);
+    }
+    
+    .istitleshowed(@showed) when(@showed = 0){
+      border-top-width: 1px;
+    }
+    
+    dt.level1.first{
+      .istitleshowed(@moduleshowtitle);
+    }
+    
+    dt.level1:HOVER,
+    dt.level1.active,
+    dt.level1.opened,
+    dt.level1.opening{
+        border-bottom-color: fade(@borderhex,70%);
+    }
+    
+    dl.level2 {
+        dt{
+            border: 1px solid @borderhex;
+            border-color: @borderrgba;
+            border-width: 0 1px 0 1px;
+        }
+
+        dt.first{
+            .box-shadow(0 5px 2px -2px fade(@borderhex,20%) inset);
+        }
+
+        dt.last{
+            margin-bottom: 0;
+            border-bottom-width: 1px;
+        }
+    }
+    
+    dt .inner{
+        display: block;
+    }
+    
+    .levels (@index) when (@index < 6){
+        
+        &.noscript{
+            (~"dl.level@{index}") {
+                dt.parent .inner{
+                    background-image: colorizeimage(~"@{level@{index}minuscolorize}", ~"@{level@{index}minusimage}", ~"@{level@{index}minuscolor}");
+                }
+            }
+        }
+        
+        (~"dl.level@{index}") {
+            dt.parent{
+                .inner{
+                    background-image: colorizeimage(~"@{level@{index}pluscolorize}", ~"@{level@{index}plusimage}", ~"@{level@{index}pluscolor}");
+                    background-repeat: no-repeat;
+                    background-position: (~"@{level@{index}plusposition}") center;
+                    cursor: pointer;
+                }
+                &.opened,
+                &.opening{
+                    .inner{
+                        background-image: colorizeimage(~"@{level@{index}minuscolorize}", ~"@{level@{index}minusimage}", ~"@{level@{index}minuscolor}");
+                    }
+                }
+            }
+            
+            .productnumalign(@align) when(@align = right){
+              margin-right: 12px;
+            }
+            
+            .productnumalign(@align) when(@align = left){
+              margin-right: 5px;
+            }
+            
+            .nextend-productnum{
+              @pos: "level@{index}plusposition";
+              .productnumalign(@@pos);
+            }
+            
+            dt{
+                background: none repeat 0 0;
+                
+                span{
+                    d: e(~"@{level@{index}font-text}");
+                }
+                
+                a{
+                    &,
+                    span{
+                        d: e(~"@{level@{index}font-link}");
+                    }
+                }
+                
+                &,
+                &:HOVER,
+                &.opening,
+                &.opened,
+                &.active{
+                    background: none;
+                    filter: none;
+                    
+                    @enabled : "level@{index}bg0enabled";
+                    @start : "level@{index}bg0start";
+                    @stop : "level@{index}bg0stop";
+                    .whengradient(@@enabled, @@stop, @@stop, @@start);
+                }
+                
+                &.opening,
+                &.opened{
+                    @enabled : "level@{index}bg3enabled";
+                    @start : "level@{index}bg3start";
+                    @stop : "level@{index}bg3stop";
+                    .whengradient(@@enabled, @@stop, @@stop, @@start);
+                    span,
+                    a{
+                        &,
+                        span{
+                            d: e(~"@{level@{index}font-active}");
+                        }
+                    }
+                }
+                
+                &.active{
+                    @enabled : "level@{index}bg2enabled";
+                    @start : "level@{index}bg2start";
+                    @stop : "level@{index}bg2stop";
+                    .whengradient(@@enabled, @@stop, @@stop, @@start);
+                    
+                    span,
+                    a{
+                        &,
+                        span{
+                            d: e(~"@{level@{index}font-active}");
+                        }
+                    }
+                }
+                
+                &:HOVER{
+                    @enabled : "level@{index}bg1enabled";
+                    @start : "level@{index}bg1start";
+                    @stop : "level@{index}bg1stop";
+                    .whengradient(@@enabled, @@stop, @@stop, @@start);
+                    
+                    span,
+                    a{
+                        &,
+                        span{
+                            d: e(~"@{level@{index}font-hover}");
+                        }
+                    }
+                }
+            }
+            
+            .inner{
+                padding: ~"@{level@{index}padding}";
+                margin: ~"@{level@{index}margin}";
+            }
+        }
+        
+        .levels(@index + 1);
+    }
+    
+    .levels (5) {}
+    
+    .levels(1);
+}

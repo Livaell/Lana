@@ -1,0 +1,118 @@
+/**
+** This file assume the good working conditions
+** No styling (color, background,...) should be made here, only positionning and management
+**/
+
+div.maximenuckv ul.maximenuck {
+    clear:both;
+    position : relative;
+    z-index:999;
+}
+
+
+div.maximenuckv ul.maximenuck > ul {
+    clear:both;
+    padding : 0;
+    margin : 0;
+}
+
+div.maximenuckv ul.maximenuck .moduletable {
+
+}
+
+div.maximenuckv ul.maximenuck li.maximenuck {
+    /*float:left;*/
+    position:relative;
+    text-align : left;
+    padding : 0;
+    margin : 0;
+}
+
+div.maximenuckv ul.maximenuck li.maximenuck img {
+    /*float:left;*/
+}
+
+div.maximenuckv ul.maximenuck li.maximenuck a,
+div.maximenuckv ul.maximenuck li.maximenuck span.separator {
+    display:block;
+    float : none !important;
+    float : left;
+    position:relative;
+}
+
+div.maximenuckv ul.maximenuck2 li.maximenuck a {
+    float : none !important;
+}
+
+div.maximenuckv ul.maximenuck li ul.maximenuck2 {
+    display:block;
+    z-index:11000;
+    clear:left;
+    margin:0;
+    padding:0;
+    text-align : left;
+    position : static;
+}
+
+div.maximenuckv ul.maximenuck li ul li.maximenuck {
+    text-align : left;
+    position : relative;
+    z-index : 11001;
+    padding:0;
+
+}
+
+div.maximenuckv ul.maximenuck li li.maximenuck a {
+    display: block;
+    padding : 0;
+    margin : 0;
+}
+
+div.maximenuckv div.maximenuck2 {
+    float : left;
+    margin : 0;
+    padding : 0;
+}
+
+div.maximenuckv div.clr {
+    clear : both;
+    visibility : hidden;
+}
+
+/*** child items ***/
+div.maximenuckv ul.maximenuck li div.floatck {
+    position : absolute;
+    left: -999em;
+    padding : 0;
+    margin : 0;
+}
+
+div.maximenuckv div.floatck ul, div.maximenuckv div.floatck ul li {
+    position : static;
+    height : 100%;
+}
+
+
+/**
+** Show sub menu if mootools is off - vertical style
+**/
+div.maximenuckv ul.maximenuck li:hover div.floatck div.floatck, div.maximenuckv ul.maximenuck li:hover div.floatck:hover div.floatck div.floatck, div.maximenuckv ul.maximenuck li:hover div.floatck:hover div.floatck:hover div.floatck div.floatck,
+div.maximenuckv ul.maximenuck li.sfhover div.floatck div.floatck, div.maximenuckv ul.maximenuck li.sfhover div.floatck.sfhover div.floatck div.floatck, div.maximenuckv ul.maximenuck li.sfhover div.floatck.sfhover  div.floatck.sfhover div.floatck div.floatck {
+left: -999em;
+}
+
+div.maximenuckv ul.maximenuck li:hover div.floatck, div.maximenuckv ul.maximenuck li:hover div.floatck li:hover div.floatck, div.maximenuckv ul.maximenuck li:hover div.floatck li:hover div.floatck li:hover div.floatck, div.maximenuckv ul.maximenuck li:hover div.floatck li:hover div.floatck li:hover div.floatck li:hover div.floatck,
+div.maximenuckv ul.maximenuck li.sfhover div.floatck, div.maximenuckv ul.maximenuck li.sfhover div.floatck li.sfhover div.floatck, div.maximenuckv ul.maximenuck li.sfhover div.floatck li.sfhover div.floatck li.sfhover div.floatck, div.maximenuckv ul.maximenuck li.sfhover div.floatck li.sfhover div.floatck li.sfhover div.floatck li.sfhover div.floatck  {
+left: auto;
+}
+
+div.maximenuckv div.maximenuck_mod ul {
+left : auto;
+}
+
+
+
+
+
+
+

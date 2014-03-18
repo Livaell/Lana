@@ -1,0 +1,90 @@
+a.nextend-font-button{
+  height: 22px;
+  width: auto;
+  float: left;  
+  margin: 2px 0;
+  padding: 0 15px;
+  text-decoration: none;
+  background: #e6e9ed; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #e6e9ed 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e6e9ed)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e9ed',GradientType=0 ); /* IE6-9 */      
+  text-shadow: 0 1px 1px white;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 -3px 5px rgba(0, 0, 0, 0.05) inset;  
+  border-radius: 50px;  
+  -moz-border-radius: 50px; 
+  -webkit-border-radius: 50px;  
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 22px;
+  color: #7c848f !important;
+  text-transform: uppercase;
+}
+
+a.nextend-font-button:HOVER{
+  text-decoration: none;
+  background: #dee1e8; /* Old browsers */
+  background: -moz-linear-gradient(top, #fbfcfe 0%, #dee1e8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfcfe), color-stop(100%,#dee1e8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* IE10+ */
+  background: linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfcfe', endColorstr='#dee1e8',GradientType=0 ); /* IE6-9 */  
+}
+
+a.nextend-font-button:ACTIVE{  
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3) inset;
+  line-height: 24px;
+}
+
+
+a.nextend-button-css.nextend-font-import,
+a.nextend-button-css.nextend-font-export{
+  height: 20px;
+  width: 20px;
+  float: left;
+  padding: 0;    
+  border-radius: 50px;  
+  -moz-border-radius: 50px; 
+  -webkit-border-radius: 50px;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.nextend-element a.nextend-font-import,
+.nextend-element a.nextend-font-export{
+    margin: 2px 3px;
+    float: left;
+    filter: none;
+}
+
+.nextend-element a.nextend-font-export{
+  margin-left: 10px;
+  background: url('../../images/export.png') no-repeat center 0;
+}
+
+.nextend-element a.nextend-font-import{
+  background: url('../../images/export.png') no-repeat center -30px;
+}
+
+
+a.nextend-font-export:HOVER,
+a.nextend-font-import:HOVER{  
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3) inset;
+} 
+
+a.nextend-font-export:ACTIVE,
+a.nextend-font-import:ACTIVE{  
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3) inset;
+} 
+
+
+.nextend-font-message{
+    margin: 3px 0 3px 20px;
+}

@@ -1,0 +1,33 @@
+<root>
+    <params name="firstrow" type="horizontal">
+        <param name="family" label="Family" type="text" default="Arial, Helvetica" />
+        <param name="color" label="Color" type="color" alpha="1" default="000000FF" />
+        <param name="size" label="Size" type="mixed" default="14|*|px" >
+            <param type="text" style="width: 22px;" />
+            <param type="switcher">
+                <unit value="px">px</unit>
+                <unit value="em">em</unit>
+            </param>
+        </param>
+        <param name="lineheight" label="Line height" type="text" default="18px" width="70px" />
+        <param name="decoration" label="Decoration" type="decoration" default="" />
+        <param name="paddingleft" label="Padding left" type="text" default="0" >
+            <unit value="px">px</unit>
+        </param>
+    </params>
+    <params name="secondrow" type="horizontal">
+        <param name="textalign" type="textalign" label="Text align" default="left" />
+        <param name="tshadow" label="Text shadow" type="mixed" default="0|*|0|*|1|*|000000FF" >
+            <param type="text" style="width: 32px;">
+                <unit value="px">px</unit>    
+            </param>
+            <param type="text" style="width: 32px;">
+                <unit value="px">px</unit>    
+            </param>
+            <param type="text" style="width: 32px;">
+                <unit value="px">px</unit>    
+            </param>
+            <param type="color" alpha="1" />
+        </param>
+    </params>
+</root>

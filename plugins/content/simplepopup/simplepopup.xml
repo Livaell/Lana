@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="plugin"
+	version="3.0.1"
+	group="content"
+	method="upgrade">
+	<name>Content - Simple Pop-Up (for Joomla 3)</name>
+	<author>Anders Wasén</author>
+	<creationDate>2011-05-14</creationDate>
+	<copyright>Copyright 2011 (C) Anders Wasén. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>awasen@gmail.com</authorEmail>
+	<authorUrl>http://wasen.net</authorUrl>
+	<version>0.1.1</version>
+	<description>Simple Pop-Up - It will display a FancyBox Pop-Up on any page where added in an article...</description>
+	
+	<files>
+		<filename plugin="simplepopup">simplepopup.php</filename>
+		<folder>simplepopup</folder>
+		<folder>simplepopup/fancybox</folder>
+	</files>
+	
+	<languages>
+	   <language tag="en-GB">en-GB.plg_content_simplepopup.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+				<field name="spu_aligntext" type="radio" default="center" label="Align text" description="Text alignment in the Pop-Up box.">
+					<option value="left">Left</option>
+					<option value="center">Center</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="spu_boxwidth" type="text" default="400" label="Pop-up box width (in pixels)" description="Pop-up box width (in pixels)."/>
+				<field name="spu_boxheight" type="text" default="auto" label="Pop-up box height (in pixels)" description="Pop-up box height (in pixels). Set it to [auto] to grow as needed on height."/>
+				<field name="spu_autodimensions" type="radio" default="false" label="Auto Dimensions" description="The Pop-Up box will shape according to content.">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="spu_cookie" type="radio" default="0" label="Use cookie (to only show once)" description="Shows the message only once at pop-up on load. Default cookie persistence is 365 days.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="spu_cookiepersistence" type="text" default="365" label="Cookie persistence (in days)" description="The number of days to passbefore message is shown again to the same user (=computer)."/>
+				<field name="@spacer" type="spacer" default="" label="" description=""/>
+				<!--field name="" type="donate" default="" label="Do you like it?" description="Feel like showing your appreciation? Build: 1.0.2.1" addfieldpath="/plugins/content/simplepopup/simplepopup/elements"/-->
+		
+			</fieldset>
+		</fields>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="spu_jqueryinclude" type="radio" default="0" label="Load FancyBox through Joomla" description="This will load FancyBox through Joomla or nativly (hard).">
+					<option value="0">Joomla</option>
+					<option value="1">Include</option>
+				</field>
+				<field name="spu_jquery" type="radio" default="1" label="Load FancyBox" description="Load FancyBox or not. If you have several extensions using FancyBox you must only load it once.">
+					<option value="1">Yes</option>
+					<option value="2">No</option>
+				</field>
+				<field name="@spacer" type="spacer" default="" label="" description=""/>
+				<field name="spu_debug" type="radio" default="0" label="Debug mode" description="Shows debugging information.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	
+</extension>

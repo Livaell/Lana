@@ -1,0 +1,27 @@
+/* Hide slug box under title */
+#edit-slug-box{
+    display: none;
+}
+
+/* Hide preview button */
+#preview-action{
+    display: none;
+}
+
+#postbox-container-1{
+    display: none;
+}
+
+#poststuff #post-body.columns-2{
+    margin-right: 0;
+}
+
+#nextend_configuration .handlediv,
+#nextend_configuration .hndle{
+    display: none;
+}
+
+#nextend_configuration .inside{
+    padding: 0;
+    margin: 0;
+}

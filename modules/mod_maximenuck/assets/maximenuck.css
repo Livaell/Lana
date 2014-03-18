@@ -1,0 +1,42 @@
+/**
+ * @copyright	Copyright (C) 2011 Cedric KEIFLIN alias ced1870
+ * http://www.joomlack.fr
+ * Module Maximenu CK
+ * @license		GNU/GPL
+ * */
+
+/**
+** Show sub menu if mootools is off - horizontal style
+**/
+div.maximenuckh ul.maximenuck li:hover div.floatck div.floatck, div.maximenuckh ul.maximenuck li:hover div.floatck:hover div.floatck div.floatck,
+div.maximenuckh ul.maximenuck li.sfhover div.floatck div.floatck, div.maximenuckh ul.maximenuck li.sfhover div.floatck.sfhover div.floatck div.floatck {
+left: -999em;
+}
+
+div.maximenuckh ul.maximenuck li:hover div.floatck, div.maximenuckh ul.maximenuck li:hover div.floatck li:hover div.floatck, div.maximenuckh ul.maximenuck li:hover div.floatck li:hover div.floatck li:hover div.floatck,
+div.maximenuckh ul.maximenuck li.sfhover div.floatck, div.maximenuckh ul.maximenuck li.sfhover div.floatck li.sfhover div.floatck, div.maximenuckh ul.maximenuck li.sfhover div.floatck li.sfhover div.floatck li.sfhover div.floatck {
+left: auto;
+}
+
+
+div.maximenuckh div.maximenuck_mod ul {
+left : auto;
+}
+
+
+/**
+** Show sub menu if mootools is off - vertical style
+**/
+div.maximenuckv ul.maximenuck li:hover div.floatck div.floatck, div.maximenuckv ul.maximenuck li:hover div.floatck:hover div.floatck div.floatck,
+div.maximenuckv ul.maximenuck li.sfhover div.floatck div.floatck, div.maximenuckv ul.maximenuck li.sfhover div.floatck.sfhover div.floatck div.floatck {
+left: -999em;
+}
+
+div.maximenuckv ul.maximenuck li:hover div.floatck, div.maximenuckv ul.maximenuck li:hover div.floatck li:hover div.floatck, div.maximenuckv ul.maximenuck li:hover div.floatck li:hover div.floatck li:hover div.floatck,
+div.maximenuckv ul.maximenuck li.sfhover div.floatck, div.maximenuckv ul.maximenuck li.sfhover div.floatck li.sfhover div.floatck, div.maximenuckv ul.maximenuck li.sfhover div.floatck li.sfhover div.floatck li.sfhover div.floatck {
+left: auto;
+}
+
+div.maximenuckv div.maximenuck_mod ul {
+left : auto;
+}

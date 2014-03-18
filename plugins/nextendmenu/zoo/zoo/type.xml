@@ -1,0 +1,19 @@
+<root>
+  <params label="Zoo menu properties">
+    
+    <param name="zoomenu" type="zooappswithcategories" default="1|*|0" label="Menu" description="If you select only one root menu item only its childrens will be shown. On multiple selection, the selected will be on the first level." >
+        <param type="zooapps" label="App" />
+        <param type="zoocategories" label="Root category" multiple="1" size="10" />
+    </param>
+    <param name="rootasitem" type="onoff" default="0" label="Singe root as menuitem" description="If enabled and one selected in the previous option, the behaviour will be the same as multiple selection."/>
+    <param name="displaynum" type="onoff" default="0" label="Display number of items" description="Display the item count for a parent item" />
+    <param name="menuicons" type="mixed" label="Menu icons" default="0|*|0|*|0" description="If enabled, the menu will add the specified image from the menu item.">
+        <param type="onoff" label="Show" />
+        <param type="radio" label="Alignment" >
+            <option value="0">Left</option>
+            <option value="1">Right</option>
+        </param>
+        <param type="onoff" label="Only icon" />
+    </param>
+  </params>
+</root>

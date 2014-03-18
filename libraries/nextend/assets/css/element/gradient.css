@@ -1,0 +1,49 @@
+.nextend-gradient{
+    margin: 3px 0;
+    min-width: 600px;
+}
+
+.nextend-gradient table{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.nextend-gradient-onoff{
+    width: 60px;
+}
+
+.nextend-gradient-start,
+.nextend-gradient-end{
+    width: 110px;
+}
+
+.nextend-gradient-end .nextend-color{
+    float:right;
+}
+
+.nextend-gradient-end .sp-replacer{
+    float:left;
+    margin-right: 4px;
+    margin-left: 3px;
+}
+
+.nextend-gradient-end .nextend-text{
+    margin-top: 2px;
+    margin-right: 0;
+}
+
+.nextend-gradient .nextend-gradient-start,
+.nextend-gradient .nextend-grandient-bg,
+.nextend-gradient .nextend-gradient-end{
+    visibility: hidden;
+}
+
+.nextend-gradient.nextend-enabled .nextend-gradient-start,
+.nextend-gradient.nextend-enabled .nextend-grandient-bg,
+.nextend-gradient.nextend-enabled .nextend-gradient-end{
+    visibility: visible;
+}
+
+.nextend-form .nextend-tab .nextend-gradient table tr {
+  height: 26px;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.5.0" method="upgrade">
+	<name>nextend_installer</name>
+	<author>Roland Soos</author>
+	<creationDate>2013 January</creationDate>
+	<copyright>Copyright (C) 2013 All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.txt GNU/GPL</license>
+	<authorEmail>roland@nextendweb.com</authorEmail>
+	<authorUrl>http://www.nextendweb.com</authorUrl>
+	<version>1.0</version>
+	<scriptfile>install.php</scriptfile>
+	<administration>
+		<files folder="admin">
+			<filename>nextend_installer.php</filename>
+			<filename>index.html</filename>
+			<folder>extensions</folder>
+		</files>
+	</administration>
+</extension>

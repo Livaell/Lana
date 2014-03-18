@@ -1,0 +1,74 @@
+.nextend-decoration{
+  margin: 2px 0 3px;
+}
+
+.nextend-decoration .nextend-checkbox-option{
+    cursor: pointer;
+    height: 11px;
+    width: 11px;
+    padding: 5px;
+    margin: 0;
+    line-height: 20px;
+    float: left;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;  
+    background: #e6e9ed; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e6e9ed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e6e9ed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* IE10+ */
+    background: linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e9ed',GradientType=0 ); /* IE6-9 */    
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.nextend-decoration .nextend-checkbox-option.selected {
+    background: #b8b8b8;  
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3) inset, 0 1px 0 #FFFFFF;
+    border: none;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.nextend-decoration .nextend-decoration-bold{
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.nextend-decoration .nextend-decoration-underline{
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.nextend-decoration .nextend-checkbox-option div{
+    width: 11px;
+    height: 11px;
+    background-position: center 1px;
+    background-repeat: no-repeat;
+}
+
+.nextend-decoration-bold div{
+    background-image: url("../../images/decoration/bold.png");
+}
+
+.nextend-decoration-italic div{
+    background-image: url("../../images/decoration/italic.png");
+}
+
+.nextend-decoration-underline div{
+    background-image: url("../../images/decoration/underline.png");
+}
+
+
+.nextend-decoration .nextend-checkbox-option.selected div{
+    background-position: center -14px;
+}

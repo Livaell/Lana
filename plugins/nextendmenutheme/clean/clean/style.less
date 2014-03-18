@@ -1,0 +1,162 @@
+@import 'elements.less';
+@import 'clear.less';
+(~'div@{id}'){
+    .clear;
+}
+
+(~'div@{id}'){
+    margin: @margin;
+    
+    .nextend-accordion-menu-inner{
+        .whengradient(@gradientenabled, @gradientstop, @gradientstop, @gradientstart);
+        overflow: hidden;
+        width: 100%;
+        .box-shadow(0 0 5px #bbb);
+        .border-radius(@borderradiustr, @borderradiusbr, @borderradiusbl, @borderradiustl);
+        margin-top:0;
+    }
+    
+    .nextend-productnum{
+        background-color: darken(@gradientstart, 10%);
+    }
+    
+    .nextend-accordion-menu-inner-container{
+        overflow: hidden;
+        position: relative;
+    }
+    
+    dl,
+    dt,
+    dd{
+        display: block;
+        position: relative;
+    }
+    
+    div div.title{
+        min-height: 36px;
+        background: transparentcolor(~"@{level1border}") repeat-x 0 100%;
+        h3{
+            margin: 0;
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+            min-height: 26px;
+            background: transparent;
+            d: e(~"@{titlefont}");
+        }
+    }
+    
+    .outer,
+    .inner{
+        display: block;
+    }
+    
+    .outer{
+        background: none repeat-x 0 100%;
+    }
+    
+    .levels (@index) when (@index < 6){
+        
+        &.noscript{
+            (~"dl.level@{index}") {
+                dt.parent .inner{
+                    background-image: colorizeimage(~"@{level@{index}minuscolorize}", ~"@{level@{index}minusimage}", ~"@{level@{index}minuscolor}");
+                }
+            }
+        }
+        
+        (~"dl.level@{index}") {
+            dt.parent{
+                .inner{
+                    background-image: colorizeimage(~"@{level@{index}pluscolorize}", ~"@{level@{index}plusimage}", ~"@{level@{index}pluscolor}");
+                    background-repeat: no-repeat;
+                    background-position: (~"@{level@{index}plusposition}") center;
+                    cursor: pointer;
+                }
+                &.opened,
+                &.opening{
+                    .inner{
+                        background-image: colorizeimage(~"@{level@{index}minuscolorize}", ~"@{level@{index}minusimage}", ~"@{level@{index}minuscolor}");
+                    }
+                }
+            }
+            
+            dt{
+                background: none repeat 0 0;
+                
+                span{
+                    d: e(~"@{level@{index}font-text}");
+                }
+                
+                a{
+                    &,
+                    span{
+                        d: e(~"@{level@{index}font-link}");
+                    }
+                }
+                
+                &,
+                &:HOVER,
+                &.opened{
+                    background-image: transparentcolor(~"@{level@{index}bgc0}");
+                    background: (~"@{level@{index}bg0}");
+                }
+                
+                &.opening,
+                &.opened{
+                    background-image: transparentcolor(~"@{level@{index}bgc3}");
+                    background: (~"@{level@{index}bg3}");
+                    
+                    span,
+                    a{
+                        &,
+                        span{
+                            d: e(~"@{level@{index}font-active}");
+                        }
+                    }
+                }
+                
+                &.active{
+                    background-image: transparentcolor(~"@{level@{index}bgc2}");
+                    background: (~"@{level@{index}bg2}");
+                    
+                    span,
+                    a{
+                        &,
+                        span{
+                            d: e(~"@{level@{index}font-active}");
+                        }
+                    }
+                }
+                
+                &:HOVER{
+                    background-image: transparentcolor(~"@{level@{index}bgc1}");
+                    background: (~"@{level@{index}bg1}");
+                    
+                    span,
+                    a{
+                        &,
+                        span{
+                            d: e(~"@{level@{index}font-hover}");
+                        }
+                    }
+                }
+            }
+            
+            .outer{
+                padding: e(~"@{level@{index}margin}");
+                background-image: transparentcolor(~"@{level@{index}border}");
+            }
+            
+            .inner{
+                padding: e(~"@{level@{index}padding}");
+                margin: 0 0 0 8px;
+            }
+        }
+        
+        .levels(@index + 1);
+    }
+    
+    .levels (5) {}
+    
+    .levels(1);
+}

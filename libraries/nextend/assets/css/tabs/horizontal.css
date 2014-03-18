@@ -1,0 +1,35 @@
+
+.nextend-horizontal-tab td{
+    padding: 0 10px 0 0;
+}
+
+.nextend-horizontal-tab .nextend-horizontal-label,
+.nextend-horizontal-tab .nextend-horizontal-element{
+    float:left;
+    clear:left;
+    margin-bottom: 3px;
+}
+
+.nextend-horizontal-tab label{
+    float:none;
+    min-width: auto;
+    max-width: none;
+    display: inline;
+    margin: auto;
+    padding: auto;
+    color: #454545;
+    font-size: 12px;
+}
+
+.nextend-horizontal-tab .nextend-mixed-label{
+    display: none;
+}
+
+.nextend-horizontal-tab .nextend-mixed-group{
+    margin-right: 3px;
+}
+
+.nextend-horizontal-tab .nextend-mixed-element,
+.nextend-horizontal-tab .nextend-mixed-label{
+    margin-bottom: 0;
+}

@@ -1,0 +1,135 @@
+#nextend-configurator-panels,
+#menu-pane,
+#nextend-type-panel,
+#nextend-type-panels,
+#nextend-theme-panel,
+#nextend-theme-panels{
+  margin: 0;
+  padding: 0;
+}
+
+#nextend-configurator-wp .nextend-form div.nextend-tab h3,
+.nextend-form div.nextend-tab h3{
+    height: 40px;
+    margin: 0;
+    padding: 0 15px;
+    color: #697481;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: normal;
+    background: #dee1e8; /* Old browsers */
+    background: -moz-linear-gradient(top, #f7f8fa 0%, #dee1e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f8fa), color-stop(100%,#dee1e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f7f8fa 0%,#dee1e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f7f8fa 0%,#dee1e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f7f8fa 0%,#dee1e8 100%); /* IE10+ */
+    background: linear-gradient(top, #f7f8fa 0%,#dee1e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f8fa', endColorstr='#dee1e8',GradientType=0 ); /* IE6-9 */    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 1px white;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 -5px 10px rgba(0, 0, 0, 0.05) inset;
+    cursor: default;
+}
+
+.nextend-form .nextend-tab table{
+    width: 100%;
+    border-spacing:0;
+    border-collapse:collapse; 
+}
+
+.nextend-form .nextend-tab table tr{
+  height: 40px;
+}
+
+.nextend-form .nextend-tab table tr.odd{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.nextend-form .nextend-tab table tr.odd:first-child{
+  border-top: none;
+}
+
+.nextend-form .nextend-tab table tr.even:last-child{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nextend-form .nextend-tab table td.nextend-label{
+    width: 233px;
+    padding: 5px 8px;
+    text-align: right;
+}
+
+.nextend-form .nextend-tab table td.nextend-element{
+    padding: 5px 10px;
+}
+
+.nextend-form .nextend-tab table td.nextend-label label{
+    float:none;
+    min-width: auto;
+    max-width: none;
+    display: inline;
+    margin: auto;
+    padding: auto;
+    color: #738aa2;
+    font-size: 13px;
+    text-shadow: 0 1px 1px white;
+}
+
+.nextend-form .nextend-tab table .odd td,
+.nextend-form .nextend-form .nextend-tab table .odd td{
+    background-color: #eef3f8;
+}
+
+.nextend-form td.nextend-hastip,
+.nextend-form td.nextend-hastip label{
+  cursor: help;
+}
+
+.nextend-form .nextend-tab table .odd td.nextend-label,
+.nextend-form .nextend-form .nextend-tab table .odd td.nextend-label{
+    border-right: 1px solid RGBA(0,0,0,0.1); ;
+}
+
+.nextend-form .nextend-tab table .even td,
+.nextend-form .nextend-form .nextend-tab table .even td{
+    background-color: #ffffff;
+}
+
+.nextend-form .nextend-tab table .even td.nextend-label,
+.nextend-form .nextend-form .nextend-tab table .even td.nextend-label{
+    border-right: 1px solid #eeeeee;
+}
+
+.nextend-form select{
+    height: 20px;
+    font-size: 12px;
+    margin: 3px 0;
+    padding: 0;
+}
+
+.nextend-form select[multiple] {
+    height: auto;
+    padding: 0 10px;
+}
+
+.nextend-form .nextend-tab table td.nextend-label,
+.nextend-form .nextend-tab table td.nextend-element,
+.nextend-form select,
+.nextend-form h3{
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-weight: normal;
+}
+
+.nextend-form select{
+  color: #6C7581;  
+  border-radius: 3px;  
+  -moz-border-radius: 3px; 
+  -webkit-border-radius: 3px;
+}
+
+.nextend-form input:focus,
+.nextend-form select:focus, 
+.nextend-form textarea:focus{
+  background-color: #fcf4d4;
+}

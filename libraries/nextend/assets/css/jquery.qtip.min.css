@@ -1,0 +1,112 @@
+/*!
+ * qTip2 - Pretty powerful tooltips - 
+ * http://qtip2.com
+ *
+ * Copyright (c) 2013 Craig Michael Thompson
+ * Released under the MIT, GPL licenses
+ * http://jquery.org/license
+ *
+ * Date: Thu May 9 2013 04:46 UTC+0000
+ * Plugins: svg ajax tips modal viewport imagemap ie6
+ * Styles: basic css3
+ */
+
+/* Core qTip styles */
+.qtip, .qtip{
+	position: absolute;
+	left: -28000px;
+	top: -28000px;
+	display: none;
+	max-width: 380px;
+	min-width: 50px;	
+	font-size: 12px;
+	line-height: 16px;
+	direction: ltr;	
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: normal;
+  color: white;  
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	text-shadow: 0 -1px 1px RGBA(0,0,0,0.6);
+}
+
+	.qtip-content{
+		position: relative;
+		padding: 12px 20px;
+		overflow: hidden;
+		text-align: left;
+  	word-wrap: break-word;
+  	font-size: 12px;
+  	line-height: 16px;
+	}
+
+	.qtip-titlebar{
+		position: relative;
+		padding: 5px 35px 5px 10px;
+		overflow: hidden;
+		border-width: 0 0 2px;
+	}
+
+/* Default tooltip style */
+.qtip-default{
+	background-color: RGBA(51,56,58,0.95);
+}
+
+	.qtip-default .qtip-titlebar{
+		background-color: #FFEF93;
+	}
+
+	.qtip-default .qtip-icon{
+		border-color: #CCC;
+		background: #F1F1F1;
+		color: #777;
+	}
+	
+	.qtip-default .qtip-titlebar .qtip-close{
+		border-color: #AAA;
+		color: #111;
+	}
+
+
+  /* Add shadows to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+  .qtip-shadow{
+  	-webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  	-moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  }
+  
+  
+  /* Tips plugin */
+  .qtip .qtip-tip{
+  	margin: 0 auto;
+  	overflow: hidden;
+  	z-index: 10;
+  }
+  
+  .qtip-tip canvas{
+    background: red;
+  }
+
+	.qtip .qtip-tip,
+	.qtip .qtip-tip .qtip-vml{
+		position: absolute;
+		color: #123456;
+		background: transparent;
+		border: 0 dashed transparent;
+	}
+	
+	.qtip .qtip-tip canvas{ top: 0; left: 0; float:left; }
+
+	.qtip .qtip-tip .qtip-vml{
+		behavior: url(#default#VML);
+		display: inline-block;
+		visibility: visible;
+	}
+
+
+
+/* IE6 Modal plugin fix */
+.qtipmodal-ie6fix{
+	position: absolute !important;
+}
