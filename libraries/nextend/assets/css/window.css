@@ -1,0 +1,133 @@
+.nextend-window{
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: fixed;
+  background-color: #3e3e3e;
+  background-color: RGBA(0,0,0,0.3);
+  left: 0;
+  top:0;
+  z-index:9900;
+  overflow:hidden;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.nextend-window.nextend-no-style{
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  z-index:1;
+}
+
+.nextend-window .nextend-window-container{
+  height: 100%;
+  width: 100%;
+  margin: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px RGBA(0,0,0,0.6);
+  overflow:auto;
+  cursor: pointer;
+}
+
+.nextend-topbar{
+  cursor: default;
+  height: 68px;
+  border-radius: 5px 5px 0 0;  
+  -moz-border-radius:  5px 5px 0 0; 
+  -webkit-border-radius:  5px 5px 0 0; 
+  border: 1px solid #171c23;
+  position: relative;
+  z-index: 2;
+  background: #4B5C70; /* Old browsers */
+  background: -moz-linear-gradient(top, #4B5C70 0%, #333F4C 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4B5C70), color-stop(100%,#333F4C)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #4B5C70 0%,#333F4C 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #4B5C70 0%,#333F4C 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #4B5C70 0%,#333F4C 100%); /* IE10+ */
+  background: linear-gradient(top, #4B5C70 0%,#333F4C 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4B5C70', endColorstr='#333F4C',GradientType=0 ); /* IE6-9 */
+  line-height: 114px;
+  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1) inset,  0px 2px 3px RGBA(0,0,0,0.5);
+}
+
+.nextend-topbar-logo{
+  width: 249px;
+  height: 100%;
+  border-right: 1px solid #171c23;
+  background: center center no-repeat;
+  float: left;
+  background-image: url('../images/admin/accordionmenu.png');
+  background-position: center 17px;
+}
+
+a.nextend-topbar-button{
+  display: block;
+  width: 97px;
+  height: 100%;
+  border-right: 1px solid #171c23;
+  float: left;
+  background: center center no-repeat;
+  text-align: center;
+  color: #e5e7e9 !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 104px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  text-decoration: none !important;
+}
+
+a.nextend-topbar-button:HOVER{
+  text-decoration: none;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2) inset;
+  background-color: RGBA(0,0,0,0.2);
+}
+
+a.nextend-topbar-button:ACTIVE{
+  box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.4) inset;
+  line-height: 106px;  
+  background-position: center 13px;
+}
+
+a.nextend-topbar-manual{
+  background-image: url('../images/admin/manual.png');
+  background-position: center 12px;
+}
+
+a.nextend-topbar-support{
+  background-image: url('../images/admin/support.png');
+  background-position: center 12px;
+}
+
+a.nextend-topbar-getpro{
+  background-image: url('../images/admin/getpro.png');
+  background-position: center 12px;
+}
+
+.nextend-window .nextend-window-container .nextend-window-container-inner{
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  cursor: default;
+  background: #fff;
+}
+
+.nextend-window{
+  transition: opacity 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition:  opacity 0.4s linear;
+  -o-transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.nextend-window.active{
+  opacity: 1;
+}
+
+.nextend-window .pane-sliders{
+  margin: 18px 0 0;
+  position: relative;
+}

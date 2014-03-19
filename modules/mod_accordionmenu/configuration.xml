@@ -1,0 +1,66 @@
+<root>
+    <version>9.1.0</version>
+    <params name="basic" label="Basic parameters">
+        <param name="type"  type="menutype" label="Type" default="joomla" file="type.xml" description="Choose the source component for the menu. Click on the SETTINGS button for more options." />
+        <param name="theme" type="menutheme" label="Theme" default="clean" file="theme.xml" description="Change the look of your menu. Click on the SETTINGS button for more options." />
+        <param name="moduleshowtitle" type="onoff" default="0" label="Title theme" description="If enabled, the menu theme will skin your module title. To prevent duplicated title, switch off the module Show title option." />
+        <param name="parentlink" type="onoff" default="0" label="Parent items as link" description="If enabled, the items which have subitems will be urls." />
+        <param name="accordionmode" type="radio" default="1" label="Accordion mode" description="&lt;b&gt;Normal&lt;/b&gt;: If one item opens, the others are closing on that level.&lt;br&gt;&lt;b&gt;Improved&lt;/b&gt;: Same as normal, except the animated level moving upwards to the active item.&lt;br&gt;&lt;b&gt; Multiple opening&lt;/b&gt;:The items are openable&amp;closeable independent from each other.">
+            <option value="1">Normal</option>
+            <option value="2">Improved</option>
+            <option value="0">Multiple opening</option>
+        </param>
+        <param name="mode" type="radio" label="Activator event" default="onclick" description="&lt;b&gt;Click&lt;/b&gt;: Open/close by mouse click action&lt;br&gt;&lt;b&gt;Mouse enter&lt;/b&gt;: Open by mouse over, close by click&lt;br&gt;&lt;b&gt;Both&lt;/b&gt;: Open and close by mouse click or enter and close by click">
+            <option value="onclick">Click</option>
+            <option value="onmouseenter">Mouse enter</option>
+            <option value="both">Both</option>
+        </param>
+    </params>
+    <params name="advanced" label="Advanced parameters">
+        <param name="active" type="radio" default="1" label="Active" description="The current page is active highlighted. You can &lt;b&gt;disable&lt;/b&gt;, mark active only the current page(&lt;b&gt;item&lt;/b&gt;) or mark the current page and it's parents (&lt;b&gt;branch&lt;/b&gt;).">
+            <option value="0">Disabled</option>
+            <option value="1">Item</option>
+            <option value="2">Branch</option>
+        </param>
+        <param name="opened" type="radio" default="2" label="Opened" description="The active page can be opened on pageload by the following options.">
+            <option value="0">Disabled</option>
+            <option value="-1">All</option>
+            <option value="1">Active item</option>
+            <option value="2">Active branch</option>
+            <option value="3">State saving with cookies</option>
+        </param>
+        <param name="openedlevels" multiple="1" type="list" size="5" default="" label="Always opened" description="If you mark a level always opened, it will be unfolded and the controls are disabled.">
+            <option value="1">#1 level</option>
+            <option value="2">#2 level</option>
+            <option value="3">#3 level</option>
+            <option value="4">#4 level</option>
+            <option value="5">#5 level</option>
+            <option value="6">#6 level</option>
+            <option value="7">#7 level</option>
+            <option value="8">#8 level</option>
+            <option value="9">#9 level</option>
+            <option value="10">#10 level</option>
+        </param>
+        <param name="slice" type="mixed" label="Menu slice" default="0|*|0|*|0" description="You can show a specific part of the menu by this option. Improved start level is great if you leave start and end level on 0.">
+            <param type="text" label="Start level" style="width:50px;" />
+            <param type="text" label="End level" style="width:50px;" />
+            <param type="onoff" label="Improved start level handling" />
+        </param>
+    </params>
+    <params name="animation" label="Animation parameters">
+        <param name="css3animation" type="onoff" default="0" label="CSS3 animations" description="This enables the CSS3 transition for animations if the browser support it. If not, the default javascript animation used." />
+        <param name="animation" type="mixed" label="Animation" description="Bounces are not available for CSS3 animations." default="500|*|dojo.fx.easing.cubicInOut|*|dojo.fx.easing.cubicInOut">
+            <param type="text" style="width: 50px;" label="Duration" description="">
+                <unit value="ms">ms</unit>
+            </param>
+            <param type="easing" label="Open easing" description="" />
+            <param type="easing" label="Close easing" description="" />
+        </param>
+        <param name="snaptobottom" type="onoff" default="0" label="Snap submenus to bottom" description="Attaches the sublevel to the bottom, results interesting effect. Give it a try!" />
+    </params>
+    <params name="other" label="Other parameters">
+        <param name="class_sfx" type="text" default="" label="Menu class suffix" description="Add a CSS class to the menu" />
+        <param name="html5" type="onoff" default="0" label="HTML5 mode" description="Use NAV HTML5 tag to show the navigation for Google" />
+        <param name="noscript" type="onoff" default="1" label="Show expanded when Javascript disabled" description="Set this OFF to prevent flickering." />
+    </params>
+</root>

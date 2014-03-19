@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.5.0" method="upgrade" client="site">
+  <name>Nextend Accordion Menu V9</name>
+  <author>Roland Soos</author>
+  <copyright>Copyright (C) Nextendweb.com</copyright>
+  <authorEmail>roland@nextendweb.com</authorEmail>
+  <authorUrl>http://www.nextendweb.com</authorUrl>
+  <version>9.1.1</version>
+  <description>The module displays Accordion menus</description>
+  <params addPath="/libraries/nextend/joomla/elements">
+    <param name="config" type="configurator" identifier="accordionmenu" manual="http://www.nextendweb.com/wiki/accordion-menu-documentation/" support="http://www.nextendweb.com/accordion-menu/#support" label="" xml="/modules/mod_accordionmenu/configuration.xml" />
+  </params>
+  <params group="advanced">
+      <param name="cache" type="hidden" default="0" />
+      <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" />
+  </params>
+  <config>
+    <fields name="params" addfieldpath="/libraries/nextend/joomla/fields">
+      <fieldset name="basic">
+        <field name="config" type="configurator" identifier="accordionmenu" manual="http://www.nextendweb.com/wiki/accordion-menu-documentation/" support="http://www.nextendweb.com/accordion-menu/#support" label="" xml="/modules/mod_accordionmenu/configuration.xml" />
+      </fieldset>
+      <fieldset name="advanced">
+          <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+          <field name="cache" type="hidden" default="0" />
+          <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+          <field name="cachemode" type="hidden" default="itemid">
+              <option value="itemid"></option>
+          </field>
+      </fieldset>
+    </fields>
+  </config>
+  <creationDate>2013-05-28</creationDate>
+  <license>http://www.gnu.org/licenses/gpl-3.0.txt GNU/GPL</license>
+  <releaseDate>2013-05-28</releaseDate>
+  <files>
+    <filename module="mod_accordionmenu">mod_accordionmenu.php</filename>
+    <filename>mod_accordionmenu.xml</filename>
+    <filename>configuration.xml</filename>
+    <filename>index.html</filename>
+  </files>
+</extension>

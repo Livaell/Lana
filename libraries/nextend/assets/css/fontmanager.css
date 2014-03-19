@@ -1,0 +1,130 @@
+#nextend-fontmanager-panel{
+  margin: 0;
+}
+
+#nextend-fontmanager-lightbox .nextend-window-container{
+    background: #F5F5F5;
+}
+
+#nextend-fontmanager-panels{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+#nextend-fontmanager-tabs{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    z-index: 2;
+}
+
+#nextend-fontmanager-panel .nextend-form{
+  margin: 10px 20px;
+}
+
+#nextend-fontmanager-cleartab,
+#nextend-fontmanager-tabs .nextend-tab{
+    font-size: 12px;
+    color: #7c848f;
+    cursor: pointer;
+    padding: 1px 15px;
+    height: 22px;
+    line-height: 22px;
+    margin: 0 5px;
+    float: left;
+    background: #e6e9ed; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e6e9ed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e6e9ed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* IE10+ */
+    background: linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e9ed',GradientType=0 ); /* IE6-9 */      
+    text-shadow: 0 1px 1px white;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 -3px 5px rgba(0, 0, 0, 0.05) inset;  
+    border-radius: 3px;
+}
+
+#nextend-fontmanager-cleartab{
+  margin-right: 20px;
+}
+
+#nextend-fontmanager-tabs .nextend-tab:HOVER{
+  background: #dee1e8; /* Old browsers */
+  background: -moz-linear-gradient(top, #fbfcfe 0%, #dee1e8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfcfe), color-stop(100%,#dee1e8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* IE10+ */
+  background: linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfcfe', endColorstr='#dee1e8',GradientType=0 ); /* IE6-9 */ 
+}
+  
+#nextend-fontmanager-tabs .nextend-tab.selected{
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+    border-color: #6ca502;
+    background: -moz-linear-gradient(top, #98D130 0%, #4A9901 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#689e02), color-stop(100%,#72ae02)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #689e02 0%,#72ae02 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #689e02 0%,#72ae02 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #689e02 0%,#72ae02 100%); /* IE10+ */
+    background: linear-gradient(top, #689e02 0%,#72ae02 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#689e02', endColorstr='#72ae02',GradientType=0 ); /* IE6-9 */
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+#nextend-fontmanager-cleartab:HOVER{
+    color: #fff;
+    text-shadow: 1px 1px 1px #575656;
+    border-color: #ac3a26;
+    background: -moz-linear-gradient(top, #c96648 0%, #ac3a26 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c96648), color-stop(100%,#ac3a26)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #c96648 0%,#ac3a26 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #c96648 0%,#ac3a26 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #c96648 0%,#ac3a26 100%); /* IE10+ */
+    background: linear-gradient(top, #c96648 0%,#ac3a26 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c96648', endColorstr='#ac3a26',GradientType=0 ); /* IE6-9 */
+}
+
+#nextend-fontmanager-lightbox h3{
+    height: 40px;
+    margin: 0;
+    padding: 0 15px;
+    color: #697481;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: normal;
+    background: #dee1e8; /* Old browsers */
+    background: -moz-linear-gradient(top, #f7f8fa 0%, #dee1e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f8fa), color-stop(100%,#dee1e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f7f8fa 0%,#dee1e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f7f8fa 0%,#dee1e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f7f8fa 0%,#dee1e8 100%); /* IE10+ */
+    background: linear-gradient(top, #f7f8fa 0%,#dee1e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f8fa', endColorstr='#dee1e8',GradientType=0 ); /* IE6-9 */    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 1px white;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 -5px 10px rgba(0, 0, 0, 0.05) inset;
+}
+
+.fontcolorpickerinput{
+  float:right;
+  margin-top: -47px;
+  margin-right: 21px;
+}
+
+#nextend-fontmanager-preview{
+    margin: 20px;
+    padding: 20px 10px;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 3px #9E9E9E inset;
+}
+
+#nextend-fontmanager-panel .nextend-horizontal-tab label{
+  color: #6C7581;
+  font-size: 10px;
+  font-family: 'Montserrat',Arial,sans-serif;
+}

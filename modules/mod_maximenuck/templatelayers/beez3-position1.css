@@ -1,0 +1,10 @@
+/*---------------------------------------------
+---	 	compatibility layer 				---
+---		for native template 				---
+---		Beez20 and Beez5					---
+----------------------------------------------*/
+
+
+#header {
+    overflow:visible !important;
+}

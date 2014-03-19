@@ -1,0 +1,20 @@
+.nextend-onoff{
+    float: left;
+    background: url("../../images/onoff.png") -26px 0 no-repeat;
+    width: 48px;
+    height: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid #adbcc5;
+    margin: 2px 0;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -webkit-transition:background-position 0.2s ease-in;  
+    -moz-transition:background-position 0.2s ease-in;  
+    -o-transition:background-position 0.2s ease-in;  
+    transition:background-position 0.2s ease-in;  
+}
+
+.nextend-onoff.nextend-onoff-on{
+    background-position: 0 0;
+}

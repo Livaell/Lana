@@ -1,0 +1,10 @@
+/*---------------------------------------------
+---	 	compatibility layer 				---
+---		for native template 				---
+---		Beez20 position-12					---
+----------------------------------------------*/
+
+
+#top, #wrapper2 {
+    overflow:visible !important;
+}

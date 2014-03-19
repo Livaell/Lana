@@ -1,0 +1,24 @@
+<root>
+  <params label="Joomla menu properties">
+    
+    <param name="joomlamenu" type="joomlamenuwithitems" default="mainmenu|*|0" label="Menu" description="If you select only one root menu item only its childrens will be shown. On multiple selection, the selected will be on the first level." >
+        <param type="joomlamenu" label="Menu" />
+        <param type="joomlamenuitems" label="Root" multiple="1" size="10" />
+    </param>
+    <param name="rootasitem" type="onoff" default="0" label="Singe root as menuitem" description="If enabled and one selected in the previous option, the behaviour will be the same as multiple selection."/>
+    <param name="displaynum" type="onoff" default="0" label="Display number of subitems" description="Display the item count for a parent item" />
+    <param name="loadposition" type="onoff" default="0" label="Load module feature" description="Create an separator type menu item and with the following code you can load modulepositions: {loadposition menulogin}"/>
+    <param name="menuicons" type="mixed" label="Menu icons" default="0|*|0|*|0" description="If enabled, the menu will add the specified image from the menu item.">
+        <param type="onoff" label="Show" />
+        <param type="radio" label="Alignment" >
+            <option value="0">Left</option>
+            <option value="1">Right</option>
+        </param>
+        <param type="onoff" label="Only icon" />
+    </param>
+    <param name="hidebycssclass" type="mixed" label="Filter by Link CSS Style" default="0|*|invisible" description="If enabled the menu will check every menuitem's Link CSS Style for the filter string. If any occurence found the menuitem will be unshown. Only works in Joomla 2.5 and higher!">
+        <param type="onoff" label="Filter" />
+        <param type="text" label="Filter by" />
+    </param>
+  </params>
+</root>

@@ -1,0 +1,155 @@
+.clear(){
+    (~'@{class}'){
+        overflow: hidden;
+    }
+    
+    div,
+    dl,
+    dt,
+    dd,
+    span,
+    a,
+    img,
+    h3{
+        width: auto;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        float: none;
+        clear: none;
+        line-height: normal;
+        position: static;
+        list-style: none;
+    }
+    
+    .dj_ie7 & div,
+    .dj_ie7 & dl,
+    .dj_ie7 & dt,
+    .dj_ie7 & dd,
+    /*.dj_ie7 & span,
+    .dj_ie7 & a,
+    .dj_ie7 & img,*/
+    .dj_ie7 & h3{
+        width: 100%;
+    }
+    
+    span,
+    a,
+    img{
+      vertical-align: middle;
+    }
+    
+    a{
+        /* For testing*/
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        &,
+        :focus,
+        :active{
+            background: none;
+            outline: 0;
+            -moz-outline-style: none;
+        }
+    }
+    
+    img{
+        margin: 0 4px;
+    }
+    
+    .snaptobottom (@a) when (@a = 1) {
+        bottom: 0;
+    }
+    
+    .css3animation(@a) when (@a = 1) {
+        &.opening{
+            .transition(@animationinterval, @animationopening);
+        }
+        &.closing{
+            .transition(@animationinterval, @animationclosing);
+        }
+        &.opening.notransition,
+        &.closing.notransition{
+            .notransition();
+        }
+    }
+    
+    .css3animationimproved(@a) when (@a = 2) {
+        .transition(@animationinterval, @animationopening);
+    }
+    
+    dl{
+        .css3animationimproved(@accordionmode);
+    }
+    
+    dl.level1{
+        dl{
+            position: absolute;
+            width: 100%;
+            top: @snaptobottom;
+            .snaptobottom(@snaptobottom);
+        }
+    
+        dd{
+            display: block;
+            overflow: hidden;
+            height: 0px;
+            width: 100%;
+            margin: 0;
+            position: relative;
+    
+            &.opening, 
+            &.closing,
+            &.opened{
+                display: block;
+            }
+        
+            &.parent{
+                .css3animation(@css3animation);
+                &.opened{
+                    height: auto;
+                    > dl{
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+    
+    .nextend-productnum{
+        display: inline-block;
+        float: right;
+        vertical-align: middle;
+        margin: -1px 5px 0 5px;
+        min-width: 8px;
+        padding: 0 8px;
+        text-align: center !important;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 9px 9px 9px 9px;
+        .box-shadow(~"0 0 2px 1px rgba(0, 0, 0, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.1) inset");
+    }
+    
+    .dj_ie6 & span.nextend-productnum,
+    .dj_ie7 & span.nextend-productnum{
+        float: none;
+        display: inline;
+        margin: 0 10px;
+    }
+    
+    .dj_ie6 & span.nextend-productnum,
+    .dj_ie7 & span.nextend-productnum,
+    .dj_ie8 & span.nextend-productnum{
+        border: 1px solid #ffffff;
+    }
+    
+    &.noscript dl.level1{
+        dl{
+            position: static;
+        }
+        dd.parent{
+            height: auto !important;
+            display: block;
+            visibility: visible;
+        }
+    }
+}

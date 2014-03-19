@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.0"
+	client="site"
+	method="upgrade">
+	<name>Menu Accordeon CK</name>
+	<author>Cédric KEIFLIN</author>
+	<creationDate>octobre 2011</creationDate>
+	<copyright>Cédric KEIFLIN</copyright>
+	<license>GNU/GPL 3 http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>ced1870@gmail.com</authorEmail>
+	<authorUrl>http://www.joomlack.fr</authorUrl>
+	<version>2.0.8</version>
+	<description>MOD_ACCORDEONCK_DESC</description>
+	<files>
+		<filename module="mod_accordeonck">mod_accordeonck.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>logo_accordeonmenuck.png</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>themes</folder>
+		<folder>language</folder>
+		<folder>elements</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_accordeonck.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_accordeonck.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_accordeonck.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_accordeonck.sys.ini</language>
+	</languages>
+	<updateservers>
+		<server type="extension" priority="1" name="Accordeon Menu CK Update">http://update.joomlack.fr/mod_accordeonck_update.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_accordeonck/elements">
+				<field
+					name="menutype"
+					type="ckmenu"
+					label="MOD_ACCORDEONCK_MENUTYPE"
+					description="MOD_ACCORDEONCK_MENUTYPE_DESC"
+					icon="text_list_numbers.png" />
+				<field
+					name="startLevel"
+					type="cklist"
+					default="1"
+					label="MOD_ACCORDEONCK_STARTLEVEL"
+					description="MOD_ACCORDEONCK_STARTLEVEL_DESC"
+					icon="chart_organisation_add.png" >
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+
+				<field
+					name="endLevel"
+					type="cklist"
+					default="0"
+					label="MOD_ACCORDEONCK_ENDLEVEL"
+					description="MOD_ACCORDEONCK_ENDLEVEL_DESC"
+					icon="chart_organisation_delete.png" >
+					<option value="0">JALL</option>
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field
+					name="ckspaceradvanced1"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_IMAGES"
+					style="title" />
+				<field
+					name="imgalignement"
+					type="ckradio"
+					default="none"
+					label="MOD_ACCORDEONCK_IMGALIGNEMENT"
+					description="MOD_ACCORDEONCK_IMGALIGNEMENT_DESC"
+					icon="text_padding_left.png"
+					class="btn-group">
+					<option value="none">MOD_ACCORDEONCK_NONE</option>
+					<option value="left">MOD_ACCORDEONCK_LEFT</option>
+					<option value="right">MOD_ACCORDEONCK_RIGHT</option>
+				</field>
+				<field
+					name="imagerollprefix"
+					type="cktext"
+					default="_hover"
+					label="MOD_ACCORDEONCK_ROLLOVERPREFIX_LABEL"
+					description="MOD_ACCORDEONCK_ROLLOVERPREFIX_DESC"
+					icon="text_signature.png" />
+				<field
+					name="imageactiveprefix"
+					type="cktext"
+					default="_active"
+					label="MOD_ACCORDEONCK_ACTIVEPREFIX_LABEL"
+					description="MOD_ACCORDEONCK_ACTIVEPREFIX_DESC"
+					icon="text_signature.png" />
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+				<field
+					name="tag_id"
+					type="cktext"
+					label="MOD_ACCORDEONCK_TAG_ID"
+					description="MOD_ACCORDEONCK_TAG_ID_DESC"
+					icon="textfield_key.png" />
+
+				<field
+					name="class_sfx"
+					type="cktext"
+					label="MOD_ACCORDEONCK_CLASS"
+					description="MOD_ACCORDEONCK_CLASS_DESC"
+					icon="text_signature.png"/>
+
+				<field
+					name="layout"
+					type="ckmodulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+					icon="layout.png"/>
+
+				<field
+					name="moduleclass_sfx"
+					type="cktext"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					icon="text_signature.png"/>
+
+				<field
+					name="cache"
+					type="cklist"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL
+					</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
+				</field>
+				<field
+					name="cache_time"
+					type="cktext"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					icon="hourglass.png"
+					suffix="min"/>
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid">
+					</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="effects" label="MOD_ACCORDEONCK_EFFECTS">
+				<field name="eventtype" type="ckradio" label="MOD_ACCORDEONCK_EVENTTYPE" description="MOD_ACCORDEONCK_EVENTTYPE_DESC" default="click" icon="mouse.png" class="btn-group">
+					<option value="click">MOD_ACCORDEONCK_CLICK</option>
+					<option value="mouseover">MOD_ACCORDEONCK_MOUSEOVER</option>
+				</field>
+				<field name="eventtarget" type="ckradio" label="MOD_ACCORDEONCK_EVENTTARGET" description="MOD_ACCORDEONCK_EVENTTARGET_DESC" default="link" icon="cursor.png" class="btn-group">
+					<option value="link">MOD_ACCORDEONCK_LINK</option>
+					<option value="image">MOD_ACCORDEONCK_IMAGE</option>
+				</field>
+				<field name="fadetransition" type="ckradio" label="MOD_ACCORDEONCK_FADETRANSITION" description="MOD_ACCORDEONCK_FADETRANSITION_DESC" default="false" icon="layers.png" class="btn-group">
+					<option value="true">JYES</option>
+					<option value="false">JNO</option>
+				</field>
+				<field name="mooduration" type="cktext" default="500" label="MOD_ACCORDEONCK_MOODUREE" description="MOD_ACCORDEONCK_MOODUREE_DESC" icon="hourglass.png"
+					   suffix="ms" />
+				<field name="mootransition" type="cklist" default="linear" label="MOD_ACCORDEONCK_TRANSITION" description="MOD_ACCORDEONCK_TRANSITION_DESC" icon="chart_curve.png">
+					<option value="linear">Linear</option>
+					<option value="swing">swing</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				<field 
+					name="defaultopenedid"
+					type="cktext"
+					default=""
+					label="MOD_ACCORDEONCK_DEFAULTOPENEDID_LABEL"
+					description="MOD_ACCORDEONCK_DEFAULTOPENEDID_DESC"
+				/>
+			</fieldset>
+			<fieldset name="styles" label="MOD_ACCORDEONCK_STYLES">
+				<field name="usestyles" type="ckradio" default="1" label="MOD_ACCORDEONCK_USESTYLES" description="MOD_ACCORDEONCK_USESTYLES_DESC" icon="css.png" class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field type="spacer" hr="true" />
+				<field
+					name="theme"
+					type="ckfolderlist"
+					directory="modules/mod_accordeonck/themes"
+					default="simple"
+					hide_none="true"
+					hide_default="true"
+					label="MOD_ACCORDEONCK_THEME_LABEL"
+					description="MOD_ACCORDEONCK_THEME_DESC"
+					icon="palette.png" />
+				<field name="useplusminusimages" type="ckradio" default="1" label="MOD_ACCORDEONCK_USEPLUSMINUSIMAGES" description="MOD_ACCORDEONCK_USEPLUSMINUSIMAGES_DESC" icon="bullet_wrench.png" class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="imageplus" type="ckmedia" default="modules/mod_accordeonck/assets/plus.png" label="MOD_ACCORDEONCK_IMAGEPLUS" description="MOD_ACCORDEONCK_IMAGEPLUS_DESC" icon="image.png" />
+				<field name="imageminus" type="ckmedia" default="modules/mod_accordeonck/assets/minus.png" label="MOD_ACCORDEONCK_IMAGEMINUS" description="MOD_ACCORDEONCK_IMAGEMINUS_DESC" icon="image.png" />
+				<field name="imageposition" type="ckradio" label="MOD_ACCORDEONCK_IMAGEPOSITION" description="MOD_ACCORDEONCK_IMAGEPOSITION_DESC" default="right" icon="text_padding_left.png" class="btn-group">
+					<option value="left">MOD_ACCORDEONCK_LEFT</option>
+					<option value="right">MOD_ACCORDEONCK_RIGHT</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="menustyles" label="MOD_ACCORDEONCK_MENUSTYLES">
+				<field
+					name="menustylesmarginckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESMARGIN"
+					style="title"/>
+				<field
+					name="menuusemargin"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEMARGIN_LABEL"
+					description="MOD_ACCORDEONCK_USEMARGIN_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="menumargin" type="cktext" default="0" label="MOD_ACCORDEONCK_MARGIN_LABEL" description="MOD_ACCORDEONCK_MARGIN_DESC" icon="text_padding_left.png" suffix="px" />
+				<field name="menupadding" type="cktext" default="5" label="MOD_ACCORDEONCK_PADDING_LABEL" description="MOD_ACCORDEONCK_PADDING_DESC" icon="text_padding_left.png" suffix="px" />
+				<field
+					name="menustylesbackgroundckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESBACKGROUND"
+					style="title"/>
+				<field
+					name="menuusebackground"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEBACKGROUND_LABEL"
+					description="MOD_ACCORDEONCK_USEBACKGROUND_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="menubgcolor1" type="ckcolor" default="#f0f0f0" label="MOD_ACCORDEONCK_BGCOLOR1_LABEL" description="MOD_ACCORDEONCK_BGCOLOR1_DESC" />
+				<field
+					name="menuusegradient"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEGRADIENT_LABEL"
+					description="MOD_ACCORDEONCK_USEGRADIENT_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="menubgcolor2" type="ckcolor" default="#e3e3e3" label="MOD_ACCORDEONCK_BGCOLOR2_LABEL" description="MOD_ACCORDEONCK_BGCOLOR2_DESC" />
+
+				<field
+					name="menustylesroundedcornersckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESROUNDEDCORNERS"
+					style="title"/>
+				<field
+					name="menuuseroundedcorners"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEROUNDEDCORNERS_LABEL"
+					description="MOD_ACCORDEONCK_USEROUNDEDCORNERS_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="menuroundedcornerstl" type="cktext" default="5" label="MOD_ACCORDEONCK_ROUNDEDCORNERSTL_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSTL_DESC" icon="border_radius_tl.png" suffix="px" />
+				<field name="menuroundedcornerstr" type="cktext" default="5" label="MOD_ACCORDEONCK_ROUNDEDCORNERSTR_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSTR_DESC" icon="border_radius_tr.png" suffix="px" />
+				<field name="menuroundedcornersbr" type="cktext" default="5" label="MOD_ACCORDEONCK_ROUNDEDCORNERSBR_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSBR_DESC" icon="border_radius_br.png" suffix="px" />
+				<field name="menuroundedcornersbl" type="cktext" default="5" label="MOD_ACCORDEONCK_ROUNDEDCORNERSBL_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSBL_DESC" icon="border_radius_bl.png" suffix="px" />
+				<field
+					name="menustylesshadowckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESSHADOW"
+					style="title"/>
+				<field
+					name="menuuseshadow"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USESHADOW_LABEL"
+					description="MOD_ACCORDEONCK_USESHADOW_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="menushadowcolor" type="ckcolor" default="#444444" label="MOD_ACCORDEONCK_SHADOWCOLOR_LABEL" description="MOD_ACCORDEONCK_SHADOWCOLOR_DESC" />
+				<field name="menushadowblur" type="cktext" default="3" label="MOD_ACCORDEONCK_SHADOWBLUR_LABEL" description="MOD_ACCORDEONCK_SHADOWBLUR_DESC" icon="shadow_blur.png" suffix="px" />
+				<field name="menushadowspread" type="cktext" default="0" label="MOD_ACCORDEONCK_SHADOWSPREAD_LABEL" description="MOD_ACCORDEONCK_SHADOWSPREAD_DESC" icon="shadow_spread.png" suffix="px" />
+				<field name="menushadowoffsetx" type="cktext" default="0" label="MOD_ACCORDEONCK_OFFSETX_LABEL" description="MOD_ACCORDEONCK_OFFSETX_DESC" icon="offsetx.png" suffix="px" />
+				<field name="menushadowoffsety" type="cktext" default="0" label="MOD_ACCORDEONCK_OFFSETY_LABEL" description="MOD_ACCORDEONCK_OFFSETY_DESC" icon="offsety.png" suffix="px" />
+				<field name="menushadowinset" type="ckradio" default="0" label="MOD_ACCORDEONCK_SHADOWINSET_LABEL" description="MOD_ACCORDEONCK_SHADOWINSET_DESC" class="btn-group">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="menustylesbordersckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESBORDERS"
+					style="title"/>
+				<field
+					name="menuuseborders"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEBORDERS_LABEL"
+					description="MOD_ACCORDEONCK_USEBORDERS_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="menubordercolor" type="ckcolor" default="#efefef" label="MOD_ACCORDEONCK_BORDERCOLOR_LABEL" description="MOD_ACCORDEONCK_BORDERCOLOR_DESC" />
+				<field name="menuborderwidth" type="cktext" default="1" label="MOD_ACCORDEONCK_BORDERWIDTH_LABEL" description="MOD_ACCORDEONCK_BORDERWIDTH_DESC" icon="shape_borders.png" suffix="px" />
+			</fieldset>
+
+			<fieldset name="level1linkstyles" label="MOD_ACCORDEONCK_LEVEL1LINKSTYLES">
+				<field
+					name="level1linkstylesfontckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESFONT"
+					style="title"/>
+				<field
+					name="level1linkusefont"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEFONT_LABEL"
+					description="MOD_ACCORDEONCK_USEFONT_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level1linkfontsize" type="cktext" default="12px" label="MOD_ACCORDEONCK_FONTSIZE_LABEL" description="MOD_ACCORDEONCK_FONTSIZE_DESC" icon="style.png" />
+				<field name="level1linkfontcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_FONTCOLOR_LABEL" description="MOD_ACCORDEONCK_FONTCOLOR_DESC" />
+				<field name="level1linkfontcolorhover" type="ckcolor" default="" label="MOD_ACCORDEONCK_FONTCOLORHOVER_LABEL" description="MOD_ACCORDEONCK_FONTCOLORHOVER_DESC" />
+				<field name="level1linkdescfontsize" type="cktext" default="10px" label="MOD_ACCORDEONCK_DESCFONTSIZE_LABEL" description="MOD_ACCORDEONCK_DESCFONTSIZE_DESC" icon="style.png" />
+				<field name="level1linkdescfontcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_DESCFONTCOLOR_LABEL" description="MOD_ACCORDEONCK_DESCFONTCOLOR_DESC" />
+
+				<field
+					name="level1linkstylesmarginckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESMARGIN"
+					style="title"/>
+				<field
+					name="level1linkusemargin"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEMARGIN_LABEL"
+					description="MOD_ACCORDEONCK_USEMARGIN_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level1linkmargin" type="cktext" default="0" label="MOD_ACCORDEONCK_MARGIN_LABEL" description="MOD_ACCORDEONCK_MARGIN_DESC" icon="text_padding_left.png" suffix="px" />
+				<field name="level1linkpadding" type="cktext" default="0" label="MOD_ACCORDEONCK_PADDING_LABEL" description="MOD_ACCORDEONCK_PADDING_DESC" icon="text_padding_left.png" suffix="px" />
+				<field
+					name="level1linkstylesbackgroundckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESBACKGROUND"
+					style="title"/>
+				<field
+					name="level1linkusebackground"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEBACKGROUND_LABEL"
+					description="MOD_ACCORDEONCK_USEBACKGROUND_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level1linkbgcolor1" type="ckcolor" default="" label="MOD_ACCORDEONCK_BGCOLOR1_LABEL" description="MOD_ACCORDEONCK_BGCOLOR1_DESC" />
+				<field
+					name="level1linkusegradient"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEGRADIENT_LABEL"
+					description="MOD_ACCORDEONCK_USEGRADIENT_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level1linkbgcolor2" type="ckcolor" default="" label="MOD_ACCORDEONCK_BGCOLOR2_LABEL" description="MOD_ACCORDEONCK_BGCOLOR2_DESC" />
+
+				<field
+					name="level1linkstylesroundedcornersckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESROUNDEDCORNERS"
+					style="title"/>
+				<field
+					name="level1linkuseroundedcorners"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEROUNDEDCORNERS_LABEL"
+					description="MOD_ACCORDEONCK_USEROUNDEDCORNERS_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level1linkroundedcornerstl" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSTL_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSTL_DESC" icon="border_radius_tl.png" suffix="px" />
+				<field name="level1linkroundedcornerstr" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSTR_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSTR_DESC" icon="border_radius_tr.png" suffix="px" />
+				<field name="level1linkroundedcornersbr" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSBR_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSBR_DESC" icon="border_radius_br.png" suffix="px" />
+				<field name="level1linkroundedcornersbl" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSBL_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSBL_DESC" icon="border_radius_bl.png" suffix="px" />
+				<field
+					name="level1linkstylesshadowckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESSHADOW"
+					style="title"/>
+				<field
+					name="level1linkuseshadow"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USESHADOW_LABEL"
+					description="MOD_ACCORDEONCK_USESHADOW_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level1linkshadowcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_SHADOWCOLOR_LABEL" description="MOD_ACCORDEONCK_SHADOWCOLOR_DESC" />
+				<field name="level1linkshadowblur" type="cktext" default="0" label="MOD_ACCORDEONCK_SHADOWBLUR_LABEL" description="MOD_ACCORDEONCK_SHADOWBLUR_DESC" icon="shadow_blur.png" suffix="px" />
+				<field name="level1linkshadowspread" type="cktext" default="0" label="MOD_ACCORDEONCK_SHADOWSPREAD_LABEL" description="MOD_ACCORDEONCK_SHADOWSPREAD_DESC" icon="shadow_spread.png" suffix="px" />
+				<field name="level1linkshadowoffsetx" type="cktext" default="0" label="MOD_ACCORDEONCK_OFFSETX_LABEL" description="MOD_ACCORDEONCK_OFFSETX_DESC" icon="offsetx.png" suffix="px" />
+				<field name="level1linkshadowoffsety" type="cktext" default="0" label="MOD_ACCORDEONCK_OFFSETY_LABEL" description="MOD_ACCORDEONCK_OFFSETY_DESC" icon="offsety.png" suffix="px" />
+				<field name="level1linkshadowinset" type="ckradio" default="0" label="MOD_ACCORDEONCK_SHADOWINSET_LABEL" description="MOD_ACCORDEONCK_SHADOWINSET_DESC" class="btn-group">
+					<option value="0">Non</option>
+					<option value="1">Oui</option>
+				</field>
+				<field
+					name="level1linkstylesbordersckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESBORDERS"
+					style="title"/>
+				<field
+					name="level1linkuseborders"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEBORDERS_LABEL"
+					description="MOD_ACCORDEONCK_USEBORDERS_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level1linkbordercolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_BORDERCOLOR_LABEL" description="MOD_ACCORDEONCK_BORDERCOLOR_DESC" />
+				<field name="level1linkborderwidth" type="cktext" default="1" label="MOD_ACCORDEONCK_BORDERWIDTH_LABEL" description="MOD_ACCORDEONCK_BORDERWIDTH_DESC" icon="shape_borders.png" suffix="px" />
+			</fieldset>
+			<fieldset name="level2linkstyles" label="MOD_ACCORDEONCK_LEVEL2LINKSTYLES">
+				<field
+					name="level2linkstylesfontckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESFONT"
+					style="title"/>
+				<field
+					name="level2linkusefont"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEFONT_LABEL"
+					description="MOD_ACCORDEONCK_USEFONT_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level2linkfontsize" type="cktext" default="12px" label="MOD_ACCORDEONCK_FONTSIZE_LABEL" description="MOD_ACCORDEONCK_FONTSIZE_DESC" icon="style.png" />
+				<field name="level2linkfontcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_FONTCOLOR_LABEL" description="MOD_ACCORDEONCK_FONTCOLOR_DESC" />
+				<field name="level2linkfontcolorhover" type="ckcolor" default="" label="MOD_ACCORDEONCK_FONTCOLORHOVER_LABEL" description="MOD_ACCORDEONCK_FONTCOLORHOVER_DESC" />
+				<field name="level2linkdescfontsize" type="cktext" default="10px" label="MOD_ACCORDEONCK_DESCFONTSIZE_LABEL" description="MOD_ACCORDEONCK_DESCFONTSIZE_DESC" icon="style.png" />
+				<field name="level2linkdescfontcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_DESCFONTCOLOR_LABEL" description="MOD_ACCORDEONCK_DESCFONTCOLOR_DESC" />
+
+				<field
+					name="level2linkstylesmarginckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESMARGIN"
+					style="title"/>
+				<field
+					name="level2linkusemargin"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEMARGIN_LABEL"
+					description="MOD_ACCORDEONCK_USEMARGIN_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level2linkmargin" type="cktext" default="0" label="MOD_ACCORDEONCK_MARGIN_LABEL" description="MOD_ACCORDEONCK_MARGIN_DESC" icon="text_padding_left.png" suffix="px" />
+				<field name="level2linkpadding" type="cktext" default="0" label="MOD_ACCORDEONCK_PADDING_LABEL" description="MOD_ACCORDEONCK_PADDING_DESC" icon="text_padding_left.png" suffix="px" />
+				<field
+					name="level2linkstylesbackgroundckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESBACKGROUND"
+					style="title"/>
+				<field
+					name="level2linkusebackground"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEBACKGROUND_LABEL"
+					description="MOD_ACCORDEONCK_USEBACKGROUND_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level2linkbgcolor1" type="ckcolor" default="" label="MOD_ACCORDEONCK_BGCOLOR1_LABEL" description="MOD_ACCORDEONCK_BGCOLOR1_DESC" />
+				<field
+					name="level2linkusegradient"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEGRADIENT_LABEL"
+					description="MOD_ACCORDEONCK_USEGRADIENT_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level2linkbgcolor2" type="ckcolor" default="" label="MOD_ACCORDEONCK_BGCOLOR2_LABEL" description="MOD_ACCORDEONCK_BGCOLOR2_DESC" />
+
+				<field
+					name="level2linkstylesroundedcornersckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESROUNDEDCORNERS"
+					style="title"/>
+				<field
+					name="level2linkuseroundedcorners"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEROUNDEDCORNERS_LABEL"
+					description="MOD_ACCORDEONCK_USEROUNDEDCORNERS_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level2linkroundedcornerstl" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSTL_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSTL_DESC" icon="border_radius_tl.png" suffix="px" />
+				<field name="level2linkroundedcornerstr" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSTR_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSTR_DESC" icon="border_radius_tr.png" suffix="px" />
+				<field name="level2linkroundedcornersbr" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSBR_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSBR_DESC" icon="border_radius_br.png" suffix="px" />
+				<field name="level2linkroundedcornersbl" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSBL_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSBL_DESC" icon="border_radius_bl.png" suffix="px" />
+				<field
+					name="level2linkstylesshadowckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESSHADOW"
+					style="title"/>
+				<field
+					name="level2linkuseshadow"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USESHADOW_LABEL"
+					description="MOD_ACCORDEONCK_USESHADOW_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level2linkshadowcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_SHADOWCOLOR_LABEL" description="MOD_ACCORDEONCK_SHADOWCOLOR_DESC" />
+				<field name="level2linkshadowblur" type="cktext" default="0" label="MOD_ACCORDEONCK_SHADOWBLUR_LABEL" description="MOD_ACCORDEONCK_SHADOWBLUR_DESC" icon="shadow_blur.png" suffix="px" />
+				<field name="level2linkshadowspread" type="cktext" default="0" label="MOD_ACCORDEONCK_SHADOWSPREAD_LABEL" description="MOD_ACCORDEONCK_SHADOWSPREAD_DESC" icon="shadow_spread.png" suffix="px" />
+				<field name="level2linkshadowoffsetx" type="cktext" default="0" label="MOD_ACCORDEONCK_OFFSETX_LABEL" description="MOD_ACCORDEONCK_OFFSETX_DESC" icon="offsetx.png" suffix="px" />
+				<field name="level2linkshadowoffsety" type="cktext" default="0" label="MOD_ACCORDEONCK_OFFSETY_LABEL" description="MOD_ACCORDEONCK_OFFSETY_DESC" icon="offsety.png" suffix="px" />
+				<field name="level2linkshadowinset" type="ckradio" default="0" label="MOD_ACCORDEONCK_SHADOWINSET_LABEL" description="MOD_ACCORDEONCK_SHADOWINSET_DESC" class="btn-group" >
+					<option value="0">Non</option>
+					<option value="1">Oui</option>
+				</field>
+				<field
+					name="level2linkstylesbordersckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESBORDERS"
+					style="title"/>
+				<field
+					name="level2linkuseborders"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEBORDERS_LABEL"
+					description="MOD_ACCORDEONCK_USEBORDERS_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level2linkbordercolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_BORDERCOLOR_LABEL" description="MOD_ACCORDEONCK_BORDERCOLOR_DESC" />
+				<field name="level2linkborderwidth" type="cktext" default="1" label="MOD_ACCORDEONCK_BORDERWIDTH_LABEL" description="MOD_ACCORDEONCK_BORDERWIDTH_DESC" icon="shape_borders.png" suffix="px" />
+			</fieldset>
+			<fieldset name="level3linkstyles" label="MOD_ACCORDEONCK_LEVEL3LINKSTYLES">
+				<field
+					name="level3linkstylesfontckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESFONT"
+					style="title"/>
+				<field
+					name="level3linkusefont"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEFONT_LABEL"
+					description="MOD_ACCORDEONCK_USEFONT_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level3linkfontsize" type="cktext" default="12px" label="MOD_ACCORDEONCK_FONTSIZE_LABEL" description="MOD_ACCORDEONCK_FONTSIZE_DESC" icon="style.png" />
+				<field name="level3linkfontcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_FONTCOLOR_LABEL" description="MOD_ACCORDEONCK_FONTCOLOR_DESC" />
+				<field name="level3linkfontcolorhover" type="ckcolor" default="" label="MOD_ACCORDEONCK_FONTCOLORHOVER_LABEL" description="MOD_ACCORDEONCK_FONTCOLORHOVER_DESC" />
+				<field name="level3linkdescfontsize" type="cktext" default="10px" label="MOD_ACCORDEONCK_DESCFONTSIZE_LABEL" description="MOD_ACCORDEONCK_DESCFONTSIZE_DESC" icon="style.png" />
+				<field name="level3linkdescfontcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_DESCFONTCOLOR_LABEL" description="MOD_ACCORDEONCK_DESCFONTCOLOR_DESC" />
+
+				<field
+					name="level3linkstylesmarginckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESMARGIN"
+					style="title"/>
+				<field
+					name="level3linkusemargin"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEMARGIN_LABEL"
+					description="MOD_ACCORDEONCK_USEMARGIN_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level3linkmargin" type="cktext" default="0" label="MOD_ACCORDEONCK_MARGIN_LABEL" description="MOD_ACCORDEONCK_MARGIN_DESC" icon="text_padding_left.png" suffix="px" />
+				<field name="level3linkpadding" type="cktext" default="0" label="MOD_ACCORDEONCK_PADDING_LABEL" description="MOD_ACCORDEONCK_PADDING_DESC" icon="text_padding_left.png" suffix="px" />
+				<field
+					name="level3linkstylesbackgroundckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESBACKGROUND"
+					style="title"/>
+				<field
+					name="level3linkusebackground"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEBACKGROUND_LABEL"
+					description="MOD_ACCORDEONCK_USEBACKGROUND_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level3linkbgcolor1" type="ckcolor" default="" label="MOD_ACCORDEONCK_BGCOLOR1_LABEL" description="MOD_ACCORDEONCK_BGCOLOR1_DESC" />
+				<field
+					name="level3linkusegradient"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEGRADIENT_LABEL"
+					description="MOD_ACCORDEONCK_USEGRADIENT_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level3linkbgcolor2" type="ckcolor" default="" label="MOD_ACCORDEONCK_BGCOLOR2_LABEL" description="MOD_ACCORDEONCK_BGCOLOR2_DESC" />
+
+				<field
+					name="level3linkstylesroundedcornersckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESROUNDEDCORNERS"
+					style="title"/>
+				<field
+					name="level3linkuseroundedcorners"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEROUNDEDCORNERS_LABEL"
+					description="MOD_ACCORDEONCK_USEROUNDEDCORNERS_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level3linkroundedcornerstl" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSTL_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSTL_DESC" icon="border_radius_tl.png" suffix="px" />
+				<field name="level3linkroundedcornerstr" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSTR_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSTR_DESC" icon="border_radius_tr.png" suffix="px" />
+				<field name="level3linkroundedcornersbr" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSBR_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSBR_DESC" icon="border_radius_br.png" suffix="px" />
+				<field name="level3linkroundedcornersbl" type="cktext" default="0" label="MOD_ACCORDEONCK_ROUNDEDCORNERSBL_LABEL" description="MOD_ACCORDEONCK_ROUNDEDCORNERSBL_DESC" icon="border_radius_bl.png" suffix="px" />
+				<field
+					name="level3linkstylesshadowckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESSHADOW"
+					style="title"/>
+				<field
+					name="level3linkuseshadow"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USESHADOW_LABEL"
+					description="MOD_ACCORDEONCK_USESHADOW_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level3linkshadowcolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_SHADOWCOLOR_LABEL" description="MOD_ACCORDEONCK_SHADOWCOLOR_DESC" />
+				<field name="level3linkshadowblur" type="cktext" default="0" label="MOD_ACCORDEONCK_SHADOWBLUR_LABEL" description="MOD_ACCORDEONCK_SHADOWBLUR_DESC" icon="shadow_blur.png" suffix="px" />
+				<field name="level3linkshadowspread" type="cktext" default="0" label="MOD_ACCORDEONCK_SHADOWSPREAD_LABEL" description="MOD_ACCORDEONCK_SHADOWSPREAD_DESC" icon="shadow_spread.png" suffix="px" />
+				<field name="level3linkshadowoffsetx" type="cktext" default="0" label="MOD_ACCORDEONCK_OFFSETX_LABEL" description="MOD_ACCORDEONCK_OFFSETX_DESC" icon="offsetx.png" suffix="px" />
+				<field name="level3linkshadowoffsety" type="cktext" default="0" label="MOD_ACCORDEONCK_OFFSETY_LABEL" description="MOD_ACCORDEONCK_OFFSETY_DESC" icon="offsety.png" suffix="px" />
+				<field name="level3linkshadowinset" type="ckradio" default="0" label="MOD_ACCORDEONCK_SHADOWINSET_LABEL" description="MOD_ACCORDEONCK_SHADOWINSET_DESC" >
+					<option value="0">Non</option>
+					<option value="1">Oui</option>
+				</field>
+				<field
+					name="level3linkstylesbordersckspacer"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_STYLESBORDERS"
+					style="title"/>
+				<field
+					name="level3linkuseborders"
+					type="ckradio"
+					default="1"
+					label="MOD_ACCORDEONCK_USEBORDERS_LABEL"
+					description="MOD_ACCORDEONCK_USEBORDERS_DESC"
+					class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="level3linkbordercolor" type="ckcolor" default="" label="MOD_ACCORDEONCK_BORDERCOLOR_LABEL" description="MOD_ACCORDEONCK_BORDERCOLOR_DESC" />
+				<field name="level3linkborderwidth" type="cktext" default="1" label="MOD_ACCORDEONCK_BORDERWIDTH_LABEL" description="MOD_ACCORDEONCK_BORDERWIDTH_DESC" icon="shape_borders.png" suffix="px" />
+			</fieldset>
+			<fieldset name="thirdparty" label="MOD_ACCORDEONCK_OPTIONS_THIRDPARTY">
+				<field
+					name="thirdparty"
+					type="cklist"
+					default="none"
+					label="MOD_ACCORDEONCK_THIRDPARTY_LABEL"
+					description="MOD_ACCORDEONCK_THIRDPARTY_DESC"
+					>
+					<option value="none">MOD_ACCORDEONCK_NONE</option>
+					<option value="hikashop">MOD_ACCORDEONCK_HIKASHOP</option>
+				</field>
+				<field
+					name="thirdpartyckspacerhikashop1"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_HIKASHOP"
+					style="title" />
+				<field
+					name="thirdpartyckspacerhikashop2"
+					type="ckspacer"
+					label="MOD_ACCORDEONCK_SPACER_HIKASHOP_PATCH"
+					style="link"
+					icon="information.png"
+					testpatch="hikashop" />
+				<field
+					name="hikashopitemid"
+					type="cksql"
+					default="0"
+					label="MOD_ACCORDEONCK_HIKASHOPITEMID_LABEL"
+					description="MOD_ACCORDEONCK_HIKASHOPITEMID_LABEL"
+					query="SELECT id AS value, title AS hikashopitemid FROM #__menu WHERE link='index.php?option=com_hikashop&amp;view=category&amp;layout=listing' AND published=1 ORDER BY title ASC"
+					icon="application_form_magnify.png" />
+
+				<field
+					name="usehikashopimages"
+					type="ckradio"
+					default="0"
+					label="MOD_ACCORDEONCK_USEHIKASHOPIMAGES_LABEL"
+					description="MOD_ACCORDEONCK_USEHIKASHOPIMAGES_DESC"
+					icon="images.png"
+					class="btn-group">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="usehikashopsuffix"
+					type="ckradio"
+					default="0"
+					label="MOD_ACCORDEONCK_USEHIKASHOPSUFFIX_LABEL"
+					description="MOD_ACCORDEONCK_USEHIKASHOPSUFFIX_DESC"
+					class="btn-group">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="hikashopimagesuffix"
+					type="cktext"
+					default="_mini"
+					label="MOD_ACCORDEONCK_HIKASHOPIMAGESUFFIX_LABEL"
+					description="MOD_ACCORDEONCK_HIKASHOPIMAGESUFFIX_DESC"
+					icon="image.png" />
+				<field
+					name="hikashopcategoryroot"
+					type="ckhikashopcategory"
+					label="MOD_ACCORDEONCK_HIKASHOPCATEGORYROOT_LABEL"
+					default="0"
+					description="MOD_ACCORDEONCK_HIKASHOPCATEGORYROOT_DESC"
+				/>
+
+				<field
+					name="hikashopcategorydepth"
+					type="cklist"
+					label="MOD_ACCORDEONCK_HIKASHOPCATEGORYDEPTH_LABEL"
+					default="0"
+					description="MOD_ACCORDEONCK_HIKASHOPCATEGORYDEPTH_DESC"
+				>
+					<option value="0">JALL</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+				</field>
+			</fieldset>
+			<fieldset name="accordeonmenu_mobileparams" label="MOD_ACCORDEONCK_MOBILEPARAMS_FIELDSET_LABEL">
+				<field
+					name="accordeonmenumobileparamsinfo"
+					label="MOD_ACCORDEONCK_CHECKPLUGINMOBILE"
+					type="cktestaccordeonmenupluginmobile"
+					style="link"
+					icon="information.png"
+					/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

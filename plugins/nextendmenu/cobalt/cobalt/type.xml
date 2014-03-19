@@ -1,0 +1,6 @@
+<root>
+    <params label="Cobalt menu properties">
+        <param type="cobaltmenuitems" name="root" default="0" label="Menu root section" description="Choose a section to show his categories in the menu." />
+        <param name="showproducts" type="onoff" default="0" label="Show records" description="If enabled, the records are shown in the categories."/>
+    </params>
+</root>

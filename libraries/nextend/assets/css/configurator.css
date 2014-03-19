@@ -1,0 +1,137 @@
+#nextend-configurator-button{
+  display: block;
+  height: 34px;
+  width: 180px;
+  overflow:hidden;
+  margin: 2px 0;
+  padding: 0 5px;
+  text-decoration: none;
+  background: #e6e9ed; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #e6e9ed 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e6e9ed)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e9ed',GradientType=0 ); /* IE6-9 */  
+  border-radius: 50px;  
+  -moz-border-radius: 50px; 
+  -webkit-border-radius: 50px;  
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 36px;
+  color: #7c848f;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px white;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 -3px 5px rgba(0, 0, 0, 0.05) inset;
+  text-align: center;
+}
+
+#nextend-configurator-button span{
+  background: url('../images/cog.png') no-repeat center center;
+  display: block;
+  height: 36px;
+  width: 36px;
+  float: right;
+  margin-left: -20px;
+}
+
+.nextend-configurator-button:HOVER{
+  background-position: 0 -50px;
+}
+
+#nextend-configurator-message{
+  color: #6C7581;
+  font-size: 14px;
+  font-family: 'Montserrat',Arial,sans-serif;
+  font-weight: normal;
+}
+
+.nextend-form .nextend-configurator-button{
+  height: 22px;
+  margin: 2px 0 2px 20px;
+  width: auto;
+  float: left;
+  padding: 0 15px;
+  text-decoration: none;
+  background: #e6e9ed; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #e6e9ed 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e6e9ed)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%,#e6e9ed 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e9ed',GradientType=0 ); /* IE6-9 */      
+  text-shadow: 0 1px 1px white;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1px rgba(0, 0, 0, 0.25) inset, 0 -3px 5px rgba(0, 0, 0, 0.05) inset;  
+  border-radius: 50px;  
+  -moz-border-radius: 50px; 
+  -webkit-border-radius: 50px;  
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 22px;
+  color: #7c848f;
+  text-transform: uppercase;
+}
+
+#nextend-configurator-button:HOVER,
+.nextend-form .nextend-configurator-button:HOVER{
+  background: #dee1e8; /* Old browsers */
+  background: -moz-linear-gradient(top, #fbfcfe 0%, #dee1e8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfcfe), color-stop(100%,#dee1e8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* IE10+ */
+  background: linear-gradient(top, #fbfcfe 0%,#dee1e8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfcfe', endColorstr='#dee1e8',GradientType=0 ); /* IE6-9 */  
+}
+
+.nextend-window .nextend-configurator-button:ACTIVE{  
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3) inset;
+  line-height: 24px;
+}
+
+#nextend-configurator-button:ACTIVE{  
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+/* IE fix */
+.x-msie-8 #nextend-configurator-button,
+.x-msie-8 .nextend-window .nextend-configurator-button,
+.x-msie-8 a.nextend-font-button,
+.x-msie-8 #nextend-fontmanager-cleartab,
+.x-msie-8 #nextend-fontmanager-tabs .nextend-tab,
+.x-msie-8 .nextend-decoration .nextend-checkbox-option,
+.x-msie-8 .nextend-textalign .nextend-radio-option,
+.x-msie-9 #nextend-configurator-button,
+.x-msie-9 .nextend-window .nextend-configurator-button,
+.x-msie-9 a.nextend-font-button,
+.x-msie-9 #nextend-fontmanager-cleartab,
+.x-msie-9 #nextend-fontmanager-tabs .nextend-tab,
+.x-msie-9 .nextend-decoration .nextend-checkbox-option,
+.x-msie-9 .nextend-textalign .nextend-radio-option{
+  border: 1px solid #d2d2d2;
+  border-radius: 0px;
+}
+
+.x-msie-8 .nextend-decoration .nextend-checkbox-option,
+.x-msie-8 .nextend-textalign .nextend-radio-option,
+.x-msie-9 .nextend-decoration .nextend-checkbox-option,
+.x-msie-9 .nextend-textalign .nextend-radio-option{
+  filter: none;
+  box-shadow: none;
+}
+
+.x-msie-8 .nextend-decoration .nextend-checkbox-option.selected,
+.x-msie-8 .nextend-textalign .nextend-radio-option.selected,
+.x-msie-9 .nextend-decoration .nextend-checkbox-option.selected,
+.x-msie-9 .nextend-textalign .nextend-radio-option.selected{
+  background-color: #B8B8B8;
+  border: 1px solid #8b8b8b;
+}
+
+.x-msie-8 .qtip-default{
+	background-color: #33383a;
+}

@@ -1,0 +1,8 @@
+/*---------------------------------------------
+---	 	compatibility layer 				---
+---		for Gantry			 				---
+----------------------------------------------*/
+
+#rt-menu ul.menu li a.maximenuck {
+	line-height: 1em;
+}

@@ -1,0 +1,26 @@
+<root>
+    <params label="JoomShopping menu properties">
+        <param type="joomshoppingmenuitems" name="root" default="1" label="Menu root" multiple="1" size="10" description="If you select only one category, only its childrens will be shown. On multiple selection, the selected will be on the first level." />
+        <param name="rootasitem" type="onoff" default="0" label="Singe root as menuitem" description="If enabled and one selected in the previous option, the behaviour will be the same as multiple selection."/>
+        <param name="showproducts" type="onoff" default="0" label="Show products" description="If enabled, products are included in the menu."/>
+        <param name="displaynum" type="radio" default="0" label="Display number of products" description="Display the product count available in a category, if any.">
+            <option value="0">No</option>
+            <option value="1">Yes, the real count</option>
+            <option value="2">Yes, the aggregated count</option>
+        </param>
+        <param name="emptycategory" type="onoff" default="1" label="Show empty categories"/>
+        <param name="order" type="radio" label="Order" default="0">
+            <option value="0">Component's default</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </param>
+        <param name="menuicons" type="mixed" label="Menu icons" default="0|*|0|*|0" description="If enabled, the menu will look for icons in the description of the category and the first image will be used.">
+            <param type="onoff" label="Show" />
+            <param type="radio" label="Alignment">
+                <option value="0">Left</option>
+                <option value="1">Right</option>
+            </param>
+            <param type="onoff" label="Only icon" />
+        </param>
+    </params>
+</root>

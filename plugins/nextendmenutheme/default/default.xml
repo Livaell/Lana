@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.5" type="plugin" group="nextendmenutheme" method="upgrade">
+<name>Nextend Default theme for Accordion Menu</name>
+<author>Roland Soos</author>
+<creationDate>2013</creationDate>
+<copyright>Copyright (C) 2013 nextendweb.com. All rights reserved.</copyright>
+<license>GNU General Public License</license>
+<authorEmail>roland@nextendweb.com</authorEmail>
+<authorUrl>http://www.nextendweb.com</authorUrl>
+<version>1.0.0</version>
+<description></description>
+<files>
+    <filename plugin="default">default.php</filename>
+    <filename>index.html</filename>
+    <folder>default</folder>
+</files>
+<params>
+</params>
+</extension>

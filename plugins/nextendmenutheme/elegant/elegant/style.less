@@ -1,0 +1,212 @@
+@import 'elements.less';
+@import 'clear.less';
+(~'div@{id}'){
+    .clear;
+}
+
+.elegantlevelmargin(@level) when (@level > 1){
+    margin-bottom: 0;
+}
+
+(~'div@{id}'){
+    margin: @margin;
+    overflow: visible;
+    
+    .nextend-accordion-menu-inner{
+        overflow: hidden;
+        width: 100%;
+        .box-shadow(0 0 3px #333);
+        .border-radius(@borderradiustr, @borderradiusbr, @borderradiusbl, @borderradiustl);
+    }
+    
+    
+    dt.level1 .nextend-productnum{
+        .box-shadow(~"0 3px 4px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2)");
+        background-color: RGBA(0,0,0,0.2);
+     }
+          
+    .nextend-productnum{
+        line-height: normal !important;    
+        font-size: 11px !important;
+        padding-top: 1px;
+        line-height: 17px !important;
+        border: 0;
+        margin-top: 1px;
+        .box-shadow(~"0 0 0 1px rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.2)");
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .nextend-accordion-menu-inner-container{
+        overflow: hidden;
+        position: relative;
+    }
+    
+    dl,
+    dt,
+    dd{
+        display: block;
+        position: relative;
+    }
+    
+    div div.title{
+        min-height: 36px;
+        .whengradient(@titlegradientenabled, @titlegradientstop, @titlegradientstop, @titlegradientstart);
+        
+        h3{
+            .border-radius(@borderradiustr, 0, 0, @borderradiustl);
+            margin: 0;
+            padding-top: 8px !important;
+            padding-bottom: 7px !important;
+            min-height: 26px;
+            .box-shadow(inset 0 0 1px RGBA(255,255,255,0.7));
+            border: solid 1px RGBA(0,0,0,0.1);
+            background: transparent;
+            d: e(~"@{titlefont}");
+        }
+    }
+    
+    dl.level2 dt.last{
+        margin-bottom: 0;
+    }
+    
+    dt .inner{
+        display: block;
+        margin: 0 6px;
+    }
+    
+    .levels (@index) when (@index < 6){
+        
+        &.noscript{
+            (~"dl.level@{index}") {
+                dt.parent .inner{
+                    background-image: colorizeimage(~"@{level@{index}minuscolorize}", ~"@{level@{index}minusimage}", ~"@{level@{index}minuscolor}");
+                }
+            }
+        }
+        
+        (~"dl.level@{index}") {
+            dt.parent{
+                .inner{
+                    background-image: colorizeimage(~"@{level@{index}pluscolorize}", ~"@{level@{index}plusimage}", ~"@{level@{index}pluscolor}");
+                    background-repeat: no-repeat;
+                    background-position: (~"@{level@{index}plusposition}") center;
+                    cursor: pointer;
+                }
+                &.opened,
+                &.opening{
+                    .inner{
+                        background-image: colorizeimage(~"@{level@{index}minuscolorize}", ~"@{level@{index}minusimage}", ~"@{level@{index}minuscolor}");
+                    }
+                }
+            }
+            
+            dt{
+                @lborderradiustr : "level@{index}borderradiustr";
+                @lborderradiusbr : "level@{index}borderradiusbr";
+                @lborderradiusbl : "level@{index}borderradiusbl";
+                @lborderradiustl : "level@{index}borderradiustl";
+                .border-radius(@@lborderradiustr, @@lborderradiusbr, @@lborderradiusbl, @@lborderradiustl);
+                background: none repeat 0 0;
+                margin: 4px 4px 0 4px;
+                
+                
+                &.last{
+                    margin-bottom: 4px;
+                    .elegantlevelmargin(@index);
+                }
+                
+                span{
+                    d: e(~"@{level@{index}font-text}");
+                }
+                
+                a{
+                    &,
+                    span{
+                        d: e(~"@{level@{index}font-link}");
+                    }
+                }
+                
+                &,
+                &:HOVER,
+                &.opening,
+                &.opened,
+                &.active{
+                    background: none;
+                    filter: none;
+                    @enabled : "level@{index}bg0enabled";
+                    @start : "level@{index}bg0start";
+                    @stop : "level@{index}bg0stop";
+                    .whengradient(@@enabled, @@stop, @@stop, @@start);
+                
+                    .nextend-productnum{
+                        background: @@stop;
+                    }
+                }
+                &.opening .nextend-productnum,
+                &.opened .nextend-productnum{
+                    @stop : "level@{index}bg3stop";
+                    background: @@stop;
+                }
+                
+                &.opening,
+                &.opened{
+                    @enabled : "level@{index}bg3enabled";
+                    @start : "level@{index}bg3start";
+                    @stop : "level@{index}bg3stop";
+                    .whengradient(@@enabled, @@stop, @@stop, @@start);
+                }
+                
+                &.active .nextend-productnum{
+                    @stop : "level@{index}bg2stop";
+                    background: @@stop;
+                }
+                
+                &.active{
+                    @enabled : "level@{index}bg2enabled";
+                    @start : "level@{index}bg2start";
+                    @stop : "level@{index}bg2stop";
+                    .whengradient(@@enabled, @@stop, @@stop, @@start);
+                    
+                    span,
+                    a{
+                        &,
+                        span{
+                            d: e(~"@{level@{index}font-active}");
+                        }
+                    }
+                }
+                
+                &:HOVER .nextend-productnum{
+                    @stop : "level@{index}bg1stop";
+                    background: @@stop;
+                }
+                
+                &:HOVER{
+                    @enabled : "level@{index}bg1enabled";
+                    @start : "level@{index}bg1start";
+                    @stop : "level@{index}bg1stop";
+                    .whengradient(@@enabled, @@stop, @@stop, @@start);
+                    
+                    span,
+                    a{
+                        &,
+                        span{
+                            d: e(~"@{level@{index}font-hover}");
+                        }
+                    }
+                }
+            }
+            
+            .inner{
+                padding: e(~"@{level@{index}padding}");
+                margin: ~"@{level@{index}margin}";
+            }
+        }
+        
+        .levels(@index + 1);
+    }
+    
+    .levels (5) {}
+    
+    .levels(1);
+}

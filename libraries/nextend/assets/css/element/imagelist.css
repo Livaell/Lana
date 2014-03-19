@@ -1,0 +1,25 @@
+.nextend-imagelist .nextend-radio-option{
+    background-image: none;
+    display:inline-block;
+    vertical-align: middle;
+    float:none;
+    border: 5px solid #dee0e6;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.nextend-imagelist .nextend-radio-option:HOVER{
+  border-color: #cccfd7;
+}
+
+.nextend-imagelist .nextend-radio-option.selected{
+    border-color: #72B019;
+}
+
+.nextend-imagelist .nextend-radio-option img{
+    float: none;
+    display: inline;
+    margin: auto 0;
+    vertical-align: middle;
+}

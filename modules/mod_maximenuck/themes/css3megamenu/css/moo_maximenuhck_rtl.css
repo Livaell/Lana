@@ -1,0 +1,181 @@
+/**
+** This file assume the good working conditions
+** No styling (color, background,...) should be made here, only positionning and management
+**/
+
+
+div.maximenuckh ul.maximenuck {
+    clear:both;
+    position : relative;
+    z-index:999;
+}
+
+
+div.maximenuckh ul.maximenuck > ul {
+    clear:both;
+    padding : 0;
+    margin : 0;
+}
+
+div.maximenuckh ul.maximenuck .moduletable {
+
+}
+
+div.maximenuckh ul.maximenuck li.maximenuck {
+    /*float:right;*/
+    display: inline-block !important;
+    float: none !important;
+    position:relative;
+    text-align : right;
+    padding : 0;
+    margin : 0;
+}
+
+div.maximenuckh ul.maximenuck li.maximenuck img {
+
+}
+
+div.maximenuckh ul.maximenuck li.maximenuck a,
+div.maximenuckh ul.maximenuck li.maximenuck span.separator {
+    display:block;
+    float : none !important;
+    float : right;
+    position:relative;
+}
+
+div.maximenuckh ul.maximenuck2 li.maximenuck a,
+div.maximenuckh ul.maximenuck2 li.maximenuck span.separator {
+    float : none !important;
+}
+
+div.maximenuckh ul.maximenuck li ul.maximenuck2 {
+    display:block;
+    z-index:11000;
+    clear:left;
+    margin:0;
+    padding:0;
+    text-align : right;
+    position : static;
+}
+
+div.maximenuckh ul.maximenuck li ul li.maximenuck {
+    text-align : right;
+    position : relative;
+    z-index : 11001;
+    padding:0;
+    display: block !important;
+}
+
+div.maximenuckh ul.maximenuck li li.maximenuck a {
+    display: block;
+    padding : 0;
+    margin : 0;
+}
+
+div.maximenuckh div.maximenuck2 {
+    float : right;
+    margin : 0;
+    padding : 0;
+    /*width : 180px;*/ /* A TESTER */
+}
+
+div.maximenuckh div.clr {
+    clear : both;
+    visibility : hidden;
+}
+
+/* child items */
+div.maximenuckh ul.maximenuck li div.floatck {
+    position : absolute;
+    right: -999em; /* a supprimer pour effet slide */
+    padding : 0;
+    margin : 0;
+    background : url(../images/transparent.gif); /* important for hover to work good under IE7 */
+}
+
+div.maximenuckh div.floatck ul, div.maximenuckh div.floatck ul li {
+    position : static;
+    /*height : 100%;*/
+}
+
+div.maximenuckh ul.maximenuck li.maximenuck div.floatck.fixRight  {
+right:0;
+}
+
+div.maximenuckh ul.maximenuck li.maximenuck div.floatck div.floatck.fixRight  {
+right:0;
+}
+
+
+/**
+** fancy parameters
+**/
+div.maximenuckh li.maxiFancybackground {
+    z-index: 8;
+    position: absolute;
+    top : 0;
+}
+
+
+
+/**
+** Show sub menu if mootools is off - horizontal style
+**/
+div.maximenuckh ul.maximenuck li.maximenuck:hover div.floatck div.floatck, div.maximenuckh ul.maximenuck li.maximenuck:hover div.floatck:hover div.floatck div.floatck, div.maximenuckh ul.maximenuck li.maximenuck:hover div.floatck:hover div.floatck:hover div.floatck div.floatck,
+div.maximenuckh ul.maximenuck li.sfhover div.floatck div.floatck, div.maximenuckh ul.maximenuck li.sfhover div.floatck.sfhover div.floatck div.floatck, div.maximenuckh ul.maximenuck li.sfhover div.floatck.sfhover div.floatck.sfhover div.floatck div.floatck {
+right: -999em;
+}
+
+div.maximenuckh ul.maximenuck li.maximenuck:hover > div.floatck, div.maximenuckh ul.maximenuck li.maximenuck:hover > div.floatck li.maximenuck:hover > div.floatck, div.maximenuckh ul.maximenuck li.maximenuck:hover>  div.floatck li.maximenuck:hover > div.floatck li.maximenuck:hover > div.floatck, div.maximenuckh ul.maximenuck li.maximenuck:hover > div.floatck li.maximenuck:hover > div.floatck li.maximenuck:hover > div.floatck li.maximenuck:hover > div.floatck,
+div.maximenuckh ul.maximenuck li.sfhover > div.floatck, div.maximenuckh ul.maximenuck li.sfhover > div.floatck li.sfhover > div.floatck, div.maximenuckh ul.maximenuck li.sfhover > div.floatck li.sfhover > div.floatck li.sfhover > div.floatck, div.maximenuckh ul.maximenuck li.sfhover > div.floatck li.sfhover > div.floatck li.sfhover > div.floatck li.sfhover > div.floatck {
+right: auto;
+}
+
+div.maximenuckh div.maximenuck_mod ul {
+right : auto;
+}
+
+
+/*---------------------------------------------
+---	 Responsive design behavior         ---
+----------------------------------------------*/
+
+@media screen and (max-width: 524px) {
+    div.maximenuckh {
+        height: auto !important;
+    }
+
+    div.maximenuckh ul {
+        height: auto !important;
+        padding-right: 0 !important;
+        /*padding-right: 0 !important;*/
+    }
+
+    div.maximenuckh li {
+        float :none !important;
+        width: 100% !important;
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    div.maximenuckh div.floatck {
+        width: 100% !important;
+    }
+
+    div.maximenuckh div.floatck div.maximenuck2 {
+        width: 100% !important;
+    }
+
+    div.maximenuckh div.floatck div.floatck {
+        width: 100% !important;
+        margin: 20px 0 0 0 !important;
+    }
+
+    div.maximenuckh li.maximenucklogo img {
+        display: block !important;
+        margin-right: auto !important;
+        margin-right: auto !important;
+        float: none !important;
+    }
+
+}
