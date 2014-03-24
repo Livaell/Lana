@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="1.6.0"
+	client="site"
+	method="upgrade">
+	<name>DisplayNews</name>
+	<author>BK</author>
+	<creationDate>2013-Dec-30</creationDate>
+	<copyright>(C) 2006 - 2013 BK. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>bkomraz1@gmail.com</authorEmail>
+	<authorUrl>http://joomla.rjews.net</authorUrl>
+	<version>2.6</version>
+	<description>DISPLAY_NEWS_BY_BK_MODULE</description>
+	<updateservers>
+		<server type="extension"
+				priority="1"
+				name="Joomla.Rjews.Net">http://joomla.rjews.net/extensions.xml</server>
+	</updateservers>	
+	<files>
+		<filename module="mod_dn">mod_dn.php</filename>
+		<filename >helper.php</filename>
+		<filename >index.html</filename>
+		<filename>pausecontroller.js</filename>
+		<folder>fields</folder>
+		<folder>language</folder>
+	</files>
+	<!-- <languages>
+		Any language files included with the module 
+		<language tag="en-GB">language/en-GB/en-GB.mod_dn.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_dn.sys.ini</language>
+	</languages>-->
+
+	<config>
+	<fields name="params" ><!--  -->
+		<fieldset name="BASIC">
+		<field name="set_count" type="text" default="5" label="COUNT"
+			description="SET_COUNT_DESCR" />		
+		<field name="ordering" type="list" default="mostrecent" label="ORDER"
+			description="ARTICLE_ORDER_DESCR">
+			<option value="mostrecent">MOST_RECENT_FIRST</option>
+			<option value="publish_up">RECENTLY_PUBLISHED_UP_FIRST</option>
+			<option value="mostold">OLDEST_FIRST</option>
+			<option value="recentlymodified">RECENTLY_MODIFIED_FIRST</option>
+			<option value="mostread">MOST_HITS</option>
+			<option value="ordering">ORDER</option>
+			<option value="cat_ordering">CAT_ORDER</option>
+			<option value="frontpageordering">FRONT_PAGE_ORDER</option>
+			<option value="title">TITLE_ALPHABETICAL</option>
+			<option value="random">RANDOM</option>
+			<option value="rating">MOST_RATED_FIRST</option>
+			<option value="voting">MOST_VOTED_FIRST</option>
+			<option value="publish_down">NEAREST_EXPIRING_FIRST</option>
+			<option value="set_articles">SET_ARTICLES</option>
+		</field>
+		<field name="show_tooltips" type="list" default="0" label="LINK_TOOLTIP"
+			description="LINK_TOOLTIP_TITLE_DESCR">
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+		</field>
+                <field name="show_on_article_page" type="list"
+                       class="btn-group"
+                       default="1"
+                       label="MOD_DN_FIELD_SHOWONARTICLEPAGE_LABEL"
+                       description="MOD_DN_FIELD_SHOWONARTICLEPAGE_DESC" >
+                           <option value="1">JSHOW</option>
+                           <option value="0">JHIDE</option>
+                </field>
+		</fieldset>
+		<fieldset name="STYLE_AND_LAYOUT"  addfieldpath="/modules/mod_dn/fields" >
+		<field name="mod_dn_style" type="list" default="blog" label="LAYOUT"
+			description="STYLE_DESCR">
+			<option value="blog">BLOG</option>
+			<option value="featured">FEATURED</option>
+			<option value="flat">FLAT</option>
+			<option value="latestnews">LATESTNEWS</option>
+			<option value="flatlist">ORDERED_LIST</option>
+			<option value="horiz">TABLE_HORIZONTAL</option>
+			<option value="vert">TABLE_VERTICAL</option>
+			<!-- <option value="carousel">Carousel</option>
+			<option value="collapse">Collapse</option>
+			<option value="tabs">Tabs</option> -->
+		</field>
+		<field name="set_column" type="text" default="1" label="COLUMNS"
+			description="SET_COLUMN_DESCR" />
+
+		<!--<field name="set_grid_width" type="text" default="12" label="GRID_WIDTH"
+			description="GRID_WIDTH_DESCR" />-->
+
+		<!--<field name="css_type" type="list" default="content" label="Content Style"
+			description="CSS_DESCR">
+			<option value="content">Content</option>
+			<option value="table">Table</option>
+			<option value="latestnews">Latestnews</option>
+			<option value="dedicated">Dedicated</option>
+			<option value="nothing">Nothing</option>
+		</field> 
+		
+		<field name="title_tag" type="text" default="H2"
+			label="Title tag"
+			description="" />-->
+
+		<field name="moduleclass_sfx" type="text" default=""
+			label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+			description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />		
+		</fieldset>
+
+		
+		<fieldset name="CONTENT_SELECTION"  addfieldpath="/modules/mod_dn/fields" >
+		<field name="minus_leading" type="text" default="" label="MINUS_LEADING"
+			description="MINUS_LEADING_DESCR" />
+
+			<field name="avoid_shown" type="list" default="0" label="AVOID_SHOWN"
+			description="AVOID_SHOWN_DESCR" >
+			<option value="0">DISABLE</option>
+			<option value="1">JNO</option>
+			<option value="2">JYES</option>
+			<option value="3">RE_START</option>
+			
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="set_date_range" type="list" default=""
+			label="SET_DATE_RANGE"
+			description="SET_DATE_RANGE_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">TODAY</option>
+			<option value="2">THIS_WEEK</option>
+			<option value="3">THIS_YEAR</option>
+			<option value="15">RECENT_HOURS</option>
+			<option value="11">RECENT_DAYS</option>
+ 			<option value="12">RECENT_WEEKS</option>
+			<option value="13">RECENT_YEARS</option>
+			<option value="14">RECENT_DATE_RANGE</option>
+			<option value="6">THIS_DAY_ALL_YEARS</option>
+			<option value="5">THIS_WEEK_ALL_YEARS</option>
+			<option value="4">THIS_MONTH_ALL_YEARS</option>
+ 			<option value="25">FUTURE_PUBLISHING_HOURS</option>
+			<option value="21">FUTURE_PUBLISHING_DAYS</option>
+
+		</field>
+
+<!--			<field name="set_date_today" type="radio" default="0"
+			label="SET_DATE_TODAY" description="SET_DATE_TODAY_DESCR">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field> -->
+		<field name="set_date_since" type="text" default=""
+			label="SINCE_DATE"
+			description="SINCE_DATE_DESCR" />
+		<field name="set_date_until" type="text" default=""
+			label="TO_DATE"
+			description="TO_DATE_DESCR" />
+		<field type="spacer" hr="true" />
+		<field name="set_category_type" type="list" default=""
+			label="SET_CATEGORY_SELECTION_TYPE"
+			description="SET_CATEGORY_SELECTION_TYPE_DESC" >
+			<option value="0">JALL</option>
+			<option value="1">AUTO_SELECTED</option>
+			<option value="2">ONLY_SELECTED</option>
+			<option value="3">ALL_EXCEPT_SELECTED</option>
+		</field>
+		<field name="set_category_id" multiple="multiple"  type="category" extension="com_content" size="5" default=""
+			label="SET_CATEGORY"
+			description="SET_CATEGORY_DESCR" /> 
+		<field name="show_child_category_articles" type="list"
+			default="0"
+			label="MOD_DN_FIELD_SHOWCHILDCATEGORYARTICLES_LABEL"
+			description="MOD_DN_FIELD_SHOWCHILDCATEGORYARTICLES_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="set_category_levels" type="text" default="1"
+				label="MOD_DN_FIELD_CATDEPTH_LABEL"
+				description="MOD_DN_FIELD_CATDEPTH_DESC" />
+		<!-- /libraries/joomla/form/fields/category.php -->
+		<!-- <field name="set_category_id_extra" type="text" default=""
+			label="Additional categorys"
+			description="ADDITIONAL CATEGORYS DESCR" /> 
+		<field name="set_auto" type="radio" default="0"
+			label="SET_AUTO_CATEGORY"
+			description="SET_AUTO_CATEGORY_DESCR">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field> -->
+		<field type="spacer" hr="true" />
+		<field name="set_article_type" type="list" default="0"
+			label="SET_ARTICLE_SELECTION_TYPE"
+			description="SET_ARTICLE_SELECTION_TYPE_DESC" >
+			<option value="0">ONLY_SELECTED</option>
+			<option value="1">ALL_EXCEPT_SELECTED</option>
+		</field>
+		<field name="set_article_id" type="articles" state="1" size="10" default=""
+			label="SET_ARTICLES" multiple="multiple"  description="SET_ARTICLES_DESCR" />
+		<field name="set_article_id_extra" type="text" size="25" default=""
+			label="SET_ARTICLES" description="SET_ARTICLES_EXTRA_DESCR" />
+		<field type="spacer" hr="true" />
+		<field name="set_state" type="list" default="0"
+			label="ARCHIVED_ITEMS" description="">
+			<option value="1">JHIDE</option>
+			<option value="2">ONLY</option>
+			<option value="1,2">JSHOW</option>
+		</field>		
+		<field name="set_article_archived_id" type="articles" state="2" size="10" default=""
+			label="SET_ARCHIVED_ITEMS" multiple="multiple"  description="SET_ARTICLES_DESCR" />
+		<field name="set_article_archived_id_extra" type="text" size="25" default=""
+			label="SET_ARCHIVED_ITEMS" description="SET_ARCHIVED_ITEMS_DESCR" />
+		<!-- <field name="set_author_id" type="authors" multiple="multiple" size="5" default="" label="Set author ID"
+			description="SET AUTHOR ID DESCR" /> -->
+		<field type="spacer" hr="true" />
+		<field name="set_auto_author" type="list" default="0"
+			label="SET_AUTO_AUTHOR"
+			description="SET_AUTO_AUTHOR_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">BY_ARTICLE_AUTHOR</option>
+			<option value="2">BY_ARTICLE_TITLE</option>
+			<option value="3">BY_CURRENT_REGISTERED_USER</option>
+			<option value="4">ONLY_SELECTED</option>
+			<option value="5">ALL_EXCEPT_SELECTED</option>
+		</field>
+			<!-- <field name="author_filtering_type" type="list"
+				default="1"
+				label="MOD_DN_FIELD_AUTHORFILTERING_LABEL"
+				description="MOD_DN_FIELD_AUTHORFILTERING_DESC"
+		>
+				<option value="1">MOD_DN_OPTION_INCLUSIVE_VALUE
+				</option>
+				<option value="0">MOD_DN_OPTION_EXCLUSIVE_VALUE
+				</option>
+		</field> -->
+		<field name="set_author_name" type="authors" multiple="multiple" size="5" default=""
+			label="SET_AUTHOR"
+			description="SET_AUTHOR_DESCR" >
+			<option value="">JOPTION_SELECT_AUTHORS</option>
+		</field>
+			
+			
+
+		<!-- <field name="author_alias_filtering_type" type="list"
+				default="1"
+				label="MOD_DN_FIELD_AUTHORALIASFILTERING_LABEL"
+				description="MOD_DN_FIELD_AUTHORALIASFILTERING_DESC"
+		>
+				<option value="1">MOD_DN_OPTION_INCLUSIVE_VALUE
+				</option>
+				<option value="0">MOD_DN_OPTION_EXCLUSIVE_VALUE
+				</option>
+		</field> -->
+		
+		
+		
+		<field name="set_author_alias" type="sql"
+				multiple="true" size="5"
+				label="MOD_DN_FIELD_AUTHORALIAS_LABEL"
+				description="MOD_DN_FIELD_AUTHORALIAS_DESC"
+				query="select distinct(created_by_alias) from #__content where created_by_alias != '' order by created_by_alias ASC"
+				key_field="created_by_alias" value_field="created_by_alias"	>
+				<option value="">JOPTION_SELECT_AUTHOR_ALIASES</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="set_related" type="list" default="0"
+			label="SET_RELATED"
+			description="SET_RELATED_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>		
+		<field name="set_metakeys" type="text" default=""
+			label="SET_META_KEYWORDS"
+			description='SET_META_KEYWORDS_DESCR' />
+		<field type="spacer" hr="true" />
+		<field name="show_frontpage" type="list" default="y"
+			label="FRONTPAGE_ITEMS" description="FRONTPAGE_ITEMS_DESCR">
+			<option value="n">JHIDE</option>
+			<option value="y">JSHOW</option>
+			<option value="only">ONLY</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="hide_current" type="radio" default="0"
+			label="HIDE_CONTENT_ITEM" description="HIDE_CONTENT_ITEM_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="set_access" type="accesslevel" multiple="multiple" default=""
+			label="SET_ACCESS"
+			description="SET_ACCESS_DESCR" />
+			
+<!-- 		<field
+			name="language"
+			type="contentlanguage"
+			label="JFIELD_LANGUAGE_LABEL"
+			description="JFIELD_LANGUAGE_DESC"
+			class="inputbox"
+			multiple="multiple">
+		</field> -->
+		<field type="spacer" hr="true" />
+		<field name="if_no_articles" type="list" default="0" label="IF_NO_ARTICLES"
+			description="">
+			<option value="0">HIDE_MODULE</option>
+			<option value="1">SHOW_EMPTY_MODULE</option>
+			<option value="2">SHOW_MESSAGE</option>
+		</field>		
+		<field name="no_articles_message" type="text" format="row" default="No articles are found!" label="NO_ARTICLES_MESSAGE"
+			description="" />
+			
+		</fieldset>	
+
+		<fieldset name="TITLE">
+		<field name="show_title" type="list" default="" label="SHOW_ARTICLE_TITLE"
+			description="SHOW_ARTICLE_TITLE_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="">USE_GLOBAL</option>
+		</field>
+		<field name="link_titles" type="list" default="" label="TITLE_LINKABLE"
+			description="TITLE_LINKABLE_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="">USE_GLOBAL</option>
+		</field>
+		<field name="text_hover_title" type="text" filter="raw" default=""
+			label="TITLE_TOOLTIP_PREFIX"
+			description="TOOLTIP_TITLE_DESCR" />
+			
+		<field name="title_tag" type="text" filter="raw" default="span class=&quot;title&quot;"
+			label="TITLE_TAG"
+			description="TITLE_TAG_DESCR" />
+			
+		<field name="filter_title" type="list" default="0"
+			label="FILTER_AND_LIMIT_TITLE"
+			description="FILTER_AND_LIMIT_TITLE_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">EXACTLY</option>
+			<option value="2">DO_NOT_CUT_MID_WORD</option>
+		</field>
+		<field name="length_limit_title" type="text" default="20"
+			label="LENGTH_LIMIT_TITLE"
+			description="LENGTH_LIMIT_TITLE_DESCR" />
+		<field name="truncate_ending_title" type="list" default="1"
+			label="LIMITED_TITLE_SIGN"
+			description="LIMITED_TITLE_SIGN_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+		<field name="truncate_ending_title_sign" type="text" filter="raw" default="..."
+			label="Limited_title_sign"
+			description="LIMIT_TITLE_ENDING_SIGN_DESCR" />
+		</fieldset>	
+
+		<fieldset name="TEXT" >
+		<field name="show_text" type="list" default="1" label="Text_of_article"
+			description="SHOW_CONTENT_TEXT_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">INTRO_ONLY</option>
+			<option value="2">FULL_TEXT</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="link_text" type="list" default="0" label="Text_Linkable"
+			description="TEXT_LINKABLE_DESCR">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="filter_text" type="list" default="0"
+			label="TEXT_FORMAT"
+			description="FORMAT_TEXT_DESCR">
+			<option value="0">PRESERVE</option>
+			<option value="1">CLEANUP</option>
+		</field>
+		<field name="preserve_tags" type="text" filter="raw" default="&lt;img&gt;" label="PRESERVE_TAGS"
+			description="PRESERVE_TAGS_DESCR">
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="limit_text" type="list" default="0"
+			label="LIMIT_TEXT"
+			description="LIMIT_TEXT_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">EXACTLY</option>
+			<option value="2">DO_NOT_CUT_MID_WORD</option>
+		</field>
+		<field name="length_limit_text" type="text" default="100"
+			label="LIMIT_TEXT_LENGTH"
+			description="LIMIT_TEXT_LENGTH_DESCR" />
+		<field name="truncate_ending" type="list" default="1"
+			label="LIMITED_TEXT_SIGN"
+			description="LIMIT_TEXT_ENDING_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+		<field name="truncate_ending_sign" type="text" filter="raw" default="..."
+			label="LIMITED_TEXT_SIGN"
+			description="LIMIT_TEXT_ENDING_SIGN_DESCR" />
+		<field type="spacer" hr="true" />
+		<field name="text_hover_text" type="text" filter="raw" default=""
+			label="TEXT_TOOLTIP_PREFIX"
+			description="TOOLTIP_TEXT_DESCR" />
+		</fieldset>
+		
+		<fieldset name="IMAGE" >
+		<field name="get_image" type="list" default="3" label="SHOW_IMAGES"
+			description="SHOW_IMAGES_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">INTRO_IMAGE_ONLY</option>
+			<option value="2">INTRO_IMAGE_AND_FROM_ARTICLE_BODY</option>
+			<option value="3">FROM_ARTICLE_BODY_ONLY</option>
+		</field>
+
+		<field name="image" type="list" default="1" label="DISPLAY_IMAGES"
+			description="DISPLAY_IMAGES_DESCR">
+			<option value="1">IN_ARTICLE_TEXT</option>
+			<option value="2">IMAGES_SEPARATLY</option>
+		</field>
+		<field name="link_image" type="list" default="0" label="IMAGES_LINKABLE"
+			description="IMAGES_LINKABLE_DESCR">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="image_num" type="text" default="" label="NUMBER_OF_IMAGES"
+			description="NUMBER_OF_IMAGES_DESCR">
+		</field>
+
+		<field name="image_scale" type="list" default="bestfit" label="IMAGE_RESIZING"
+			description="IMAGE_SCALING_DESCR">
+			<option value="0">JNO</option>
+			<option value="scale">IMAGE_SCALE</option>
+			<option value="bestfit">IMAGE_BESTFIT</option>
+			<option value="crop">IMAGE_CROP</option>
+			<option value="only_cut">IMAGE_ONLY_CUT</option>
+            <option value="fill">IMAGE_FILL</option>
+            <option value="transparent">IMAGE_TRANSPARENT</option>
+		</field>
+		<field name="image_bg" type="text" default="FFFFFF" label="BACKGROUND_TRANSPARENT_COLOR" 
+			description="BACKGROUND_TRANSPARENT_COLOR_DESCR" />
+		<field name="image_type" type="list" default="" label="IMAGE_TYPE"
+			description="IMAGE_TYPE_DESCR">
+			<option value="">PRESERVE</option>
+			<option value="png">PNG</option>
+			<option value="gif">GIF</option>
+			<option value="jpeg">JPEG</option>
+		</field>
+		<field name="image_width" type="text" default="" label="IMAGE_WIDTH"
+			description="IMAGE_WIDTH_DESCR">
+		</field>
+		<field name="image_height" type="text" default="" label="IMAGE_HEIGHT"
+			description="IMAGE_HEIGHT_DESCR">
+		</field>
+		<field name="image_size" type="text" default="" label="IMAGE_SIZE"
+			description="IMAGE_SIZE_DESCR">
+		</field>
+		<field name="image_align" type="list" default="0" label="IMAGE_ALIGNMENT"
+			description="IMAGE_ALIGNMENT_DESCR">
+			<option value="0">PRESERVE</option>
+			<option value="1">JNO</option>
+			<option value="2">LEFT</option>
+			<option value="3">RIGHT</option>
+			<option value="4">MIDDLE</option>
+			<option value="5">TOP</option>
+			<option value="6">BOTTOM</option>
+			<option value="7">LEFT_RIGHT</option>
+			<option value="8">RIGHT_LEFT</option>
+		</field>
+		<field name="image_margin" type="text" default="" label="IMAGE_MARGINS"
+			description="IMAGE_MARGIN_DESCR">
+		</field>
+		<field name="image_class" type="list" default="0" label="IMAGE_CLASS"
+			description="IMAGE_CLASS_DESCR">
+			<option value="0">PRESERVE</option>
+			<option value="1">REMOVE</option>
+			<option value="2">REPLACE</option>
+			<option value="3">ADD</option>
+		</field>
+		<field name="image_class_name" type="text" default="" label="IMAGE_CLASS_NAME"
+			description="IMAGE_CLASS_NAME_DESCR">
+		</field>
+		<field name="image_default" type="list" default="0" label="DEFAULT_IMAGE" 
+			description="DEFAULT_IMAGE_DESCR" >
+			<option value="0">DISABLE</option>
+			<option value="1">ENABLE</option>
+		</field>
+		<field name="image_default_file" type="text" default="" label="DEFAULT_IMAGE_FILE" 
+			description="DEFAULT_IMAGE_FILE_DESCR" />	
+		</fieldset>
+		<fieldset name="video">
+		<field name="video" type="list" default="" label="SHOW_VIDEO"
+			description="SHOW_VIDEO_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">SEPARATELY</option>
+		</field>
+		<field name="video_num" type="text" default="" label="NUMBER_OF_VIDEO"
+			description="NUMBER_OF_VIDEO_DESCR"/>
+        <field name="autoplay" type="list" default="" label="VIDEO_AUTOPLAY" description="VIDEO_AUTOPLAY_DESCR">
+          <option value=""></option>
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+
+
+		<field name="vwidth" type="text" default="" size="4" label="MOD_DN_DEFAULT_WIDTH_IN_PX_FOR_VIDEOS" description="" />
+        <field name="vheight" type="text" default="" size="4" label="MOD_DN_DEFAULT_HEIGHT_IN_PX_FOR_VIDEOS" description="" />
+
+    
+        <field name="awidth" type="text" default="" size="4" label="MOD_DN_DEFAULT_WIDTH_IN_PX_FOR_AUDIO_PLAYER" description="" />
+        <field name="aheight" type="text" default="" size="4" label="MOD_DN_DEFAULT_HEIGHT_IN_PX_FOR_AUDIO_PLAYER" description="" />
+
+		
+		</fieldset>
+		<fieldset name="youtube">
+		<field name="youtube" type="list" default="" label="SHOW_YOUTUBE"
+			description="SHOW_YOUTUBE_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">SEPARATELY</option>
+		</field>
+		<field name="youtube_num" type="text" default="" label="NUMBER_OF_YOUTUBE"
+			description="NUMBER_OF_YOUTUBE_DESCR"/>
+		<field name="youtube_width" type="text" default="" label="youtube_WIDTH"
+			description="youtube_WIDTH_DESCR"/>
+		<field name="youtube_height" type="text" default="" label="youtube_HEIGHT"
+			description="youtube_HEIGHT_DESCR"/>
+		<field name="youtube_player" type="list" default="" label="youtube_PLAYER"
+			description="youtube_PLAYER_DESCR">
+			<option value=""></option>
+			<option value="HTML5">HTML5</option>
+			<option value="AS3">AS3</option>
+		</field>
+
+		<field name="youtube_autoplay" type="list" default="" label="youtube_AUTOPLAY"
+			description="youtube_AUTOPLAY_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="youtube_loop" type="list" default="" label="youtube_loop"
+			description="youtube_loop_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>				 
+		<field name="youtube_start" type="text" default="" label="youtube_start"
+			description="youtube_start_DESCR"/>
+		<field name="youtube_plyalist" type="text" default="" label="youtube_PLAYLIST"
+			description="youtube_PLAYLIST_DESCR"/>
+		<field name="youtube_controls" type="list" default="" label="youtube_CONTROLS"
+			description="youtube_CONTROLS_DESCR">
+			<option value=""></option>
+			<option value="0">DISABLE</option>
+			<option value="1">ENABLE</option>
+		</field>
+		<field name="youtube_autohide" type="list" default="" label="youtube_AUTOHIDE"
+			description="youtube_AUTOHIDE_DESCR">
+			<option value=""></option>
+			<option value="0">NOTHING</option>
+			<option value="1">CONTROL_AND_PROGRESS_BAR</option>
+			<option value="2">PROGRESS_BAR</option>
+		</field>			
+		<field name="youtube_disablekb" type="list" default="" label="youtube_DISABLEKB"
+			description="youtube_DISABLEKB_DESCR">
+			<option value=""></option>
+			<option value="0">ENABLE</option>
+			<option value="1">DISABLE</option>
+		</field>		
+		<field name="youtube_fs" type="list" default="" label="youtube_FS"
+			description="youtube_FS_DESCR">
+			<option value=""></option>
+			<option value="0">DENNY</option>
+			<option value="1">PERMIT</option>
+		</field>
+		<field name="youtube_hd" type="list" default="" label="youtube_HD"
+			description="youtube_HD_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="youtube_modestbranding" type="list" default="" label="youtube_modestbranding"
+			description="youtube_modestbranding_DESCR">
+			<option value=""></option>
+			<option value="0">SHOW</option>
+			<option value="1">HIDE</option>
+		</field>
+		
+		<field name="youtube_cc_load_policy" type="list" default="" label="youtube_CC_LOAD_POLICY"
+			description="youtube_CC_LOAD_POLICY_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field> 
+		<field name="youtube_showinfo" type="list" default="" label="youtube_showinfo"
+			description="youtube_showinfo_DESCR">
+			<option value=""></option>
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+		</field>
+		<field name="youtube_rel" type="list" default="" label="youtube_REL"
+			description="youtube_REL_DESCR">
+			<option value=""></option>
+			<option value="0">HIDE</option>
+			<option value="1">SHOW</option>
+		</field>	
+<!--
+		<field name="youtube_showsearch" type="list" default="" label="youtube_showsearch"
+			description="youtube_showsearch_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+	-->	
+		<field name="youtube_iv_load_policy" type="list" default="" label="youtube_iv_load_policy"
+			description="youtube_iv_load_policy_DESCR">
+			<option value=""></option>
+			<option value="3">HIDE</option>
+			<option value="1">SHOW</option>
+		</field>
+
+		<field name="youtube_theme" type="list" default="" label="youtube_theme"
+			description="youtube_theme_DESCR">
+			<option value=""></option>
+			<option value="dark">dark</option>
+			<option value="light">light</option>
+		</field>
+	
+<!--
+		<field name="youtube_border" type="list" default="" label="youtube_BORDER"
+			description="youtube_border_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		-->
+		<field name="youtube_color" type="list" default="" label="youtube_color"
+			description="youtube_color_DESCR">
+			<option value=""></option>
+			<option value="red">Red</option>
+			<option value="white">White</option>
+		</field>		
+		<!--
+		<field name="youtube_color1" type="text" default="" label="youtube_color1"
+			description="youtube_color1_DESCR"/>
+		<field name="youtube_color2" type="text" default="" label="youtube_color2"
+			description="youtube_color2_DESCR"/>			
+		<field name="youtube_egm" type="list" default="" label="youtube_egm"
+			description="youtube_egm_DESCR">
+			<option value=""></option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+-->
+		</fieldset>
+		<fieldset name="CATEGORY">
+		<!-- <field name="show_section" type="list" default="" label="Section Name"
+			description="SECTION NAME DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="">Use Global</option>
+		</field>
+		<field name="link_section" type="list" default=""
+			label="Section Linkable"
+			description="SECTION LINKABLE DESCR">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+			<option value="">Use Global</option>
+		</field>
+		<field name="text_hover_section" type="text" default=""
+			label="Section tooltip prefix"
+			description="SECTION TOOLTIP PREFIX DESCR" /> -->
+
+			<field name="show_category" type="list" default="" label="SHOW_CATEGORY"
+				description="SHOW_CATEGORY_DESCR">
+				<option value="0">JHIDE</option>
+				<option value="1">FOR_ARTICLE</option>
+				<option value="2">FOR_MODULE</option>
+			</field>	
+			
+			<field name="show_category_title" type="list" default="1" 
+				label="JGLOBAL_SHOW_CATEGORY_TITLE"
+				description="JGLOBAL_SHOW_CATEGORY_TITLE_DESC">
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="show_description" type="list"
+				description="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_DESC"
+				label="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_LABEL"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+			<field name="show_description_image" type="list"
+				description="JGLOBAL_SHOW_CATEGORY_IMAGE_DESC"
+				label="JGLOBAL_SHOW_CATEGORY_IMAGE_LABEL"
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			
+			
+			
+		<field name="link_category" type="list" default=""
+			label="CATEGORY_LINKABLE"
+			description="CATEGORY_LINKABLE_DESCR">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+			<option value="">USE_GLOBAL</option>
+		</field>
+		<field name="text_more" type="text" default="" filter="raw" label="TEXT_MORE"
+			description="TEXT_MORE_DESCR" />		
+		<field name="text_hover_category" type="text" filter="raw" default=""
+			label="CATEGORY_TOOLTIP_PREFIX"
+			description="CATEGORY_TOOLTIP_PREFIX_DESCR" />
+		<!-- <field type="spacer" hr="true" /> -->
+		<!-- <field name="show_more_auto" type="list" default="0"
+			label="SHOW_MORE_CATEGORY_AUTO"
+			description="SHOW_MORE_CATEGORY_AUTO_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			
+		</field> -->
+
+		<!-- <field name="text_hover_more_section" type="text" default=""
+			label="Tooltip prefix of more from section"
+			description="TOOLTIP MORE FROM SECTION DESCR" /> -->
+		<!-- <field name="text_hover_more_category" type="text" filter="raw" default=""
+			label="TOOLTIP_PREFIX" description="TEXT_HOVER_MORE_CATEGORY_DESCR" /> -->
+		
+	
+			
+		</fieldset>
+	
+
+
+		<fieldset name="OTHER_ATTRIBUTES" >
+		<field name="use_modify_date" type="list" default="0"
+			label="DATE_TYPE"
+			description="USE_MODIFY_DATE">
+			<option value="0">CREATION</option>
+			<option value="1">MODIFING</option>
+			<option value="2">PUBLISH_UP</option>
+			<option value="3">EXPIRATION</option>
+		</field>
+		<field name="show_date" type="list" default="" label="SHOW_DATE"
+			description="SHOW_DATE_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="2">Auto</option>
+			<option value="">USE_GLOBAL</option>
+		</field>
+		<field name="format_date" type="text" default="" filter="raw" label="DATE_FORMAT"
+			description="DATE_FORMAT_DESCR" />
+		<field type="spacer" hr="true" />
+		<field name="show_author" type="list" default="" label="SHOW_AUTHOR"
+			description="SHOW_AUTHOR_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="2">Auto</option>
+			<option value="">USE_GLOBAL</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="show_readmore" type="list" default="2" label="SHOW_READ_MORE"
+			description="SHOW_READ_MORE_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="2">Auto</option>
+		</field>
+		<field name="text_readmore" type="text" filter="raw" default="" label="TEXT_READMORE"
+			description="TEXT_READMORE_DESCR" />
+		<field name="text_hover_readmore" type="text" filter="raw" default=""
+			label="TOOLTIP_PREFIX_READMORE"
+			description="TOOLTIP_READMORE_DESCR" />
+		<field name="readmore_class" type="text" filter="raw" default="readmore btn" label="READMORE_CLASS"
+			description="READMORE_CLASS_DESCR" />
+		<field type="spacer"  hr="true" />
+		<field name="show_vote" type="list" default="" label="SHOW_RATE"
+			description="SHOW_RATE_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="">USE_GLOBAL</option>
+		</field>
+		<field name="rating_txt" 
+			type="text" 
+			default="" 
+			label="RATING_TEXT"
+			description="" />
+		<field type="spacer" hr="true" />
+		<field name="show_hits" type="list" default="" label="SHOW_HITS"
+			description="SHOW_HITS_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="">USE_GLOBAL</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="show_jcomment_counter" type="list" default="0" label="JCOMMENTS_NUMBER"
+			description="JCOMMENTS_NUMBER_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="2">LINK</option>
+		</field>
+		<field name="comment_template" type="text" filter="raw" default="Comments (%s)" label="COMMENTS_FORMAT"
+			description="COMMENTS_FORMAT_DESCR" />
+		<field type="spacer" hr="true" />
+		<field name="show_tags" type="list" default="" label="MOD_DN_FIELD_SHOW_TAGS_LABEL"
+			description="MOD_DN_FIELD_SHOW_TAGS_DESC">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+			<option value="">USE_GLOBAL</option>
+		</field>
+		</fieldset>
+		
+
+		
+		
+		
+		<!-- <fieldset name="Bottom Link" >
+		<field name="bottom_link_text" type="text" default=""
+			label="Bottom link title" description="BOTTOM LINK TITLE DESCR" />
+		<field name="bottom_link_url" type="text" default=""
+			label="Bottom link url"
+			description="BOTTOM LINK URL DESCR" />
+		<field name="text_module_description" type="text" default=""
+			label="Text module desciption" description="TEXT MODULE DESCIPTION DESCR" />
+		</fieldset> -->
+			
+		<fieldset name="SCROLL" >
+		<field name="scroll_direction" type="list" default="" label="SCROLL"
+			description="SCROLL_DESCR">
+			<option value="">JNO</option>
+			<option value="hashbangcode_scrolling_up">JAVASCRIPT_SCROLLING_UP</option>
+			<option value="up">MARQUE_UP</option>
+			<option value="down">MARQUE_DOWN</option>
+			<option value="left">MARQUE_LEFT</option>
+			<option value="right">MARQUE_RIGHT</option>
+			<option value="scrollspy">Scrollspy</option>
+			<!-- <option value="paging">Pausing up scrolling</option> -->
+		</field>
+		<field name="scroll_speed" type="int" default="1" label="SCROLL_SPEED"
+			description="SCROLL_SPEED_DESCR">
+		</field>
+		<field name="scroll_delay" type="text" default="30" label="SCROLL_DELAY"
+			description="SCROLL_DELAY_DESCR" />
+		<field name="scroll_mouse_ctrl" type="list" default="1"
+			label="Scrolling_control" description="SCROLLING_CONTROL_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="scroll_height" type="text" default="100" label="SCROLL_HEIGHT"
+			description="SCROLL_HEIGHT_DESCR" />
+		<field name="lead_space" type="text" default="50" label="LEADING_SPACE"
+			description="LEADING_SPACE_DESCR" />
+		<field name="tail_space" type="text" default="80" label="TAILING_SPACE"
+			description="TAILING_SPACE_DESCR" />
+		</fieldset>		
+		<fieldset name="POPUP_WINDOW" >
+		<field name="link_type" type="list" default="0"
+			label="POP_UP_WINDOW" 
+			description="POP_UP_WINDOW_DESCR">
+			<option value="0">DISABLE</option>
+			<option value="1">ENABLE</option>
+		</field>
+		<field name="link_target" type="text" default=""
+			label="LINK_TARGET" description="LINK_TARGET_DESCR"/>
+		<field name="window_width"       type="text" default="" label="WINDOW_WIDTH" description="WINDOW_WIDTH_DESCR"/>
+   		<field name="window_height"      type="text" default="" label="WINDOW_HEIGHT" description="WINDOW_HEIGHT_DESCR"/> 
+   		<field name="window_menubar"     type="list" default="0" label="MENU_BAR" description="MENU_BAR_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+   		<field name="window_directories" type="list" default="0" label="LINK_BAR" description="LINK_BAR_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+   		<field name="window_location"    type="list" default="0" label="ADDRESS_LINE" description="ADDRESS_LINE_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+   		<field name="window_resizable"   type="list" default="0"  label="RESIZABLE" description="RESIZABLE_DESCR">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+   		<field name="window_scrollbars"  type="list" default="0"  label="SCROLLBARS" description="SCROLLBARS_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+		<field name="window_status" type="list" default="0" label="STATUS_BAR" description="STATUS_BAR_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+   		<field name="window_toolbar"	  type="list" default="0"  label="TOOLBAR" description="TOOLBAR_DESCR">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+		</fieldset>
+		<fieldset name="ITEM_ID">
+		<field name="article_link" type="list" default="0"
+			label="ARTICLE_LINK"
+			description="ARTICLE_LINK_DESCR">
+			<option value="0">Article</option>
+			<option value="1">JCATEGORY</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="item_id_type" type="list" default="0"
+			label="ARTICLE_LINK_ITEM_ID_OVERWRITE"
+			description="ARTICLE_LINK_ITEM_ID_OVERWRITE_DESCR">
+			<option value="0">never</option>
+			<option value="1">If_itemId_not_found</option>
+			<option value="2">Always</option>
+		</field>
+		<field name="item_id" type="menuitem" size="10"
+			label="ARTICLE_LINK_ITEM_ID"
+			description="ARTICLE_LINK_ITEM_ID_DESCR">
+			<option value="-1">CURRENT_PAGE</option>
+		</field>
+		<field type="spacer" hr="true" />
+		<field name="item_id_cat_type" type="list" default="0"
+			label="CATEGORY_LINK_ITEM_ID_OVERWRITE"
+			description="">
+			<option value="0">never</option>
+			<option value="1">If_itemId_not_found</option>
+			<option value="2">Always</option>
+		</field>
+		<field name="item_id_cat" type="menuitem" size="10"
+			label="CATEGORY_LINK_ITEM_ID"
+			description="">
+			<option value="-1">CURRENT_PAGE</option>
+			</field>		
+		</fieldset>
+		<fieldset name="ARTICLE_FORMATTING_OPTIONS">
+		<field name="use_row_styles" type="list" default="1"
+			label="FORMAT_ARTICLE_AUTOMATICLY"
+			description="FORMAT_ARTICLE_AUTOMATICLY_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="use_rows_template" type="list" default="1"
+			label="ROW_TEMPLATE_TYPE"
+			description="ROW_TEMPLATE_TYPE_DESCR">
+			<option value="0">Static</option>
+			<option value="1">Dynamic</option>
+		</field>
+		<field name="format" type="textarea" filter="raw" rows="6" cols="50"
+			default="%t &lt;br/&gt;%T%c%S&lt;br/&gt;%a - %d&lt;br/&gt;%b&lt;br/&gt;%p%v%i&lt;br/&gt;%m&lt;div class=&quot;item-separator&quot;&gt; &lt;/div&gt;" label="STATIC_ROW_TEMPLATE"
+			description="STATIC_ROW_TEMPLATE_DESCR" />
+		<!-- <field name="format_ext" type="textarea" filter="raw" rows="10" cols="50"
+			default="&lt;span class='title'&gt;%t&lt;/span&gt; (&lt;span class='hits'&gt;%h&lt;/span&gt;)
+&lt;span class='content_rating'&gt;%r&lt;/span&gt;&lt;br/&gt;
+&lt;span class='category-name'&gt;%c&lt;/span&gt;
+&lt;div class='category-desc'&gt;%S&lt;/div&gt;&lt;br/&gt;
+&lt;span class='createdby'&gt;%a&lt;/span&gt; - &lt;span class='create'&gt;%d&lt;/span&gt;&lt;br/&gt;
+%b&lt;br/&gt;
+%p%i&lt;br/&gt;
+&lt;span class='hits'&gt;%C&lt;/span&gt;
+&lt;span class='readmore'&gt;%m&lt;/span&gt;
+&lt;div class='item-separator'&gt; &lt;/div&gt;" label="STATIC_ROW_TEMPLATE_EXT"
+			description="STATIC_ROW_TEMPLATE_DESCR" /> -->
+		<field name="row_template" type="textarea" filter="raw" rows="20" cols="50"
+			 default="($title_out!='' ? &quot;$title_out&quot; : ''). 
+($title_out!='' &amp;&amp; $style != 'blog' &amp;&amp; $style != 'featured' ? &quot;&lt;br/&gt;&quot; : '').
+($tags_out!='' ? &quot;$tags_out&quot; : ''). 
+($rate_out!='' ? &quot;$rate_out&lt;br/&gt;&quot; : ''). 
+($cat_out.$cat_desc_out!='' ? &quot;$cat_out$cat_desc_out&quot;.'&lt;br/&gt;' : ''). 
+($author_out!='' ? &quot;$author_out&quot; : ''). 
+($author_out!='' &amp;&amp; $date_out!='' ? ' - ' : ''). 
+($date_out!='' ? &quot;$date_out&quot; : ''). 
+($author_out.$date_out!='' ? '&lt;br/&gt;' : ''). 
+($before_out!='' ? &quot;$before_out&lt;br/&gt;&quot; : ''). 
+($img_out!='' ? &quot;$img_out&quot; : ''). 
+($video_out!='' ? &quot;$video_out&quot; : ''). 
+($text_out!='' ? &quot;$text_out&quot; : ''). 
+($hits_out!='' ? &quot;($hits_out)&quot; : ''). 
+($jcomments_out&lt;&gt;'' ? &quot;$jcomments_out&quot; : ''). 
+($readmore_out!='' ? &quot;&lt;br/&gt;$readmore_out&quot; : ''). 
+(!$last ? '&lt;div class=&quot;item-separator&quot;&gt; &lt;/div&gt;' : '')"
+			label="DYNAMIC_ROW_TEMPLATE"
+			description="ROW_TEMPLATE_DESCR" />
+		</fieldset>	
+		<fieldset name="MODULE_FORMATTING_OPTIONS">
+		<field name="show_empty_module" type="list" default="0"
+			label="MODULE_WITHOUT_CONTENT"
+			description="">
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>		
+		<field name="show_title_auto" type="list" default="0"
+			label="MODULE_TITLE_AUTO"
+			description="MODULE_TITLE_AUTO_DESCR">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>		
+		<field name="mod_title_format" type="text" filter="raw" default="&lt;h3&gt;%c&lt;/h3&gt;"
+			label="MOD_TITLE_FORMAT"
+			size="30"
+			description="MOD_TITLE_FORMAT_DESCR" />
+		<field name="use_module_template" type="list" default="0"
+			label="MODULE_TEMPLATE_TYPE"
+			description="MODULE_TEMPLATE_TYPE_DESCR">
+			<option value="1">Static</option>
+			<option value="0">Dynamic</option>
+		</field>		
+		<field name="module_format" label="STATIC_MODULE_TEMPLATE" type="textarea" filter="raw" rows="6" cols="50"
+			default="%t %c %s %r %f" 
+			description="MODULE_STATIC_TEMPLATE_DESCR" />		
+		<field name="module_template" label="DYNAMIC_MODULE_TEMPLATE" type="textarea" filter="raw" rows="12" cols="50"
+			default="($mod_title_out != '' ? &quot;$mod_title_out&quot; : '').
+$mod_cat_out.
+$scroll_start.
+$rows_out.
+$scroll_finish" 
+			description="MODULE_TEMPLATE_DESCR" />
+		</fieldset>
+		<fieldset name="INTEGRATION_PARAMETERS">
+		<field name="on_prepare_content_plugins" type="list" default="1"
+			label="PREPARE_CONTENT_PLUGINS"
+			description="PREPARE_CONTENT_PLUGINS_DESCR">
+			<option value="0">Disable</option>
+			<option value="1">After_text_FORMATTING</option>
+			<option value="2">Before_text_FORMATTING</option>
+		</field>
+		<field name="mod_dn_context_content" type="text" default="mod_dn.content" label="MOD_DN_CONTEXT_CONTENT" description="MOD_DN_CONTEXT_CONTENT_DESCR"/>
+		<field name="before_display_content_plugins" type="list" default="0"
+			label="BEFORE_DISPLAY_CONTENT_PLUGINS"
+			description="BEFORE_DISPLAY_CONTENT_PLUGINS_DESCR">
+			<option value="1">Enable</option>
+			<option value="0">Disable</option>
+		</field>
+		<field name="mod_dn_context_before" type="text" default="mod_dn.featured" label="MOD_DN_BEFORE_CONTEXT" description="MOD_DN_CONTEXT_BEFORE_DESCR"/>
+		<field name="raw_data_change" type="textarea" default="" label="RAW_DATA_CHANGE" description="RAW_DATA_CHANGE_DESCR" rows="5" cols="50" filter="raw"/>
+		<field name="force_builtin_rating" type="list" default="0"
+			label="FORCE_INTERNAL_RATING"
+			description="FORCE_INTERNAL_RATING_DESCR">
+			<option value="1">Enable</option>
+			<option value="0">Disable</option>
+		</field>
+		<field name="jcomments" type="list" default="0"
+			label="JCOMMENTS_INTEGRATION"
+			description="">
+			<option value="0">Disable</option>
+			<option value="1">JoomlaComments</option>
+			<option value="2">sliComments</option>
+		</field>
+		</fieldset>
+	
+	<fieldset name="ADVANCED">
+		<field name="cache" 
+			type="list" 
+			default="1" 
+			label="COM_MODULES_FIELD_CACHING_LABEL"
+			description="COM_MODULES_FIELD_CACHING_DESC">
+			<option value="1">USE_GLOBAL</option>
+			<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+		</field>
+		<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+			description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+
+		</fieldset>	
+		</fields>
+	</config>
+
+</extension>
