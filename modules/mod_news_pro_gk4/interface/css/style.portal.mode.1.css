@@ -1,0 +1,49 @@
+.nspMainPortalMode1 { position: relative; }
+.nspMainPortalMode1 .nspArts,
+.nspMainPortalMode1 .nspArt { overflow: hidden;	}
+.nspMainPortalMode1 .nspTopInterface { float: right; margin-top: -28px; }
+.nspMainPortalMode1 .nspTopInterface .nspNext,
+.nspMainPortalMode1 .nspTopInterface .nspPrev { background: transparent url('../images/nsp_portal_mode_1_interface.png') no-repeat 0 -28px; cursor: pointer; display: block; height: 14px; text-indent: -999em; width: 11px; }
+.nspMainPortalMode1 .nspTopInterface .nspNext { background-position: 0 -42px; }
+.nspMainPortalMode1 .nspTopInterface .nspNext:hover { background-position: 0 -14px; }
+.nspMainPortalMode1 .nspTopInterface .nspPrev:hover { background-position: 0 0; }
+/* basic CSS rules */
+.nspMainPortalMode1 .nspArt h4.nspHeader{}
+	.nspMainPortalMode1 .nspArt h4.nspHeader a{}
+	.nspMainPortalMode1 .nspArt h4.nspHeader a:hover{}
+.nspMainPortalMode1 .nspArt img.nspImage{}
+.nspMainPortalMode1 .nspArt p.nspText{float:none;}
+	.nspMainPortalMode1 .nspArt p.nspText a{}
+	.nspMainPortalMode1 .nspArt p.nspText a:hover{}
+.nspMainPortalMode1 .nspArt p.nspInfo{font-size:11px; color:#b3b6b7;}
+	.nspMainPortalMode1 .nspArt p.nspInfo a{}
+	.nspMainPortalMode1 .nspArt p.nspInfo a:hover{}
+.nspMainPortalMode1 .nspArt .tleft{ text-align:left; }
+.nspMainPortalMode1 .nspArt .tright{ text-align:right; }
+.nspMainPortalMode1 .nspArt .tcenter{ text-align:center; }
+.nspMainPortalMode1 .nspArt .tjustify{ text-align:justify; }
+.nspMainPortalMode1 .nspArt .fleft{float:left;}
+.nspMainPortalMode1 .nspArt .fright{float:right;}
+.nspMainPortalMode1 .nspArt .fnone{ clear:both;width:100%;float:none; }
+.nspMainPortalMode1 .readon_class.left,
+.nspMainPortalMode1 .readon_class.right,
+.nspMainPortalMode1 .readon_class.center{clear:both;}
+.nspMainPortalMode1 .readon_class.left{float:left;}
+.nspMainPortalMode1 .readon_class.right{float:right;}
+.nspMainPortalMode1 .readon_class.center{display:inline;float:none;}
+/* make element unvisible */
+.nspMainPortalMode1 .unvisible{ height:1px; left:-10000px; overflow:hidden; position:absolute; top:auto; width:1px; }
+/* font-size classes */
+.nspFs80{ font-size:80%; }
+.nspFs90{ font-size:90%; }
+.nspFs100{ font-size:100%; }
+.nspFs110{ font-size:110%; }
+.nspFs120{ font-size:120%; }
+.nspFs130{ font-size:130%; }
+.nspFs140{ font-size:140%; }
+.nspFs150{ font-size:150%; }
+.nspFs160{ font-size:160%; }
+.nspFs170{ font-size:170%; }
+.nspFs180{ font-size:180%; }
+.nspFs190{ font-size:190%; }
+.nspFs200{ font-size:200%; }

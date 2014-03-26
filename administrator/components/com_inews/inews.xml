@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6.0" method="upgrade">
+
+	<name>iNews</name>
+	<!-- The following elements are optional and free of formatting conttraints -->
+	<creationDate>2012</creationDate>
+	<author>DimYur</author>
+	<authorEmail>no@no.ru</authorEmail>
+	<authorUrl>http://www.ru</authorUrl>
+	<copyright>Copyright 2012</copyright>
+	<license>GPL</license>
+	<!--  The version string is recorded in the components table -->
+	<version>0.1</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>Component iNews</description>
+
+	<files folder="site">
+		<filename>inews.php</filename>
+		<filename>controller.php</filename>
+		<filename>news_inc_joomla_d.php</filename>
+		<filename>style.css</filename>
+		<filename>index.html</filename>
+		<folder>views</folder>
+	</files>
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu>iNews</menu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>inews.php</filename>
+		</files>
+	</administration>
+</extension>

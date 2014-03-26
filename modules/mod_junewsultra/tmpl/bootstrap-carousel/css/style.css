@@ -1,0 +1,37 @@
+/**
+* @package Joomla! 3.0
+* @author 2012 (c)  Denys Nosov
+* @author web-site: www.joomla-ua.org
+* @copyright This module is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 License.
+**/
+
+.jubc h4, .jubc h4 a,
+.jubc .jubc-info, .jubc .jubc-info a, 
+.jubc .jubc-rating, .jubc .jubc-rating a,
+.jubc .jubc-intro, .jubc .jubc-intro a {
+	color: #fff;	
+}
+
+.jubc .jubc-count {
+	font-size: 11px;	
+}
+
+.jubc .jubc-rating .left {
+	float: left;
+}
+
+.jubc .jubc-rating .right,
+.jubc .jubc-more {
+	float: right;
+}
+
+.jubc .jubc-rating .icon-eye-open {
+	font-size: 11px;
+}
+
+.jubc .jubc-intro,
+.jubc .jubc-more,
+.jubc .jubc-rating {
+	clear: both;
+	margin-top: 8px;
+}

@@ -334,7 +334,7 @@ fieldset.phrases label,fieldset.only label {
 	margin: 0 10px
 }
 
- :root *> fieldset.only label:before {
+/* :root *> fieldset.only label:before {
 	background: #a7c7dc;
 	background: -moz-linear-gradient(-45deg, #fefefe, #ddd);
 	background: -webkit-linear-gradient(-45deg, #fefefe, #ddd);
@@ -354,7 +354,7 @@ fieldset.phrases label,fieldset.only label {
 	padding: 2px;
 	line-height: 1em;
 	text-indent: -50px;
-}
+}*/
 
 input[type="checkbox"]:checked+label:before {
 	content: "\2714";
@@ -367,7 +367,7 @@ input[type="checkbox"]:checked+label:before {
 	border: 1px solid #0B70CD;
 }
 
-:root *> .phrases-box  label:before {
+/*:root *> .phrases-box  label:before {
 	background: #a7c7dc;
 	background: -moz-linear-gradient(-45deg, #fefefe, #ccc);
 	background: -webkit-linear-gradient(-45deg, #fefefe, #0b70cd);
@@ -388,7 +388,7 @@ input[type="checkbox"]:checked+label:before {
 	text-indent: -40px;
 	color: #fff;
 	text-shadow: 0px 10px 6px #fff;
-}
+}*/
 
 /*
 input[type="radio"]:checked + label:before {
@@ -657,7 +657,8 @@ form ul {
 #breadcrumbs ul{
 	/*overflow: hidden; */
 	zoom: 1;
-	padding-left:170px;	
+	/*padding-left:170px;*/
+	padding-left:30px;	
 }
 #breadcrumbs ul li{
 	/*list-style: none;*/ 
@@ -837,6 +838,7 @@ ul.menu ul ul ul ul a {
 }
 
 /* ++++++++++++++  content-module ++++++++++++++ */
+
 .category-module {
 	margin: 0;
 	padding: 0

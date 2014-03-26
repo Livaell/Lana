@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="file" version="3.0" method="upgrade">
+	<name>JUNewsUltra - Bootstrap Highly customizable template</name>
+	<creationDate>22.11.2012</creationDate>
+	<author>Joomla! Ukraine</author>
+	<authorEmail>denys@joomla-ua.org</authorEmail>
+	<authorUrl>www.joomla-ua.org</authorUrl>
+	<copyright>Copyright (C) 2012 Joomla! Ukraine. All rights reserved</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.4</version>
+	<description>Bootstrap Highly customizable template for module JUNewsUltra</description>
+	<fileset>
+		<files target="modules/mod_junewsultra/tmpl">
+			<folder>bootstrap-highly-customizable</folder>
+			<file writable="yes">bootstrap-highly-customizable.php</file>
+			<file>bootstrap-highly-customizable.xml</file>
+		</files>
+	</fileset>
+</extension>

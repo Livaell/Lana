@@ -1,0 +1,41 @@
+.nspMainPortalMode3 { position: relative; margin: 0; }
+.nspMainPortalMode3 .nspTitleTab { height: 42px; border-top: 1px solid #e5e5e5; line-height: 42px; background: #fff url('../images/nsp_portal_mode_3_interface.png') no-repeat 100% 0; cursor: pointer; position:relative; z-index: 2; }
+.nspMainPortalMode3 .nspTitleTab:hover { background-position: 100% 50%;}
+.nspMainPortalMode3 .nspTitleBlock.opened .nspTitleTab { background-position: 100% 100%; }
+.nspMainPortalMode3 .nspTitleBlock:first-child .nspTitleTab { border-top: none; }
+.nspMainPortalMode3 .nspTitleTab .nspDate { float: left; font-size: 11px; color: #b3b6b7; padding: 0 20px; border-right: 1px solid #e5e5e5; line-height:12px; height: 12px; margin-top: 15px; }
+.nspMainPortalMode3 .nspTitleTab .nspTitle:hover { color: #3477BB}
+.nspMainPortalMode3 .nspTitleTab .nspTitle { float: left; font-size: 17px; color: #555; margin-left: 20px; position: relative; z-index:2; }
+.nspMainPortalMode3 .nspTitleBlock { overflow: hidden; min-height:42px; }
+.nspMainPortalMode3 .nspTitleBlock .nspArtMore { background: #fff; position: relative; z-index: 1; overflow:hidden; }
+.nspMainPortalMode3 .nspTitleBlock .nspArtMain { overflow: hidden; border-left: 1px solid #e5e5e5; margin-bottom: 15px; padding: 0 20px; }
+.nspMainPortalMode3 .tleft{ text-align:left; }
+.nspMainPortalMode3 .tright{ text-align:right; }
+.nspMainPortalMode3 .tcenter{ text-align:center; }
+.nspMainPortalMode3 .tjustify{ text-align:justify; }
+.nspMainPortalMode3 .fleft{float:left;}
+.nspMainPortalMode3 .fright{float:right;}
+.nspMainPortalMode3 .fnone{ clear:both;width:100%;float:none; }
+.nspMainPortalMode3 .readon.left,
+.nspMainPortalMode3 .readon.right,
+.nspMainPortalMode3 .readon.center{clear:both;}
+.nspMainPortalMode3 .readon.left{float:left;}
+.nspMainPortalMode3 .readon.right{float:right;}
+.nspMainPortalMode3 .readon.center{display:inline;float:none;}
+.nspMainPortalMode3 .nspText { float: none!important; margin-top: 0!important; }
+/* make element unvisible */
+.nspMainPortalMode3 .unvisible{ height:1px; left:-10000px; overflow:hidden; position:absolute; top:auto; width:1px; }
+/* font-size classes */
+.nspFs80{ font-size:80%; }
+.nspFs90{ font-size:90%; }
+.nspFs100{ font-size:100%; }
+.nspFs110{ font-size:110%; }
+.nspFs120{ font-size:120%; }
+.nspFs130{ font-size:130%; }
+.nspFs140{ font-size:140%; }
+.nspFs150{ font-size:150%; }
+.nspFs160{ font-size:160%; }
+.nspFs170{ font-size:170%; }
+.nspFs180{ font-size:180%; }
+.nspFs190{ font-size:190%; }
+.nspFs200{ font-size:200%; }

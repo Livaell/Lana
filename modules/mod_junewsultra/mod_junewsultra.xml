@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>MOD_JUNEWSULTRA</name>
+	<creationDate>09.12.2012</creationDate>
+	<author>Denys Nosov</author>
+	<authorEmail>denys@joomla-ua.org</authorEmail>
+	<authorUrl>http://www.joomla-ua.org</authorUrl>
+	<copyright>This module is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 License.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>4.5.5</version>
+	<description>MOD_JUNEWS_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_junewsultra">mod_junewsultra.php</filename>
+		<filename>helper.php</filename>
+        <filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>fields</folder>
+        <folder>img</folder>
+    </files>
+    <media destination="mod_junewsultra" folder="media">
+		<filename>index.html</filename>
+		<filename writable="yes">notfoundimage.png</filename>
+        <folder>js</folder>
+	</media>
+    <updateservers>
+		<server type="extension" priority="1" name="JUNewsUltra">http://www.joomla-ua.org/update/mod/junewsultra.xml</server>
+	</updateservers>
+
+    <config addfieldpath="/modules/mod_junewsultra/fields">
+        <fields name="params">
+            <fieldset name="basic">
+            
+                <field name="display_article" type="list" default="0" label="MOD_JUNEWS_MODE_SELECT" description="MOD_JUNEWS_DISPLAY_SELECTED_ARTICLE">
+                    <option value="0">MOD_JUNEWS_CATEGORIES_SELECT</option>
+                    <option value="1">MOD_JUNEWS_ARTICLE_SELECT</option>
+                </field>
+
+                <field name="@toggler_choose_settings2_a" type="nn_toggler" param="display_article" value="1"/>
+
+                    <field name="articleid" type="article" default="" label="MOD_JUNEWS_SELECTARTICLE" description="" />
+
+                <field name="@toggler_showsuccessmessage2_b" type="nn_toggler"/>
+
+                <field name="@toggler_choose_settings3_a" type="nn_toggler" param="display_article" value="0"/>
+
+                    <field name="count" type="text" default="5" label="MOD_JUNEWS_FIELD_COUNT_LABEL" description="MOD_JUNEWS_FIELD_COUNT_DESC" />
+					
+                    <field name="count_skip" type="text" default="0" label="MOD_JUNEWS_SKIPPED_ARTICLES" description="MOD_JUNEWS_SKIPPED_ARTICLES_DESC" />
+
+                    <field type="spacer" name="cat1" hr="true" />
+
+                    <field name="show_featured" type="list" default="" label="MOD_JUNEWS_FIELD_FEATURED_LABEL" description="MOD_JUNEWS_FIELD_FEATURED_DESC">
+                        <option value="">JSHOW</option>
+                        <option value="0">JHIDE</option>
+                        <option value="1">MOD_JUNEWS_VALUE_ONLY_SHOW_FEATURED</option>
+                    </field>
+
+    			    <field name="catid" type="category" extension="com_content" multiple="true" size="20" default="" label="JCATEGORY" description="MOD_JUNEWS_FIELD_CATEGORY_DESC">
+    					<option value="">JOPTION_ALL_CATEGORIES</option>
+    				</field>
+
+    				<field name="category_filtering_type" type="radio" default="1" label="MOD_JUNEWS_CATEGORY_FIELD_CATFILTERINGTYPE_LABEL" description="MOD_JUNEWS_CATEGORY_FIELD_CATFILTERINGTYPE_DESC">
+    					<option value="1">MOD_JUNEWS_CATEGORY_OPTION_INCLUSIVE_VALUE</option>
+    					<option value="0">MOD_JUNEWS_CATEGORY_OPTION_EXCLUSIVE_VALUE</option>
+    				</field>
+
+    				<field name="show_child_category_articles" type="radio" default="1" label="Child Category Articles" description="Include or Exclude Articles from Child Categories.">
+    					<option value="1">MOD_JUNEWS_CATEGORY_OPTION_INCLUDE_VALUE</option>
+    					<option value="0">MOD_JUNEWS_CATEGORY_OPTION_EXCLUDE_VALUE</option>
+    				</field>
+
+    				<field name="levels" type="text" default="999" label="MOD_JUNEWS_CATEGORY_FIELD_CATDEPTH_LABEL" description="MOD_JUNEWS_CATEGORY_FIELD_CATDEPTH_DESC" />
+
+				    <field name="excluded_articles" type="textarea" cols="15" rows="5" label="MOD_JUNEWS_CATEGORY_FIELD_EXCLUDEDARTICLES_LABEL" description="MOD_JUNEWS_CATEGORY_FIELD_EXCLUDEDARTICLES_DESC" />
+
+                    <field type="spacer" name="cat2" hr="true" />
+
+    				<field name="date_filtering" type="radio" default="0" label="MOD_JUNEWS_FIELD_DATEFILTERING_LABEL" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+    				</field>
+
+                    <field name="@toggler_choose_settings40_a" type="nn_toggler" param="date_filtering" value="1"/>
+
+        				<field name="date_field" type="list" default="a.created" label="MOD_JUNEWS_FIELD_DATERANGEFIELD_LABEL" description="MOD_JUNEWS_FIELD_DATERANGEFIELD_DESC">
+        					<option value="a.created">MOD_JUNEWS_OPTION_CREATED_VALUE</option>
+        					<option value="a.modified">MOD_JUNEWS_OPTION_MODIFIED_VALUE</option>
+        					<option value="a.publish_up">MOD_JUNEWS_OPTION_STARTPUBLISHING_VALUE</option>
+        				</field>
+
+        				<field name="relative_date" type="list" default="0" label="MOD_JUNEWS_FIELD_DATE_SELECT_LABEL" description="">
+        					<option value="0">1 day</option>
+        					<option value="1">1 day (From 00:00 to the current time)</option>
+        					<option value="2">1 week</option>
+        					<option value="3">2 weeks</option>
+        					<option value="4">1 month</option>
+        					<option value="5">1 year</option>
+        					<option value="6">Custom days</option>
+        				</field>
+
+                        <field name="@toggler_choose_settings41_a" type="nn_toggler" param="relative_date" value="6"/>
+
+                            <field name="custom_days" type="text" default="30" label="MOD_JUNEWS_FIELD_DATERANGE_CUSTOM" description="MOD_JUNEWS_FIELD_DATERANGE_CUSTOM_DESC" />
+
+                        <field name="@toggler_showsuccessmessage41_b" type="nn_toggler"/>
+
+                    <field name="@toggler_showsuccessmessage40_b" type="nn_toggler"/>
+
+
+                    <field type="spacer" name="cat5" hr="true" />
+
+                    <field name="ordering" type="list" default="created_desc" label="MOD_JUNEWS_FIELD_ORDERING_LABEL" description="">
+                        <option value="created_desc">MOD_JUNEWS_BY_DATE1</option>
+                        <option value="created_asc">MOD_JUNEWS_BY_DATE2</option>
+                        <option value="modified_desc">MOD_JUNEWS_BY_DATE3</option>
+                        <option value="modified_created_dsc">MOD_JUNEWS_VALUE_RECENT_MODIFIED</option>
+                        <option value="modified_touch_dsc">MOD_JUNEWS_VALUE_RECENT_TOUCHED</option>
+                        <option value="publish_dsc">MOD_JUNEWS_VALUE_RECENT_PUBLISHED</option>
+                        <option value="title_asc">MOD_JUNEWS_TITLE_ALPHABETICAL</option>
+                        <option value="title_desc">MOD_JUNEWS_TITLE_REVERSE_ALPHABETICAL</option>
+                        <option value="ordering_asc">MOD_JUNEWS_ORDERING1</option>
+                        <option value="ordering_desc">MOD_JUNEWS_ORDERING2</option>
+                        <option value="id_asc">MOD_JUNEWS_BY_ID1</option>
+                        <option value="id_desc">MOD_JUNEWS_BY_ID2</option>
+                        <option value="hits_asc">MOD_JUNEWS_BY_POPULAR2</option>
+                        <option value="hits_desc">MOD_JUNEWS_BY_POPULAR</option>
+                        <option value="rating_desc">MOD_JUNEWS_BY_RATING2</option>
+                        <option value="rating_asc">MOD_JUNEWS_BY_RATING1</option>
+                        <option value="rand">MOD_JUNEWS_BY_RANDOM</option>
+                    </field>
+
+    				<field name="user_id" type="list" default="0" label="MOD_JUNEWS_FIELD_USER_LABEL" description="MOD_JUNEWS_FIELD_USER_DESC">
+    					<option value="0">MOD_JUNEWS_VALUE_ANYONE</option>
+    					<option value="by_me">MOD_JUNEWS_VALUE_ADDED_BY_ME</option>
+    					<option value="not_me">MOD_JUNEWS_VALUE_NOTADDED_BY_ME</option>
+    				</field>
+
+                <field name="@toggler_showsuccessmessage3_b" type="nn_toggler"/>
+
+                <field type="spacer" name="as" hr="true" />
+
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field name="@toggler_choose_settings1_a" type="nn_toggler" param="cache" value="1"/>
+
+                    <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+                    <field name="cachemode" type="hidden" default="static">
+    					<option value="static"></option>
+    				</field>
+
+                <field name="@toggler_showsuccessmessage1_b" type="nn_toggler"/>
+
+            </fieldset>
+			
+
+            <fieldset name="template" label="MOD_JUNEWS_TEMPLATE_PARAM" >
+
+                <field name="template" type="modulelayout" label="MOD_JUNEWS_TEMPLATE" description="MOD_JUNEWS_TEMPLATE_DESC" />
+
+                <field type="spacer" name="a0892" hr="true" />
+
+                <field name="jquery" type="radio" default="0" label="MOD_JUNEWS_USE_JQUERY" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="bootstrap_js" type="radio" default="0" label="MOD_JUNEWS_USE_BOOTSTRAP_JS" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="bootstrap_css" type="radio" default="0" label="MOD_JUNEWS_USE_BOOTSTRAP_CSS" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field type="spacer" name="a002" hr="true" />
+
+                <field name="empty_mod" type="radio" default="0" label="MOD_JUNEWS_DISPLAY_EMPTY_MODULE" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field type="spacer" name="a000" hr="true" />
+
+                <field name="cssstyle" type="radio" default="1" label="MOD_JUNEWS_CSS" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="moduleclass_sfx" type="text" default="" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field type="spacer" name="a001" hr="true" />
+
+                <field name="show_title" type="radio" default="1" label="MOD_JUNEWS_SHOW_TITLE" description="">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="@toggler_choose_settings5658921_a" type="nn_toggler" param="show_title" value="1"/>
+
+                    <field name="title_limit" type="radio" default="0" label="MOD_JUNEWS_LIMIT_TEXT" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                        <field name="@toggler_choose_settings548521_a" type="nn_toggler" param="title_limit" value="1"/>
+
+                            <field name="title_limit_mode" type="list" default="1" label="MOD_JUNEWS_LIMIT_METOD" description="MOD_JUNEWS_LIMIT_METODS_DESC">
+                                <option value="1">MOD_JUNEWS_WORDS_LIMIT</option>
+                                <option value="0">MOD_JUNEWS_CHARACTERS_LIMIT</option>
+                            </field>
+
+                            <field name="title_limit_count" type="text" default="20" label="MOD_JUNEWS_NUMBER_WORDS_CHARACTERS_LIMIT" description="MOD_JUNEWS_NUMBER_WORDS_CHARACTERS_LIMIT_DESC" />
+
+                            <field name="end_limit_title" type="text" default="..." label="MOD_JUNEWS_END_LIMIT_TITLE" description="" />
+
+                        <field name="@toggler_showsuccessmessage548521_b" type="nn_toggler"/>
+
+                    <field name="title_prepare" type="radio" default="0" label="MOD_JUNEWS_CONTENT_TITLE_PREPARE" description="MOD_JUNEWS_CONTENT_TITLE_PREPARE_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                <field name="@toggler_showsuccessmessage5658921_b" type="nn_toggler"/>
+
+                <field type="spacer" name="a5654112" hr="true" />
+
+                <field name="content_prepare" type="radio" default="0" label="MOD_JUNEWS_CONTENT_PREPARE" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field type="spacer" name="a5698701" hr="true" />
+
+                <field name="show_intro" type="radio" default="1" label="MOD_JUNEWS_SHOW_HIDE_INTROTEXT" description="">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="@toggler_choose_settings4_a" type="nn_toggler" param="show_intro" value="1"/>
+
+                    <field name="clear_tag" type="radio" default="1" label="MOD_JUNEWS_CLEAR_TAG_IN_INTROTEXT" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                    <field name="@toggler_choose_settings89548_a" type="nn_toggler" param="clear_tag" value="1"/>
+
+                        <field name="allowed_intro_tags" type="text" default="" label="MOD_JUNEWS_ALLOWED_INTRO_TAGS" description="MOD_JUNEWS_ALLOWED_TAGS_DESC" />
+
+                    <field name="@toggler_showsuccessmessage89548_b" type="nn_toggler"/>
+
+                    <field name="li" type="radio" default="1" label="MOD_JUNEWS_LIMIT_TEXT" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                    <field name="@toggler_choose_settings001_a" type="nn_toggler" param="li" value="1"/>
+
+                    <field name="lmttext" type="list" default="1" label="MOD_JUNEWS_LIMIT_METOD" description="MOD_JUNEWS_LIMIT_METODS_DESC">
+                        <option value="1">MOD_JUNEWS_WORDS_LIMIT</option>
+                        <option value="0">MOD_JUNEWS_CHARACTERS_LIMIT</option>
+                    </field>
+
+                    <field name="introtext_limit" type="text" default="20" label="MOD_JUNEWS_NUMBER_WORDS_CHARACTERS_LIMIT" description="MOD_JUNEWS_NUMBER_WORDS_CHARACTERS_LIMIT_DESC" />
+
+                    <field name="end_limit_introtext" type="text" default="..." label="MOD_JUNEWS_END_LIMIT_INTROTEXT" description="" />
+
+                    <field name="@toggler_showsuccessmessage001_b" type="nn_toggler"/>
+
+                <field name="@toggler_showsuccessmessage04_b" type="nn_toggler"/>
+
+
+                <field name="show_full" type="radio" default="0" label="MOD_JUNEWS_SHOW_HIDE_FULLTEXT" description="">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="@toggler_choose_settings004_a" type="nn_toggler" param="show_full" value="1"/>
+
+                    <field name="clear_tag_full" type="radio" default="1" label="MOD_JUNEWS_CLEAR_TAG_IN_FULLTEXT" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                    <field name="@toggler_choose_settings845481_a" type="nn_toggler" param="clear_tag_full" value="1"/>
+
+                        <field name="allowed_full_tags" type="text" default="" label="MOD_JUNEWS_ALLOWED_FULL_TAGS" description="MOD_JUNEWS_ALLOWED_TAGS_DESC" />
+
+                    <field name="@toggler_showsuccessmessage845481_b" type="nn_toggler"/>
+
+                    <field name="li_full" type="radio" default="1" label="MOD_JUNEWS_LIMIT_TEXT" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                    <field name="@toggler_choose_settings0041_a" type="nn_toggler" param="li_full" value="1"/>
+
+                        <field name="lmttext_full" type="list" default="1" label="MOD_JUNEWS_LIMIT_METOD" description="MOD_JUNEWS_LIMIT_METODS_DESC">
+                            <option value="1">MOD_JUNEWS_WORDS_LIMIT</option>
+                            <option value="0">MOD_JUNEWS_CHARACTERS_LIMIT</option>
+                        </field>
+
+                        <field name="fulltext_limit" type="text" default="20" label="MOD_JUNEWS_NUMBER_WORDS_CHARACTERS_LIMIT" description="MOD_JUNEWS_NUMBER_WORDS_CHARACTERS_LIMIT_DESC" />
+
+                        <field name="end_limit_fulltext" type="text" default="..." label="MOD_JUNEWS_END_LIMIT_FULLTEXT" description="" />
+
+                    <field name="@toggler_showsuccessmessage0041_b" type="nn_toggler"/>
+
+                <field name="@toggler_showsuccessmessage004_b" type="nn_toggler"/>
+
+                <field type="spacer" name="a2" hr="true" />
+
+                <field name="juauthor" type="radio" default="0" label="MOD_JUNEWS_DISPLAY_AUTHOR" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field type="spacer" name="a3" hr="true" />
+
+                <field name="read_more" type="radio" default="0" label="MOD_JUNEWS_READ_MORE" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="@toggler_choose_settings5_a" type="nn_toggler" param="read_more" value="1"/>
+
+                    <field name="rmtext" type="text" default="Read more..." label="MOD_JUNEWS_READ_MORE_TEXT" description="" />
+
+                <field name="@toggler_showsuccessmessage5_b" type="nn_toggler"/>
+
+                <field type="spacer" name="a4" hr="true" />
+
+                <field name="show_date" type="radio" default="1" label="MOD_JUNEWS_SHOW_DATE" description="">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="@toggler_choose_settings7_a" type="nn_toggler" param="show_date" value="1"/>
+
+                    <field name="data_format" type="text" default="d.m.Y" label="MOD_JUNEWS_DATE_FORMAT" description="" />
+                    <field name="df_d" type="text" default="d" label="MOD_JUNEWS_DATE_FORMAT_D" description="" />
+					<field name="df_m" type="text" default="m" label="MOD_JUNEWS_DATE_FORMAT_M" description="" />
+					<field name="df_y" type="text" default="Y" label="MOD_JUNEWS_DATE_FORMAT_Y" description="" />
+
+                <field name="@toggler_showsuccessmessage7_b" type="nn_toggler"/>
+
+                <field type="spacer" name="a5" hr="true" />
+
+                <field name="showcat" type="radio" default="0" label="MOD_JUNEWS_SHOW_CATEGORY" description="">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="@toggler_choose_settings6_a" type="nn_toggler" param="showcat" value="1"/>
+
+                    <field name="showcatlink" type="radio" default="0" label="MOD_JUNEWS_SHOW_CATEGORY_LINK" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                <field name="@toggler_showsuccessmessage6_b" type="nn_toggler"/>
+
+                <field type="spacer" name="46" hr="true" />
+
+                <field name="showHits" type="radio" default="0" label="MOD_JUNEWS_SHOW_HITS" description="">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="showRating" type="radio" default="0" label="MOD_JUNEWS_SHOW_RATING_STAR" description="">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="showRatingCount" type="radio" default="0" label="MOD_JUNEWS_SHOW_RATING" description="">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field type="spacer" name="a6" hr="true" />
+
+                <field name="all_in" type="radio" default="0" label="MOD_JUNEWS_ALL_IN_CATEGORY" description="MOD_JUNEWS_ALL_IN_CATEGORY_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="@toggler_choose_settings8_a" type="nn_toggler" param="all_in" value="1"/>
+
+                    <field name="all_in_position" type="list" default="0" label="MOD_JUNEWS_LINK_HEADER_POSITION" description="">
+                        <option value="0">MOD_JUNEWS_TOP</option>
+                        <option value="1">MOD_JUNEWS_BOTTOM</option>
+                    </field>
+
+    				<field name="item_heading" type="list" default="span" label="MOD_JUNEWS_TITLE_HEADING" description="">
+    					<option value="span">SPAN</option>
+    					<option value="div">DIV</option>
+    					<option value="strong">STRONG</option>
+    					<option value="h1">H1</option>
+    					<option value="h2">H2</option>
+    					<option value="h3">H3</option>
+    					<option value="h4">H4</option>
+    					<option value="h5">H5</option>
+    					<option value="h6">H6</option>
+    				</field>
+
+                    <field name="class_all_in" type="text" default="" label="MOD_JUNEWS_ALL_IN_CATEGORY_CSS" description="MOD_JUNEWS_ALL_IN_CATEGORY_CSS_DESC" />
+
+                    <field type="spacer" name="a8" hr="true" />
+
+                    <field name="custom_heading" type="radio" default="0" label="MOD_JUNEWS_CUSTOM_HEADING" description="">
+                        <option value="0">MOD_JUNEWS_MENU</option>
+                        <option value="1">MOD_JUNEWS_CUSTOM</option>
+                    </field>
+
+                    <field name="@toggler_choose_settings94_a" type="nn_toggler" param="custom_heading" value="1"/>
+
+                        <field name="text_all_in" type="text" default="" label="MOD_JUNEWS_ALL_IN_CATEGORY_DESC2" description="" />
+
+					    <field name="link_all_in" type="text" default="" label="MOD_JUNEWS_ALL_IN_CATEGORY_LINK" description="MOD_JUNEWS_ALL_IN_CATEGORY_LINK_DESC" />
+
+                    <field name="@toggler_showsuccessmessage94_b" type="nn_toggler"/>
+
+                    <field name="@toggler_choose_settings95_a" type="nn_toggler" param="custom_heading" value="0"/>
+
+                        <field name="text_all_in2" type="text" default="" label="MOD_JUNEWS_ALL_IN_CATEGORY_DESC2" description="" />
+
+                        <field name="link_menuitem" type="menuitem" default="" label="MOD_JUNEWS_SELECT_A_MENU_ITEM" description="">
+                            <option value="">JDEFAULT</option>
+                        </field>
+
+                    <field name="@toggler_showsuccessmessage95_b" type="nn_toggler"/>
+
+
+                <field name="@toggler_showsuccessmessage8_b" type="nn_toggler"/>
+
+            </fieldset>
+			
+            
+            <fieldset name="settings_images" label="MOD_JUNEWS_IMAGE_PARAMETERS" >
+
+                <field name="pik" type="radio" default="1" label="MOD_JUNEWS_IMAGE_DISPLAY" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="@toggler_choose_settings9_a" type="nn_toggler" param="pik" value="1"/>
+
+                    <field name="image_source" type="list" default="0" label="MOD_JUNEWS_IMAGE_FROM_TEXT_OR_ARTICLE_PARAMETERS" description="">
+                        <option value="0">MOD_JUNEWS_IMAGE_FROM_TEXT_OR_ARTICLE_DEFAULT</option>
+                        <option value="1">MOD_JUNEWS_IMAGE_FROM_TEXT_OR_ARTICLE_INTROFULL</option>
+                        <option value="2">MOD_JUNEWS_IMAGE_FROM_TEXT_OR_ARTICLE_INTRO</option>
+                        <option value="3">MOD_JUNEWS_IMAGE_FROM_TEXT_OR_ARTICLE_FULL</option>
+                    </field>
+
+                    <field name="imglink" type="radio" default="1" label="MOD_JUNEWS_IMAGE_LINK" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                    <field name="tips" type="radio" default="1" label="MOD_JUNEWS_IMAGE_TITLE" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                    <field name="imageWidth" type="text" default="70" label="MOD_JUNEWS_IMAGE_WIDTH" description="" />
+
+                    <field name="imageHeight" type="text" default="70" label="MOD_JUNEWS_IMAGE_HEIGHT" description="" />
+
+                    <field name="thumb_width" type="radio" default="1" label="MOD_JUNEWS_IMAGE_THUMB" description="MOD_JUNEWS_IMAGE_THUMB_DESC">
+                        <option value="1">MOD_JUNEWS_IMAGE_THUMB_O1</option>
+                        <option value="0">MOD_JUNEWS_IMAGE_THUMB_O2</option>
+                    </field>
+
+                    <field name="@toggler_choose_settings10_a" type="nn_toggler" param="thumb_width" value="1"/>
+
+                        <field name="source_rectangle" type="radio" default="0" label="MOD_JUNEWS_USE_SOURCE_RECTANGLE" description="MOD_JUNEWS_IMAGE_THUMB_DESC">
+                            <option value="0">JNO</option>
+                            <option value="1">JYES</option>
+                        </field>
+
+                        <field name="@toggler_choose_settings0120_a" type="nn_toggler" param="source_rectangle" value="1"/>
+
+                            <field name="sx" type="text" default="0" label="MOD_JUNEWS_IMAGE_SX" description="MOD_JUNEWS_IMAGE_SX_DESC" />
+                            <field name="sy" type="text" default="0" label="MOD_JUNEWS_IMAGE_SY" description="MOD_JUNEWS_IMAGE_SY_DESC" />
+                            <field name="sw" type="text" default="" label="MOD_JUNEWS_IMAGE_SW" description="MOD_JUNEWS_IMAGE_SW_DESC" />
+                            <field name="sh" type="text" default="" label="MOD_JUNEWS_IMAGE_SH" description="MOD_JUNEWS_IMAGE_SH_DESC" />
+
+                        <field name="@toggler_showsuccessmessage0120_b" type="nn_toggler"/>
+
+                        <field name="Zoom_Crop" type="radio" default="1" label="MOD_JUNEWS_IMAGE_ZOOM_CROP" description="">
+                            <option value="0">JNO</option>
+                            <option value="1">JYES</option>
+                        </field>
+
+                        <field name="thumb_filtercolor" type="list" default="0" label="MOD_JUNEWS_IMAGE_FILTERS_SELECT_COLOR" description="MOD_JUNEWS_IMAGE_FILTERS_SELECT_DESC">
+                            <option value="0">JNO</option>
+                            <option value="1">MOD_JUNEWS_IMAGE_FILTERS_GREY</option>
+                            <option value="2">MOD_JUNEWS_IMAGE_FILTERS_SEPIA</option>
+                            <option value="3">MOD_JUNEWS_FILTER_TH</option>
+                            <option value="4">MOD_JUNEWS_IMAGE_FILTERS_CUSTOM</option>
+                        </field>
+
+                        <field name="@toggler_choose_settings20_a" type="nn_toggler" param="thumb_filtercolor" value="4"/>
+
+                            <field name="colorized" type="text" default="25" label="MOD_JUNEWS_IMAGE_FILTERS_COLORIZED" description="MOD_JUNEWS_IMAGE_FILTERS_COLORIZED_DESC" />
+
+                            <field name="colorpicker" type="colorpicker" default="#0000ff" label="MOD_JUNEWS_IMAGE_FILTERS_COLOR" description="MOD_JUNEWS_IMAGE_FILTERS_COLOR_DESC" />
+
+                        <field name="@toggler_showsuccessmessage20_b" type="nn_toggler"/>
+
+                        <field name="@toggler_choose_settings33_a" type="nn_toggler" param="thumb_filtercolor" value="3"/>
+
+                             <field name="thumb_th_seting" type="integer" default="10" label="MOD_JUNEWS_CHOOSE_AN_INTEGER" description="MOD_JUNEWS_FILTER_TH_DESC" first="0" last="255" step="5" />
+                        <field name="@toggler_showsuccessmessage33_b" type="nn_toggler"/>
+
+                        <field name="thumb_filters" type="radio" default="1" label="MOD_JUNEWS_USE_FILTERS" description="">
+                            <option value="0">JNO</option>
+                            <option value="1">JYES</option>
+                        </field>
+
+                        <field name="@toggler_choose_settings34_a" type="nn_toggler" param="thumb_filters" value="1"/>
+
+                            <field name="thumb_unsharp" type="radio" default="1" label="MOD_JUNEWS_FILTER_UNSHARP" description="">
+                                <option value="0">JNO</option>
+                                <option value="1">JYES</option>
+                            </field>
+
+                            <field name="@toggler_choose_settings35_a" type="nn_toggler" param="thumb_unsharp" value="1"/>
+
+                                <field name="thumb_unsharp_amount" type="integer" default="80" label="MOD_JUNEWS_FILTER_UNSHARP_AMOUNT" description="MOD_JUNEWS_FILTER_UNSHARP_AMOUNT_DESC" first="0" last="255" step="5" />
+                                <field name="thumb_unsharp_radius" type="integer" default="1" label="MOD_JUNEWS_FILTER_UNSHARP_RADIUS" description="MOD_JUNEWS_FILTER_UNSHARP_RADIUS_DESC" first="0" last="10" step="1" />
+                                <field name="thumb_unsharp_threshold" type="integer" default="3" label="MOD_JUNEWS_FILTER_UNSHARP_THRESHOLD" description="MOD_JUNEWS_FILTER_UNSHARP_THRESHOLD_DESC" first="0" last="50" step="1" />
+                            <field name="@toggler_showsuccessmessage35_b" type="nn_toggler"/>
+
+                            <field type="spacer" name="im001" hr="true" />
+
+                            <field name="thumb_blur" type="radio" default="0" label="MOD_JUNEWS_FILTER_BLUR" description="">
+                                <option value="0">JNO</option>
+                                <option value="1">JYES</option>
+                            </field>
+
+                            <field name="@toggler_choose_settings30_a" type="nn_toggler" param="thumb_blur" value="1"/>
+
+                                <field name="thumb_blur_seting" type="integer" default="1" label="MOD_JUNEWS_CHOOSE_AN_INTEGER" description="MOD_JUNEWS_FILTER_BLUR_DESC" first="1" last="5" step="1" />
+
+                            <field name="@toggler_showsuccessmessage30_b" type="nn_toggler"/>
+
+                            <field type="spacer" name="im002" hr="true" />
+
+                            <field name="thumb_brit" type="radio" default="0" label="MOD_JUNEWS_FILTER_BRIT" description="">
+                                <option value="0">JNO</option>
+                                <option value="1">JYES</option>
+                            </field>
+
+                            <field name="@toggler_choose_settings31_a" type="nn_toggler" param="thumb_brit" value="1"/>
+
+                                <field name="thumb_brit_seting" type="integer" default="50" label="MOD_JUNEWS_CHOOSE_AN_INTEGER" description="MOD_JUNEWS_FILTER_BRIT_DESC" first="-50" last="50" step="2" />
+                            <field name="@toggler_showsuccessmessage31_b" type="nn_toggler"/>
+
+                            <field type="spacer" name="im003" hr="true" />
+
+                            <field name="thumb_cont" type="radio" default="0" label="MOD_JUNEWS_FILTER_CONT" description="">
+                                <option value="0">JNO</option>
+                                <option value="1">JYES</option>
+                            </field>
+
+                            <field name="@toggler_choose_settings32_a" type="nn_toggler" param="thumb_cont" value="1"/>
+
+                                <field name="thumb_cont_seting" type="integer" default="50" label="MOD_JUNEWS_CHOOSE_AN_INTEGER" description="MOD_JUNEWS_FILTER_CONT_DESC" first="-50" last="50" step="2" />
+                            <field name="@toggler_showsuccessmessage32_b" type="nn_toggler"/>
+
+                        <field name="@toggler_showsuccessmessage34_b" type="nn_toggler"/>
+
+                    <field name="@toggler_showsuccessmessage10_b" type="nn_toggler"/>
+
+                    <field type="spacer" name="im7" hr="true" />
+
+                    <field name="defaultimg" type="radio" default="1" label="MOD_JUNEWS_DEFAULT_IMAGE" description="">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                    </field>
+
+                    <field name="@toggler_choose_settings21_a" type="nn_toggler" param="defaultimg" value="1"/>
+
+                        <field name="noimage" type="imagelist" default="" hide_default="1" hide_none="1" label="MOD_JUNEWS_IMAGE_DEFAULT" directory="/media/mod_junewsultra/" description="" />
+
+                        <field name="" type="upload" label="MOD_JUNEWS_IMAGE_UPLOAD" description="" />
+
+                    <field name="@toggler_showsuccessmessage21_b" type="nn_toggler"/>
+
+                <field name="@toggler_showsuccessmessage9_b" type="nn_toggler"/>
+
+            </fieldset>
+			
+
+            <fieldset name="image_configuration" label="MOD_JUNEWS_IMAGE_CONF" >
+
+                <field name="img_cache" type="folderlist" default="cache" label="MOD_JUNEWS_IMAGE_CONF00" description="" directory="" exclude="administrator|cli|components|includes|language|libraries|logs|modules|plugins|templates" hide_none="1" hide_default="1" />
+                <field name="cache_maxage_img" type="text" default="30" label="MOD_JUNEWS_IMAGE_CONF05" description="MOD_JUNEWS_IMAGE_CONF05_TIPS" />
+                <field name="cache_maxsize_img" type="text" default="10" label="MOD_JUNEWS_IMAGE_CONF06" description="MOD_JUNEWS_IMAGE_CONF06_TIPS" />
+                <field name="cache_maxfiles_img" type="text" default="200" label="MOD_JUNEWS_IMAGE_CONF07" description="MOD_JUNEWS_IMAGE_CONF07_TIPS" />
+
+                <field type="spacer" name="im10" hr="true" />
+
+                <field name="use_imagemagick" type="radio" default="1" label="MOD_JUNEWS_IMAGE_CONF02" description="MOD_JUNEWS_IMAGE_CONF02_TIPS">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="@toggler_choose_settings29_a" type="nn_toggler" param="use_imagemagick" value="1"/>
+
+                    <field name="imagemagick_path" type="text" default="" label="MOD_JUNEWS_IMAGE_CONF03" description="MOD_JUNEWS_IMAGE_CONF03_TIPS" />
+
+                <field name="@toggler_showsuccessmessage29_b" type="nn_toggler"/>
+
+                <field type="spacer" name="im12" hr="true" />
+
+                <field name="img_ext" type="list" default="jpg" label="MOD_JUNEWS_IMAGE_CONF04" description="MOD_JUNEWS_IMAGE_CONF04_TIPS">
+                    <option value="jpg">.JPG</option>
+                    <option value="png">.PNG</option>
+                    <option value="gif">.GIF</option>
+                </field>
+
+                <field name="link_enabled" type="radio" default="1" label="MOD_JUNEWS_IMAGE_CONF01" description="MOD_JUNEWS_IMAGE_CONF01_TIPS">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+            </fieldset>
+			
+
+            <fieldset name="comments_integration" label="MOD_JUNEWS_JUNEWSULTRA_INTEGRATION" >
+
+                <field name="use_comments" type="radio" default="0" label="MOD_JUNEWS_USE_COMMENTS" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="@toggler_choose_settings29858_a" type="nn_toggler" param="use_comments" value="1"/>
+
+                    <field name="select_comments" type="commentsradio" default="jcomments" label="" description="">
+                        <option value="jcomments">JComments</option>
+                        <option value="komento">Komento</option>
+                        <option value="slicomments">sliComments</option>
+                        <option value="joocomments">JooComments</option>
+                    </field>
+
+                <field name="@toggler_showsuccessmessage29858_b" type="nn_toggler"/>
+
+                <field type="spacer" name="im11" hr="true" />
+
+                <field name="youtube_img_show" type="radio" default="1" label="MOD_JUNEWS_IMAGE_VIDEO" description="MOD_JUNEWS_IMAGE_VIDEO_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field type="spacer" name="im145891" hr="true" />
+
+                <field name="gallery" type="jumultithumbradio" default="1" label="MOD_JUNEWS_IMAGE_JUMULTITHUMB_GALLERY" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+            </fieldset>
+			
+
+            <fieldset name="license" label="MOD_JUNEWS_LICENSE" >
+                
+                <field name="copy" type="radio" default="1" label="MOD_JUNEWS_LICENSE_LINK" description="">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                
+            </fieldset>
+
+        </fields>
+
+    </config>
+
+</extension>

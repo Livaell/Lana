@@ -1,0 +1,156 @@
+/*
+-----------------------------------------------
+File:    junewsultra.css
+Author:  Denys Nosov at http://www.denysdesign.com
+Version: 12.11.2012
+License: GNU General Public License version 2 or later
+----------------------------------------------- */
+/* Field label widths - short label */
+fieldset.adminform label,
+fieldset.panelform label,
+fieldset.adminform span.faux-label,
+div.current label, div.current span.faux-label { min-width: 10%; max-width: 30%; width: 30%; padding: 0 5px 0 0; }
+div.current fieldset.radio label { width: 95px; max-width: 40%; }
+div.current select { margin-top: 10px; margin-bottom: 5px; }
+#rules label, #rules span.faux-label { min-width: 150px; }
+#module-sliders fieldset.radio label, #module-sliders fieldset.radio span.faux-label { min-width: 70px; max-width: 40%; width: auto; }
+/* Module description */
+.module-desc { overflow: hidden; }
+/* JUNewsUltra Pro */
+.width-60 { width: 55%!important; }
+.width-40 { width: 45%!important; }
+.pane-sliders code { font-size: 12px; color: #993366; }
+.pane-sliders .modal { margin-left: 15px; margin-right: 15px; font-weight: bolder; color: #146295; }
+.nntoggler { border: 1px solid #ccc; padding: 12px; margin-left: 4%; margin-top: 3px; }
+	.nntoggler .nntoggler { border: 0 none; border-top: 1px dotted #ccc; padding: 12px 0 0 4%; margin-left: 0; }
+/* fields */
+.spacer hr { border: 1px dotted #ccc; }
+.jumultithumb-text { width: 99%; clear: both; display: block; overflow: hiden; font-weight: normal; }
+.jumultithumb-link { clear: both; display: block; font-weight: normal; }
+
+.fltrt .label {
+  display: inline-block;
+  padding: 2px 3px;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 12px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #999999;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+
+.fltrt a.label:hover{
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fltrt .label-important {
+  background-color: #b94a48;
+}
+
+.fltrt .label-warning {
+  background-color: #f89406;
+}
+
+.fltrt .label-success {
+  background-color: #468847;
+}
+
+.fltrt .label-inverse {
+  background-color: #333333;
+}
+
+.fltrt .label-info {
+  background-color: #3a87ad;
+}
+
+.fltrt .modal {
+	padding: 0!important;
+	margin: 0!important;
+	line-height: 28px;
+	display: block;
+}
+	.fltrt .modal span {
+		padding: 0!important;
+		margin: 0!important;
+	}
+	
+.fltrt #jform_params_select_comments-lbl {
+	display: none;
+}
+.fltrt #jform_params_select_comments,
+.fltrt #jform_params_select_comments div {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Joomla 3.0 */
+.control-group .control-label {
+	min-width: 15%!important;
+	max-width: 25%!important;
+	width: 24%!important;
+	padding: 0 5px 0 0!important;
+}
+
+.control-group hr {
+	width: 100%!important;
+	display: block;
+	margin: 0!important;
+}
+.control-group .controls .radio label {
+	float: left;
+	margin: 3px 40px 0 5px;
+}
+.control-group .controls .btn-group  label {
+	float: none;
+	margin: 0 -1px 0 0;
+}
+.nntoggler {
+	margin: -10px 0 18px 18px;
+}
+
+.nav-tabs {
+	float: left;
+	width: 16%;
+	position: fixed;
+	top: 178px;
+	margin-top: 18px;
+	
+	border-bottom: 0!important;
+	margin-right: 19px!important;
+  	border-right: 1px solid #ddd!important;	
+}
+.tab-content {
+	float: right;
+	width: 82%;
+	margin-top: 18px;
+}
+.nav-tabs > li {
+	float: none!important;
+}
+.nav-tabs > li > a {
+  	min-width: 74px!important;
+	margin-right: 0!important;
+	margin-bottom: 3px!important;
+	margin-right: -1px!important;
+	-webkit-border-radius: 4px 0 0 4px!important;
+	-moz-border-radius: 4px 0 0 4px!important;
+	border-radius: 4px 0 0 4px!important;
+}
+.nav-tabs > li > a:hover {
+	border-color: #eeeeee #dddddd #eeeeee #eeeeee!important;
+}
+.nav-tabs .active > a,
+.nav-tabs .active > a:hover {
+	border-color: #ddd transparent #ddd #ddd!important;
+	*border-right-color: #ffffff!important;
+}
+
+

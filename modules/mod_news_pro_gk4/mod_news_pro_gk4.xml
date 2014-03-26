@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>mod_news_pro_gk4</name>
+	<creationDate>07/02/2013</creationDate>
+	<author>Gavick.com</author>
+	<copyright>(C) 2009-2013 Gavick.com</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>info@gavick.com</authorEmail>
+	<authorUrl>www.gavick.com</authorUrl>
+	<version>GK4 3.3.7</version>
+	<description><![CDATA[
+MODNEWSPRO_GK4
+	]]></description>
+	<files>
+		<filename module="mod_news_pro_gk4">mod_news_pro_gk4.php</filename>
+		<filename module="mod_news_pro_gk4">helper.php</filename>
+		<filename module="mod_news_pro_gk4">index.html</filename>
+		<folder>admin/</folder>
+		<folder>cache/</folder>	
+		<folder>gk_classes/</folder>
+		<folder>interface/</folder>	            
+		<folder>tmpl/</folder>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB.mod_news_pro_gk4.ini</language>
+		<language tag="ru-RU">ru-RU.mod_news_pro_gk4.ini</language>
+	</languages>
+
+	<config>
+	   <fields name="params">
+        	<fieldset name="NSP_BASIC_SETTINGS" addfieldpath="/modules/mod_news_pro_gk4/admin/elements">
+ 	            <field type="asset" path="modules/mod_news_pro_gk4/admin/" />
+                <field name="moduleclass_sfx" type="text" default="" label="MOD_NEWS_PRO_GK4_MODCLASSSUFFIX" description="MOD_NEWS_PRO_GK4_MODCLASSSUFFIX_DESC" />
+             	<field name="automatic_module_id" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_AUTOMATIC_MODULE_ID" description="MOD_NEWS_PRO_GK4_AUTOMATIC_MODULE_ID_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+    	        <field name="module_unique_id" type="text" default="newspro1" label="MOD_NEWS_PRO_GK4_MODID" description="MOD_NEWS_PRO_GK4_MODID_DESC" />
+                <field name="module_mode" type="list" default="normal" label="MOD_NEWS_PRO_GK4_MOD_MODE" description="MOD_NEWS_PRO_GK4_MOD_MODE_DESC">
+    	    		<option value="normal">MOD_NEWS_PRO_GK4_NORMAL_MODE</option>
+    	    		<option value="Portal_Mode_1">MOD_NEWS_PRO_GK4_PORTAL_MODE_1</option>
+    	    		<option value="Portal_Mode_2">MOD_NEWS_PRO_GK4_PORTAL_MODE_2</option>
+    	    		<option value="Portal_Mode_3">MOD_NEWS_PRO_GK4_PORTAL_MODE_3</option>
+    	    		<option value="Portal_Mode_4">MOD_NEWS_PRO_GK4_PORTAL_MODE_4</option>
+    	    		<option value="Portal_Mode_5">MOD_NEWS_PRO_GK4_PORTAL_MODE_5</option>
+    	    		<option value="Portal_Mode_6">MOD_NEWS_PRO_GK4_PORTAL_MODE_6</option>
+    	    		<option value="Portal_Mode_7">MOD_NEWS_PRO_GK4_PORTAL_MODE_7</option>
+                </field>
+    	    	<field name="module_width" type="text" class="input-percents input-small" default="100" size="5" label="MOD_NEWS_PRO_GK4_MODULE_WIDTH" description="MOD_NEWS_PRO_GK4_MODULE_WIDTH_DESC" />
+                <field name="portal_mode_1_module_height" type="text" size="5" class="input-pixels input-small" default="320" label="MOD_NEWS_PRO_GK4_NEWS_PORTAL_MODE_1_MODULE_HEIGHT" description="MOD_NEWS_PRO_GK4_NEWS_PORTAL_MODE_1_MODULE_HEIGHT_DESC" />
+    	    	<field name="module_font_size" type="list" default="100" label="MOD_NEWS_PRO_GK4_MODULE_FONT_SIZE" description="MOD_NEWS_PRO_GK4_MODULE_FONT_SIZE_DESC">
+                        <option value="80">80%</option>
+                        <option value="90">90%</option>
+                        <option value="100">100%</option>
+                        <option value="110">110%</option>
+                        <option value="120">120%</option>
+                        <option value="130">130%</option>
+                        <option value="140">140%</option>
+                        <option value="150">150%</option>
+                        <option value="160">160%</option>
+                        <option value="170">170%</option>
+                        <option value="180">180%</option>
+                        <option value="190">190%</option>
+                        <option value="200">200%</option>
+                </field>
+            </fieldset>
+            
+            <fieldset addfieldpath="/modules/mod_news_pro_gk4/admin/elements" name="NSP_DATA_SOURCE">
+        		<field name="data_source" type="list" default="com_categories" label="MOD_NEWS_PRO_GK4_DATA_SOURCE" description="MOD_NEWS_PRO_GK4_DATA_SOURCE_DESC">
+    	            <option value="com_categories">MOD_NEWS_PRO_GK4_COM_CONTENT_CATEGORIES</option>
+    	            <option value="com_articles">MOD_NEWS_PRO_GK4_COM_CONTENT_ARTICLES</option>
+    	            <option value="com_all_articles">MOD_NEWS_PRO_GK4_ALL_COM_CONTENT_ARTICLES</option>
+                    <option value="k2_categories">MOD_NEWS_PRO_GK4_K2_CATEGORIES</option>
+	                <option value="k2_tags">MOD_NEWS_PRO_GK4_K2_TAGS</option>
+                    <option value="k2_articles">MOD_NEWS_PRO_GK4_K2_ARTICLES</option>
+                    <option value="all_k2_articles">MOD_NEWS_PRO_GK4_ALL_K2_ARTICLES</option>
+                </field>
+            	<field name="com_categories" type="category" extension="com_content" default="" multiple="multiple" label="MOD_NEWS_PRO_GK4_COM_CATEGORIES" description="MOD_NEWS_PRO_GK4_COM_CATEGORIES_DESC" />
+            	<field name="com_articles" type="text" default="" label="MOD_NEWS_PRO_GK4_COM_ARTICLES" size="5" description="MOD_NEWS_PRO_GK4_COM_ARTICLES_DESC" />
+                <field name="k2_categories" type="k2multicategories" extension="k2multicategories" default="" size="50" multiple="multiple" label="MOD_NEWS_PRO_GK4_K2CATEGORIES" description="MOD_NEWS_PRO_GK4_K2CATEGORIES_DESC" />
+                <field name="k2_tags" type="k2tags" extension="k2tags" default="" size="25" label="MOD_NEWS_PRO_GK4_K2TAGS" description="MOD_NEWS_PRO_GK4_K2TAGS_DESC" />
+	        	<field name="k2_articles" type="text" default="" size="25" label="MOD_NEWS_PRO_GK4_K2ITEMS" description="MOD_NEWS_PRO_GK4_K2ITEMS_DESC" />
+	        	                
+            	<field name="news_sort_value" type="list" default="created" label="MOD_NEWS_PRO_GK4_NEWS_SORT_VALUE" description="MOD_NEWS_PRO_GK4_NEWS_SORT_VALUE_DESC">
+                            <option value="created">MOD_NEWS_PRO_GK4_DATE</option>
+                            <option value="title">MOD_NEWS_PRO_GK4_TITLE</option>
+    						<option value="ordering">MOD_NEWS_PRO_GK4_ORDER</option>
+                            <option value="fordering">MOD_NEWS_PRO_GK4_FRONTPAGE_ORDER</option>
+                            <option value="random">MOD_NEWS_PRO_GK4_RANDOM</option>
+                            <option value="hits">MOD_NEWS_PRO_GK4_HITS</option>
+          		</field>
+                <field name="news_sort_order" type="radio" class="btn-group" default="DESC" label="MOD_NEWS_PRO_GK4_NEWS_SORT_ORDER" description="MOD_NEWS_PRO_GK4_NEWS_SORT_ORDER_DESC">
+                        <option value="ASC">MOD_NEWS_PRO_GK4_ASC</option>
+                        <option value="DESC">MOD_NEWS_PRO_GK4_DESC</option>
+                </field>
+                <field name="news_since" type="calendar" class="input-small" default="" label="MOD_NEWS_PRO_GK4_NEWS_SINCE" description="MOD_NEWS_PRO_GK4_NEWS_SINCE_DESC" format="%Y-%m-%d 00:00:00" />    
+                <field name="news_frontpage" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_FRONTPAGE_FEATURED" description="MOD_NEWS_PRO_GK4_FRONTPAGE_FEATURED_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+    		  	<field name="unauthorized" default="0" type="radio" class="btn-group" label="MOD_NEWS_PRO_GK4_UNAUTH" description="MOD_NEWS_PRO_GK4_UNAUTH_DESC">
+                		<option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="only_frontpage" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_ONLYFRONTPAGE_ONLYFEATURED" description="MOD_NEWS_PRO_GK4_ONLYFRONTPAGE_ONLYFEATURED_DESC">
+                		<option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="startposition" type="text" class="input-small" default="0" size="5" label="MOD_NEWS_PRO_GK4_FIRST_NEWS" description="MOD_NEWS_PRO_GK4_FIRST_NEWS_DESC"/>
+            	<field name="time_offset" type="list" class="input-small" default="0" label="MOD_NEWS_PRO_GK4_TIME_OFFSET" description="MOD_NEWS_PRO_GK4_TIME_OFFSET_DESC">
+                		<option value="-12">-12</option>
+                		<option value="-11">-11</option>
+                		<option value="-10">-10</option>
+                		<option value="-9">-9</option>
+                		<option value="-8">-8</option>
+                		<option value="-7">-7</option>
+                		<option value="-6">-6</option>
+                		<option value="-5">-5</option>
+                		<option value="-4">-4</option>
+                		<option value="-3">-3</option>
+                		<option value="-2">-2</option>
+                		<option value="-1">-1</option>
+                        <option value="0">0</option>
+                		<option value="1">+1</option>
+                		<option value="2">+2</option>
+                		<option value="3">+3</option>
+                		<option value="4">+4</option>
+                		<option value="5">+5</option>
+                		<option value="6">+6</option>
+                		<option value="7">+7</option>
+                		<option value="8">+8</option>
+                		<option value="9">+9</option>
+                		<option value="10">+10</option>
+                		<option value="11">+11</option>
+                		<option value="12">+12</option>
+                </field>            
+            </fieldset>
+
+            <fieldset name="NSP_ARTICLE_LAYOUT">
+              	<field name="news_portal_mode_amount" type="text" default="10" size="5" class="input-small" label="MOD_NEWS_PRO_GK4_NEWS_PORTAL_MODE_AMOUNT" description="MOD_NEWS_PRO_GK4_NEWS_PORTAL_MODE_AMOUNT_DESC" />
+				<field name="news_portal_mode_7_width" type="text" class="input-small" default="265" size="5" label="MOD_NEWS_PRO_GK4_NEWS_PORTAL_MODE_7_WIDTH" description="MOD_NEWS_PRO_GK4_NEWS_PORTAL_MODE_7_WIDTH_DESC" />
+                <field name="news_full_pages" type="text" class="input-small" default="3" size="5" label="MOD_NEWS_PRO_GK4_NEWS_FULL_PAGES_AMOUNT" description="MOD_NEWS_PRO_GK4_NEWS_FULL_PAGES_AMOUNT_DESC"/>
+       			<field name="news_column" type="text" class="input-small" default="1" size="5" label="MOD_NEWS_PRO_GK4_COLUMNS" description="MOD_NEWS_PRO_GK4_COLUMNS_DESC"/>
+            	<field name="news_rows" type="text" class="input-small" default="1" size="5" label="MOD_NEWS_PRO_GK4_ROWS" description="MOD_NEWS_PRO_GK4_ROWS_DESC"/>
+				<field name="top_interface_style" type="list" default="arrows_with_pagination" label="MOD_NEWS_PRO_GK4_TOP_INTERFACE_STYLE" description="">
+				    <option value="none">MOD_NEWS_PRO_GK4_NONE</option>
+				    <option value="arrows">MOD_NEWS_PRO_GK4_ARROWS</option>
+				    <option value="pagination">MOD_NEWS_PRO_GK4_PAGINATION</option>
+				    <option value="counter">MOD_NEWS_PRO_GK4_COUNTER</option>
+					<option value="arrows_with_pagination">MOD_NEWS_PRO_GK4_ARROWS_WITH_PAGINATION</option>
+				    <option value="arrows_with_counter">MOD_NEWS_PRO_GK4_ARROWS_WITH_COUNTER</option>
+				</field>
+				<field name="gk_line_2" type="line" text="MOD_NEWS_PRO_GK4_LINE_HEADER_LAYOUT" />
+				<field name="news_content_header_pos" type="list" default="left" label="MOD_NEWS_PRO_GK4_HEAD_POS" description="">
+                        <option value="left">MOD_NEWS_PRO_GK4_TLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_TRIGHT</option>
+                        <option value="center">MOD_NEWS_PRO_GK4_TCENTER</option>
+                </field>
+                <field name="news_content_header_float" type="radio" class="btn-group" default="none" label="MOD_NEWS_PRO_GK4_HEAD_FLOAT" description="">
+                        <option value="null">MOD_NEWS_PRO_GK4_FNULL</option>
+                        <option value="none">MOD_NEWS_PRO_GK4_FNONE</option>
+                        <option value="left">MOD_NEWS_PRO_GK4_FLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_FRIGHT</option>
+                </field>
+                <field name="news_header_link" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_HEAD_LINK" description="">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="use_title_alias" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_TITLE_ALIAS" description="">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="title_limit_type" type="radio" class="btn-group" default="chars" label="MOD_NEWS_PRO_GK4_TITLE_LIMIT_TYPE" description="">
+                        <option value="words">MOD_NEWS_PRO_GK4_WORDS</option>
+                        <option value="chars">MOD_NEWS_PRO_GK4_CHARS</option>
+                </field>
+                <field name="title_limit" class="input-small" type="text" default="40" size="5" label="MOD_NEWS_PRO_GK4_TITLE_MAX_AMOUNT" description=""/>
+                <field name="gk_line_3" type="line" text="MOD_NEWS_PRO_GK4_LINE_IMAGE_LAYOUT" />
+                <field name="news_content_image_pos" type="list" default="left" label="MOD_NEWS_PRO_GK4_IMAGE_POS" description="">
+                        <option value="left">MOD_NEWS_PRO_GK4_TLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_TRIGHT</option>
+                        <option value="center">MOD_NEWS_PRO_GK4_TCENTER</option>
+                </field>
+                <field name="news_content_image_float" type="list" class="inputbox float" default="left" label="MOD_NEWS_PRO_GK4_IMAGE_FLOAT" description="">
+                		<option value="null">MOD_NEWS_PRO_GK4_FNULL</option>
+                        <option value="none">MOD_NEWS_PRO_GK4_FNONE</option>
+                        <option value="left">MOD_NEWS_PRO_GK4_FLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_FRIGHT</option>
+                </field>
+                <field name="news_image_link" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_IMAGE_LINK" description="">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="gk_line_4" type="line" text="MOD_NEWS_PRO_GK4_LINE_TEXT_LAYOUT" />
+                <field name="news_content_text_pos" type="list" default="left" label="MOD_NEWS_PRO_GK4_TEXT_POS" description="">
+						<option value="left">MOD_NEWS_PRO_GK4_TLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_TRIGHT</option>
+                        <option value="center">MOD_NEWS_PRO_GK4_TCENTER</option>
+                        <option value="justify">MOD_NEWS_PRO_GK4_TJUSTIFY</option>
+                </field>
+                <field name="news_content_text_float" type="list" class="inputbox float" default="left" label="MOD_NEWS_PRO_GK4_TEXT_FLOAT" description="">
+                		<option value="null">MOD_NEWS_PRO_GK4_FNULL</option>
+                        <option value="none">MOD_NEWS_PRO_GK4_FNONE</option>
+                        <option value="left">MOD_NEWS_PRO_GK4_FLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_FRIGHT</option>
+                </field>
+                <field name="news_text_link" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_TEXT_LINK" description="">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+    			<field name="news_limit_type" type="radio" class="btn-group" default="words" label="MOD_NEWS_PRO_GK4_NEWS_LIMIT_TYPE" description="">
+                        <option value="words">MOD_NEWS_PRO_GK4_WORDS</option>
+                        <option value="chars">MOD_NEWS_PRO_GK4_CHARS</option>
+                </field>
+                <field name="news_limit" class="input-small" type="text" default="30" size="5" label="MOD_NEWS_PRO_GK4_NEWS_MAX_AMOUNT" description=""/>
+                <field name="gk_line_5" type="line" text="MOD_NEWS_PRO_GK4_LINE_INFO_LAYOUT" />
+                <field name="news_content_info_pos" type="list" default="left" label="MOD_NEWS_PRO_GK4_INFO_POS" description="">
+                        <option value="left">MOD_NEWS_PRO_GK4_TLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_TRIGHT</option>
+                        <option value="center">MOD_NEWS_PRO_GK4_TCENTER</option>
+                </field>
+                <field name="news_content_info_float" type="list" class="inputbox float" default="none" label="MOD_NEWS_PRO_GK4_INFO_FLOAT" description="">
+                		<option value="null">MOD_NEWS_PRO_GK4_FNULL</option>
+                        <option value="none">MOD_NEWS_PRO_GK4_FNONE</option>
+                        <option value="left">MOD_NEWS_PRO_GK4_FLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_FRIGHT</option>
+                </field>
+                <field name="news_content_info2_pos" type="list" default="left" label="MOD_NEWS_PRO_GK4_INFO2_POS" description="">
+                        <option value="left">MOD_NEWS_PRO_GK4_TLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_TRIGHT</option>
+                        <option value="center">MOD_NEWS_PRO_GK4_TCENTER</option>
+                </field>
+                <field name="news_content_info2_float" type="list" class="inputbox float" default="left" label="MOD_NEWS_PRO_GK4_INFO2_FLOAT" description="">
+                		<option value="null">MOD_NEWS_PRO_GK4_FNULL</option>
+                        <option value="none">MOD_NEWS_PRO_GK4_FNONE</option>
+                        <option value="left">MOD_NEWS_PRO_GK4_FLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_FRIGHT</option>
+                </field>
+                <field name="info_format" type="text" default="%DATE %HITS %CATEGORY %AUTHOR" size="32" label="MOD_NEWS_PRO_GK4_INFO_FORMAT" description="MOD_NEWS_PRO_GK4_INFO_FORMAT_DESC"/>
+                <field name="info2_format" type="text" default="" size="32" label="MOD_NEWS_PRO_GK4_INFO2_FORMAT" description="MOD_NEWS_PRO_GK4_INFO2_FORMAT_DESC"/>
+                <field name="category_link" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_CATEGORY_LINK" description="MOD_NEWS_PRO_GK4_CATEGORY_LINK_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+   				<field name="date_format" type="text" default="d-m-Y" size="10" label="MOD_NEWS_PRO_GK4_DATE_FORMAT" description="MOD_NEWS_PRO_GK4_DATE_FORMAT_DESC"/>   
+				<field name="date_publish" type="list" default="0" label="MOD_NEWS_PRO_GK4_DATEPUBLISH" description="MOD_NEWS_PRO_GK4_DATEPUBLISH_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DATE_CREATE</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_DATE_PUBLISH</option>
+                </field> 
+				<field name="username" type="list" class="inputbox" default="0" label="MOD_NEWS_PRO_GK4_AUTHORNAME" description="">
+                        <option value="users.name">MOD_NEWS_PRO_GK4_NAME</option>
+                        <option value="users.username">MOD_NEWS_PRO_GK4_USERNAME</option>
+                        <option value="content.created_by_alias">MOD_NEWS_PRO_GK4_ALIAS</option>
+                </field>  
+			    <field name="user_avatar" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_USER_AVATAR" description="MOD_NEWS_PRO_GK4_USER_AVATAR_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="avatar_size" type="text" class="input-pixels input-small" size="5" default="16" label="MOD_NEWS_PRO_GK4_AVATAR_SIZE" description="MOD_NEWS_PRO_GK4_AVATAR_SIZE_DESC" />
+			   
+			    <field name="gk_line_1" type="line" text="MOD_NEWS_PRO_GK4_LINE_ARTICLE_LAYOUT" />
+			    <field name="art_padding" type="text" class="text_area last-in-group" default="0 20px 20px 0" label="MOD_NEWS_PRO_GK4_ART_PADDING" description="MOD_NEWS_PRO_GK4_ART_PADDING_DESC"/>
+                <field name="news_header_order" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_HEAD_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </field>
+                <field name="news_header_enabled" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_NEWS_HEADER_ENABLED" description="MOD_NEWS_PRO_GK4_NEWS_HEADER_ENABLED_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="news_image_order" type="radio" class="btn-group" default="3" label="MOD_NEWS_PRO_GK4_IMAGE_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </field>
+                <field name="news_image_enabled" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_NEWS_IMAGE_ENABLED" description="MOD_NEWS_PRO_GK4_NEWS_IMAGE_ENABLED_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="news_text_order" type="radio" class="btn-group" default="4" label="MOD_NEWS_PRO_GK4_TEXT_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </field>
+                <field name="news_text_enabled" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_NEWS_TEXT_ENABLED" description="MOD_NEWS_PRO_GK4_NEWS_TEXT_ENABLED_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="news_info_order" type="radio" class="btn-group" default="2" label="MOD_NEWS_PRO_GK4_INFO_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </field>
+                <field name="news_info_enabled" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_NEWS_INFO_ENABLED" description="MOD_NEWS_PRO_GK4_NEWS_INFO_ENABLED_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="news_info2_order" type="radio" class="btn-group" default="5" label="MOD_NEWS_PRO_GK4_INFO2_ORDER" description="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                </field>
+                <field name="news_info2_enabled" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_NEWS_INFO2_ENABLED" description="MOD_NEWS_PRO_GK4_NEWS_INFO2_ENABLED_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+             
+ 
+            	<field name="news_content_readmore_pos" type="list" default="right" label="MOD_NEWS_PRO_GK4_MORE_POS" description="">
+						<option value="left">MOD_NEWS_PRO_GK4_FLEFT</option>
+                        <option value="right">MOD_NEWS_PRO_GK4_FRIGHT</option>
+                        <option value="after">MOD_NEWS_PRO_GK4_AFTER</option>
+                </field>
+                <field name="news_readmore_enabled" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_NEWS_READMORE_ENABLED" description="MOD_NEWS_PRO_GK4_NEWS_READMORE_ENABLED_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="NSP_LINKS_LAYOUT">
+                <field name="news_short_pages" type="text" default="3" class="input-small" size="5" label="MOD_NEWS_PRO_GK4_NEWS_SHORT_PAGES_AMOUNT" description="MOD_NEWS_PRO_GK4_NEWS_SHORT_PAGES_AMOUNT_DESC"/>
+				<field name="links_amount" type="text" class="input-small" default="3" size="5" label="MOD_NEWS_PRO_GK4_LINKSAMOUNT" description="MOD_NEWS_PRO_GK4_LINKSAMOUNT_DESC"/>
+				<field name="links_columns_amount" type="text" class="input-small" default="1" size="5" label="MOD_NEWS_PRO_GK4_LINKSCOLAMOUNT" description="MOD_NEWS_PRO_GK4_LINKSCOLAMOUNT_DESC"/>
+	    		<field name="bottom_interface_style" type="list" default="arrows_with_counter" label="MOD_NEWS_PRO_GK4_BOTTOM_INTERFACE_STYLE" description="">
+	    		    <option value="none">MOD_NEWS_PRO_GK4_NONE</option>
+	    		    <option value="arrows">MOD_NEWS_PRO_GK4_ARROWS</option>
+	    		    <option value="pagination">MOD_NEWS_PRO_GK4_PAGINATION</option>
+	    		    <option value="counter">MOD_NEWS_PRO_GK4_COUNTER</option>
+	    			<option value="arrows_with_pagination">MOD_NEWS_PRO_GK4_ARROWS_WITH_PAGINATION</option>
+	    		    <option value="arrows_with_counter">MOD_NEWS_PRO_GK4_ARROWS_WITH_COUNTER</option>
+	    		</field>
+		    	<field name="links_margin" type="text" class="input-small" default="0" label="MOD_NEWS_PRO_GK4_LINKS_MARGIN" description="MOD_NEWS_PRO_GK4_LINKS_MARGIN_DESC" />
+		    	<field name="links_position" type="list" default="bottom" label="MOD_NEWS_PRO_GK4_LINKS_POSITION" description="MOD_NEWS_PRO_GK4_LINKS_POSITION_DESC">
+		            <option value="bottom">MOD_NEWS_PRO_GK4_BOTTOM</option>
+		            <option value="left">MOD_NEWS_PRO_GK4_LEFT</option>
+		            <option value="right">MOD_NEWS_PRO_GK4_RIGHT</option>
+	            </field>
+		    	<field name="links_width" class="input-small input-percents" type="text" default="50" label="MOD_NEWS_PRO_GK4_LINKS_WIDTH" description="MOD_NEWS_PRO_GK4_LINKS_WIDTH_DESC" />
+		    	<field name="show_list_description" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_LINKS_LIST_SHOW_DESCRIPTION" description="">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+ 	    		<field name="list_title_limit_type" type="radio" class="btn-group" default="words" label="MOD_NEWS_PRO_GK4_LIST_TITLE_LIMIT_TYPE" description="">
+                        <option value="words">MOD_NEWS_PRO_GK4_WORDS</option>
+                        <option value="chars">MOD_NEWS_PRO_GK4_CHARS</option>
+                </field>
+                <field name="list_title_limit" class="input-small" type="text" default="20" size="5" label="MOD_NEWS_PRO_GK4_LIST_TITLE_MAX_AMOUNT" description=""/>
+                <field name="list_text_limit_type" type="radio" class="btn-group" default="words" label="MOD_NEWS_PRO_GK4_LIST_TEXT_LIMIT_TYPE" description="">
+                        <option value="words">MOD_NEWS_PRO_GK4_WORDS</option>
+                        <option value="chars">MOD_NEWS_PRO_GK4_CHARS</option>
+                </field>
+                <field name="list_text_limit" class="input-small" type="text" default="30" size="5" label="MOD_NEWS_PRO_GK4_LIST_TEXT_MAX_AMOUNT" description=""/>
+            </fieldset>    
+
+            <fieldset name="NSP_THUMBNAILS">                
+                <field name="responsive_images" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_RESPONSIVE_IMAGES" description="MOD_NEWS_PRO_GK4_RESPONSIVE_IMAGES_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                
+                <field name="wrap_content" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_WRAP_CONTENT" description="MOD_NEWS_PRO_GK4_WRAP_CONTENT_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                
+                <field name="memory_limit" type="list" default="128M" label="MOD_NEWS_PRO_GK4_MEMORY_LIMIT" description="MOD_NEWS_PRO_GK4_MEMORY_LIMIT_DESC">
+                		<option value="16M">16MB</option>
+                        <option value="32M">32MB</option>
+                        <option value="64M">64MB</option>
+                        <option value="96M">96MB</option>
+                        <option value="128M">128MB</option>
+                        <option value="192M">192MB</option>
+                        <option value="256M">256MB</option>
+                        <option value="384M">384MB</option>
+                        <option value="512M">512MB</option>
+                </field>
+                
+                <field name="create_thumbs" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_CREATE_THUMBS" description="MOD_NEWS_PRO_GK4_CREATE_THUMBS_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="k2_thumbs" type="list" default="first" label="MOD_NEWS_PRO_GK4_K2_THUMBS" description="MOD_NEWS_PRO_GK4_K2_THUMBS_DESC">
+                        <option value="joomla">MOD_NEWS_PRO_GK4_JOOMLA_IMAGE</option>
+                        <option value="k2">MOD_NEWS_PRO_GK4_K2_IMAGE</option>
+						<option value="first">MOD_NEWS_PRO_GK4_FIRST_IMAGE</option>
+                </field>
+				<field name="thumb_image_type" type="list" default="full" label="MOD_NEWS_PRO_GK4_THUMBS_TYPE" description="MOD_NEWS_PRO_GK4_THUMBS_TYPE_DESC">
+                        <option value="intro">MOD_NEWS_PRO_GK4_INTRO_IMAGE</option>
+                        <option value="full">MOD_NEWS_PRO_GK4_FULL_IMAGE</option>
+                </field>
+                <field name="img_auto_scale" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_IMAGE_AUTO_SCALE" description="MOD_NEWS_PRO_GK4_IMAGE_AUTO_SCALE_DESC">
+				        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+				        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+				</field>
+				<field name="img_keep_aspect_ratio" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_IMAGE_KEEP_ASPECT_RATIO" description="MOD_NEWS_PRO_GK4_IMAGE_KEEP_ASPECT_RATIO_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="img_width" type="text" default="160" size="5" class="input-pixels input-small" label="MOD_NEWS_PRO_GK4_IMAGE_W" description="MOD_NEWS_PRO_GK4_IMAGE_W_DESC"/>
+				<field name="img_height" type="text" default="120" size="5" class="input-pixels input-small" label="MOD_NEWS_PRO_GK4_IMAGE_H" description="MOD_NEWS_PRO_GK4_IMAGE_H_DESC"/>
+				<field name="img_margin" type="text" default="6px 14px 0 0" label="MOD_NEWS_PRO_GK4_IMAGE_MARGIN" description="MOD_NEWS_PRO_GK4_IMAGE_MARGIN_DESC"/>
+                <field name="img_bg" type="text" default="#000" size="5" label="MOD_NEWS_PRO_GK4_IMAGE_BG" description="MOD_NEWS_PRO_GK4_IMAGE_BG_DESC"/>   
+				<field name="img_stretch" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_IMAGE_STRETCH" description="MOD_NEWS_PRO_GK4_IMAGE_STRETCH_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+				<field name="img_quality" type="text"  class="input-percents input-small" default="95" size="5" label="MOD_NEWS_PRO_GK4_IMAGE_QUALITY" description="MOD_NEWS_PRO_GK4_IMAGE_QUALITY_DESC"/>   
+				<field name="cache_time" type="text" default="30" size="5" class="input-minutes input-small" label="MOD_NEWS_PRO_GK4_CACHE_TIME" description="MOD_NEWS_PRO_GK4_CACHE_TIME_DESC"/>   
+                <field name="simple_crop_editor" type="simplecrop" default="" label="MOD_NEWS_PRO_GK4_SIMPLE_CROP" description="MOD_NEWS_PRO_GK4_SIMPLE_CROP_DESC"/>
+                <field name="simple_crop_top" type="text" class="input-percents" default="10" size="5" label="MOD_NEWS_PRO_GK4_SIMPLE_CROP_TOP" description="MOD_NEWS_PRO_GK4_SIMPLE_CROP_TOP_DESC"/>
+                <field name="simple_crop_bottom" type="text" class="input-percents" default="10" size="5" label="MOD_NEWS_PRO_GK4_SIMPLE_CROP_BOTTOM" description="MOD_NEWS_PRO_GK4_SIMPLE_CROP_BOTTOM_DESC"/>
+                <field name="simple_crop_left" type="text" class="input-percents" default="10" size="5" label="MOD_NEWS_PRO_GK4_SIMPLE_CROP_LEFT" description="MOD_NEWS_PRO_GK4_SIMPLE_CROP_LEFT_DESC"/>
+                <field name="simple_crop_right" type="text" class="input-percents" default="10" size="5" label="MOD_NEWS_PRO_GK4_SIMPLE_CROP_RIGHT" description="MOD_NEWS_PRO_GK4_SIMPLE_CROP_RIGHT_DESC"/>
+                <field name="crop_rules" type="textarea"  default="" label="MOD_NEWS_PRO_GK4_CROP_RULES" description="MOD_NEWS_PRO_GK4_CROP_RULES_DESC" />
+            </fieldset>
+
+            <fieldset name="NSP_ADDITIONAL_SETTINGS">
+	             <field name="autoanim" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_AUTOANIM" description="MOD_NEWS_PRO_GK4_AUTOANIM_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>                
+                <field name="hover_anim" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_HOVERANIM" description="MOD_NEWS_PRO_GK4_HOVERANIM_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>  
+                <field name="animation_speed" class="input-ms input-small" type="text" default="400" size="5" label="MOD_NEWS_PRO_GK4_ANIMSPEED" description="MOD_NEWS_PRO_GK4_ANIMSPEED_DESC"/>        
+                <field name="animation_interval" class="input-ms input-small" type="text" default="5000" size="5" label="MOD_NEWS_PRO_GK4_ANIMINTERVAL" description="MOD_NEWS_PRO_GK4_ANIMINTERVAL_DESC"/>   
+                <field name="news_portal_mode_3_open_first" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_NEWS_PORTAL_MODE_3_OPEN_FIRST" description="MOD_NEWS_PRO_GK4_NEWS_PORTAL_MODE_3_OPEN_FIRST_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="animation_function" type="list" default="Fx.Transitions.Expo.easeIn" label="MOD_NEWS_PRO_GK4_ANIMATION_FUNCTION" description="MOD_NEWS_PRO_GK4_ANIMATION_FUNCTION_DESC">
+                        <option value="Fx.Transitions.linear">linear</option>
+                        <option value="Fx.Transitions.Quad.easeIn">Quad.easeIn</option>
+                        <option value="Fx.Transitions.Quad.easeOut">Quad.easeOut</option>
+                        <option value="Fx.Transitions.Quad.easeInOut">Quad.easeInOut</option>
+                        <option value="Fx.Transitions.Cubic.easeIn">Cubic.easeIn</option>
+                        <option value="Fx.Transitions.Cubic.easeOut">Cubic.easeOut</option>
+                        <option value="Fx.Transitions.Cubic.easeInOut">Cubic.easeInOut</option>
+                        <option value="Fx.Transitions.Quart.easeIn">Quart.easeIn</option>
+                        <option value="Fx.Transitions.Quart.easeOut">Quart.easeOut</option>
+                        <option value="Fx.Transitions.Quart.easeInOut">Quart.easeInOut</option>
+                        <option value="Fx.Transitions.Quint.easeIn">Quint.easeIn</option>
+                        <option value="Fx.Transitions.Quint.easeOut">Quint.easeOut</option>
+                        <option value="Fx.Transitions.Quint.easeInOut">Quint.easeInOut</option>
+                        <option value="Fx.Transitions.Pow.easeIn">Pow.easeIn</option>
+                        <option value="Fx.Transitions.Pow.easeOut">Pow.easeOut</option>
+                        <option value="Fx.Transitions.Pow.easeInOut">Pow.easeInOut</option>
+                        <option value="Fx.Transitions.Expo.easeIn">Expo.easeIn</option>
+                        <option value="Fx.Transitions.Expo.easeOut">Expo.easeOut</option>
+                        <option value="Fx.Transitions.Expo.easeInOut">Expo.easeInOut</option>
+                        <option value="Fx.Transitions.Circ.easeIn">Circ.easeIn</option>
+                        <option value="Fx.Transitions.Circ.easeOut">Circ.easeOut</option>
+                        <option value="Fx.Transitions.Circ.easeInOut">Circ.easeInOut</option>
+                        <option value="Fx.Transitions.Sine.easeIn">Sine.easeIn</option>
+                        <option value="Fx.Transitions.Sine.easeOut">Sine.easeOut</option>
+                        <option value="Fx.Transitions.Sine.easeInOut">Sine.easeInOut</option>
+                        <option value="Fx.Transitions.Back.easeIn">Back.easeIn</option>
+                        <option value="Fx.Transitions.Back.easeOut">Back.easeOut</option>
+                        <option value="Fx.Transitions.Back.easeInOut">Back.easeInOut</option>
+                        <option value="Fx.Transitions.Bounce.easeIn">Bounce.easeIn</option>
+                        <option value="Fx.Transitions.Bounce.easeOut">Bounce.easeOut</option>
+                        <option value="Fx.Transitions.Bounce.easeInOut">Bounce.easeInOut</option>
+                        <option value="Fx.Transitions.Elastic.easeIn">Elastic.easeIn</option>
+                        <option value="Fx.Transitions.Elastic.easeOut">Elastic.easeOut</option>
+                        <option value="Fx.Transitions.Elastic.easeInOut">Elastic.easeInOut</option>
+                </field>
+                <field name="gk_line_7" type="line" text="MOD_NEWS_PRO_GK4_LINE_ARTICLE_CONTENT" />
+                <field name="clean_xhtml" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_CLEANXHTML" description="MOD_NEWS_PRO_GK4_CLEANXHTML_DESC">
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                        <option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                </field>
+                <field name="more_text_value" class="input-small" type="text" default="..." size="5" label="MOD_NEWS_PRO_GK4_MORE_TEXT_VALUE" description="MOD_NEWS_PRO_GK4_MORE_TEXT_VALUE_DESC"/>
+               	<field name="parse_plugins" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_PARSE" description="MOD_NEWS_PRO_GK4_PARSE_DESC">
+						<option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                </field>    	
+   				<field name="clean_plugins" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_CLEANPLUGINS" description="MOD_NEWS_PRO_GK4_CLEANPLUGINS_DESC">
+						<option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                </field> 
+            </fieldset>
+           
+            <fieldset name="NSP_EXTERNAL_FILES">
+                <field name="useCSS" type="radio" class="btn-group" default="1" label="MOD_NEWS_PRO_GK4_USECSS" description="MOD_NEWS_PRO_GK4_USECSS_DESC">
+						<option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                </field>  
+                <field name="useScript" type="list" default="2" label="MOD_NEWS_PRO_GK4_USEJS" description="MOD_NEWS_PRO_GK4_USEJS_DESC">
+                        <option value="2">MOD_NEWS_PRO_GK4_AUTOMATIC</option>
+						<option value="1">MOD_NEWS_PRO_GK4_FORCEENABLED</option>
+                        <option value="0">MOD_NEWS_PRO_GK4_FORCEDISABLED</option>
+                </field> 
+                <field name="useRTL" type="radio" class="btn-group" default="0" label="MOD_NEWS_PRO_GK4_USERTL" description="MOD_NEWS_PRO_GK4_USERTL_DESC">
+						<option value="1">MOD_NEWS_PRO_GK4_ENABLED</option>
+                        <option value="0">MOD_NEWS_PRO_GK4_DISABLED</option>
+                </field> 
+            </fieldset>
+
+            <fieldset name="NSP_UPDATES" addfieldpath="/modules/mod_news_pro_gk4/admin/elements">
+                <field type="update" name="module_updates" /> 
+            </fieldset>
+            <fieldset name="NSP_ABOUT_US" addfieldpath="/modules/mod_news_pro_gk4/admin/elements">
+                <field type="about" name="about_us" /> 
+            </fieldset>
+       </fields>	
+	</config>
+</extension>

@@ -231,7 +231,7 @@ body {
 }
 
 #wrapper2 .item-page {
-    max-width: 660px
+    max-width: 726px;/*660px*/
 }
 
 #main {
@@ -405,6 +405,41 @@ body {
     margin: 0;
 }
 
+.search form{
+	float:right;
+	margin: -115px 10px 0px 0px;
+	
+}
+#searchForm {
+	margin: 10px 0 0 0;
+
+}
+.phrases-box .controls{
+	margin-left: -19px;
+
+}
+
+.only .checkbox{
+	margin-left: -11px;
+}
+
+.search .page-title{
+	margin: 10px 0 0 0;
+	font-size:24px;
+}
+
+button.btn.hasTooltip{
+	margin: 2px 0px 0px 5px;
+	height:27px;
+	width:99px;
+}
+
+.searchintro{
+	float:rigth;
+	margin: 50px 0 0 0;
+}
+
+
 /* ++++++++++++++  button for closing right column  ++++++++++++++ */
 
 #close {
@@ -568,6 +603,7 @@ body {
 img {
     border: 0 none;
     max-width: 100%;
+	margin: 0px 10px 10px 10px;
 }
 
 /* hide the mobile menu button */

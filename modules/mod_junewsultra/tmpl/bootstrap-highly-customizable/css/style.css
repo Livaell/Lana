@@ -1,0 +1,23 @@
+/**
+* @package Joomla! 3.0
+* @author 2012 (c)  Denys Nosov
+* @author web-site: www.joomla-ua.org
+* @copyright This module is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 License.
+**/
+
+.jubhc .jubhc-info, 
+.jubhc .jubhc-count, 
+.jubhc .jubhc-rating .span4 {
+	color: #999;	
+}
+
+.jubhc .jubhc-count {
+	font-size: 11px;	
+}
+
+.jubhc .jubhc-rating .span4 {
+	text-align: right;
+}
+	.jubhc .jubhc-rating .span4 .icon-eye-open {
+		font-size: 11px;
+	}

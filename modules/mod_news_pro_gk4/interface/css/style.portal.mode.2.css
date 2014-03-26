@@ -1,0 +1,52 @@
+.nspMainPortalMode2 { position: relative; margin: 0 -20px -20px -20px; }
+.nspMainPortalMode2 .nspArtsScroll { width: 20000px; }
+.nspMainPortalMode2 .nspArts { width: 100%; }
+.nspMainPortalMode2 .nspImages { padding: 15px 30px; background: #f7f7f7; }
+.nspMainPortalMode2 .nspArts,
+.nspMainPortalMode2 .nspArt { overflow: hidden; }
+.nspMainPortalMode2 .nspArt { float: left; }
+.nspMainPortalMode2 .nspArt:hover img { background: #b3b6b7; }
+.nspMainPortalMode2 .nspArt img { padding: 5px; background: transparent; margin: 0 !important; cursor: pointer; webkit-transition:background-color 0.4s ease-in; -moz-transition:background-color 0.4s ease-in; -o-transition:background-color 0.4s ease-in; transition:background-color 0.4s ease-in; }
+.nspMainPortalMode2 .nspArt img,
+.nspMainPortalMode2 .nspArt img a { display: block; }
+.nspMainPortalMode2 .nspArt.active img { background: #1a1a1a; margin: 0!important; }
+.nspMainPortalMode2 .nspArt.active >div > div { background: transparent url('../images/nsp_portal_mode_2_img.png') no-repeat center top; }
+.nspMainPortalMode2 .nspArt.active > div > div > div { background: transparent url('../images/nsp_portal_mode_2_img.png') no-repeat center bottom; }
+.nspMainPortalMode2 .nspArt >div > div { background-position: center 20%; padding-top: 5px; -moz-transition:background-position 0.4s ease-in; -o-transition:background-position 0.4s ease-in; transition:background-position 0.4s ease-in; }
+.nspMainPortalMode2 .nspArt > div > div > div { background-position: center 80%; padding-bottom: 5px; -moz-transition:background-position 0.4s ease-in; -o-transition:background-position 0.4s ease-in; transition:background-position 0.4s ease-in; }
+.nspMainPortalMode2 .nspBotInterface { border-top: 1px solid #e5e5e5; height: 48px; overflow: hidden; padding: 0 30px; position: relative; margin: 0!important; }
+.nspMainPortalMode2 .nspBotInterface .nspTextBlock { position: absolute; z-index:1; margin: 0 95px; height: 48px; }
+.nspMainPortalMode2 .nspBotInterface .nspArtHeadline { line-height:48px; height:48px; width: 100%; }
+.nspMainPortalMode2 .nspBotInterface .nspArtHeadline .nspInfo { color: #b3b6b7; float: left; font-size: 11px; border-right: 1px solid #eaeaea; margin:18px 0; height:12px; line-height:12px; padding-right:10px; margin-right:10px; }
+.nspMainPortalMode2 .nspBotInterface .nspArtHeadline .nspHeadline { float: left; }
+.nspMainPortalMode2 .nspBotInterface .nspArtHeadline .nspHeadline h4 { font-weight:bold; font-size: 12px; }
+.nspMainPortalMode2 .nspBotInterface .nspArtHeadline .nspHeadline h4 a { color: #1a1a1a; }
+.nspMainPortalMode2 .nspBotInterface .nspArtHeadline .nspHeadline h4 a:hover { color: #3477bb; }
+.nspMainPortalMode2 .nspBotInterface .nspPrev,
+.nspMainPortalMode2 .nspBotInterface .nspNext { float: left; display: block; height: 24px; line-height: 24px; margin-top: 13px; padding: 0 16px 0 32px!important; border-radius: 25px; background: #3f85cc url('../images/nsp_portal_mode_2_interface.png') no-repeat 7% 3px; color: #fff; cursor: pointer; font-size: 10px; font-weight: bold; text-transform: uppercase; }
+.nspMainPortalMode2 .nspBotInterface .nspPrev::selection,
+.nspMainPortalMode2 .nspBotInterface .nspNext::selection { background:transparent!important; }
+.nspMainPortalMode2 .nspBotInterface .nspPrev::-moz-selection,
+.nspMainPortalMode2 .nspBotInterface .nspNext::-moz-selection { background:transparent!important; } 
+.nspMainPortalMode2 .nspBotInterface .nspPrev::-webkit-selection,
+.nspMainPortalMode2 .nspBotInterface .nspNext::-webkit-selection { background:transparent!important; }
+.nspMainPortalMode2 .nspBotInterface .nspNext { float: right; background-position: 93% -22px; padding: 0 32px 0 16px !important; }
+.nspMainPortalMode2 .nspBotInterface .nspNext:hover,
+.nspMainPortalMode2 .nspBotInterface .nspPrev:hover { background-position: 93% -72px; background-color: #151515; text-decoration: none; }
+.nspMainPortalMode2 .nspBotInterface .nspPrev:hover { background-position: 7% -47px; }
+/* make element unvisible */
+.nspMainPortalMode2 .unvisible { height:1px; left:-10000px; overflow:hidden; position:absolute; top:auto; width:1px; }
+/* font-size classes */
+.nspFs80 { font-size:80%; }
+.nspFs90 { font-size:90%; }
+.nspFs100 { font-size:100%; }
+.nspFs110 { font-size:110%; }
+.nspFs120 { font-size:120%; }
+.nspFs130 { font-size:130%; }
+.nspFs140 { font-size:140%; }
+.nspFs150 { font-size:150%; }
+.nspFs160 { font-size:160%; }
+.nspFs170 { font-size:170%; }
+.nspFs180 { font-size:180%; }
+.nspFs190 { font-size:190%; }
+.nspFs200 { font-size:200%; }

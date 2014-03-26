@@ -1,0 +1,192 @@
+.nspMainPortalMode5 {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -15px;
+}
+.nspMainPortalMode5 .nspArtsScroll {
+    width: 20000px
+}
+.nspMainPortalMode5 .nspArts {
+    width: 100%
+}
+.nspMainPortalMode5 .nspImages {
+    padding: 0 28px
+}
+.nspMainPortalMode5 .nspArts,
+.nspMainPortalMode5 .nspArt {
+    overflow: hidden
+}
+.nspMainPortalMode5 .nspArt {
+    float: left;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -o-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.nspMainPortalMode5 .nspArt img {
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0!important;
+}
+.nspMainPortalMode5 .nspArt .nspImageGallery a {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.nspMainPortalMode5 .nspArt .nspImageGallery {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.nspMainPortalMode5 .nspArt .nspImageGallery img {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.nspMainPortalMode5 .nspArt:hover {
+    cursor: pointer
+}
+.nspMainPortalMode5 .nspArt:hover .nspHeader a {
+    color: #fb5a29
+}
+.nspMainPortalMode5 .nspArt:hover .nspImageGallery img {
+    -webkit-transform: scale(1.25) rotate(-7deg);
+    -moz-transform: scale(1.25) rotate(-7deg);
+    -ms-transform: scale(1.25) rotate(-7deg);
+    -o-transform: scale(1.25) rotate(-7deg);
+    transform: scale(1.25) rotate(-7deg);
+}
+.nspMainPortalMode5 .nspHeader {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0 0 0!important;
+    color: #535353;
+    font-size: 12px;
+    font-weight: 400;
+    text-shadow: 0 1px 0 #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.nspMainPortalMode5 .nspHeader a {
+    color: #535353
+}
+.nspMainPortalMode5 .nspHeader a:active,
+.nspMainPortalMode5 .nspHeader a:focus,
+.nspMainPortalMode5 .nspHeader a:hover {
+    color: #fb5a29
+}
+.nspMainPortalMode5 .nspArt {
+    padding: 0
+}
+.nspMainPortalMode5 .nspArt > div {
+    padding: 0;
+    position: relative;
+}
+.nspMainPortalMode5 .nspArt > div > div {
+    padding: 0
+}
+.nspMainPortalMode5 .nspPrev,
+.nspMainPortalMode5 .nspNext {
+    height: 16px;
+    width: 16px;
+    display: block;
+    background: transparent url('../images/nsp_portal_mode_5_interface.png') no-repeat 0 0;
+    text-indent: -999em;
+    margin-top: -8px;
+    cursor: pointer;
+}
+.nspMainPortalMode5 .nspPrev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+}
+.nspMainPortalMode5 .nspNext {
+    background-position: -16px 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+}
+.nspMainPortalMode5 .nspPrev:hover {
+    background-position: 0 -16px
+}
+.nspMainPortalMode5 .nspNext:hover {
+    background-position: -16px -16px
+}
+.nspMainPortalMode5 .nspPrev::selection,
+.nspMainPortalMode5 .nspNext::selection {
+    background: transparent!important
+}
+.nspMainPortalMode5 .nspPrev::-moz-selection,
+.nspMainPortalMode5 .nspNext::-moz-selection {
+    background: transparent!important
+}
+.nspMainPortalMode5 .nspPrev::-webkit-selection,
+.nspMainPortalMode5 .nspNext::-webkit-selection {
+    background: transparent!important
+}
+/* make element unvisible */
+.nspMainPortalMode5 .unvisible {
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 1px;
+}
+/* font-size classes */
+.nspFs80 {
+    font-size: 80%
+}
+.nspFs90 {
+    font-size: 90%
+}
+.nspFs100 {
+    font-size: 100%
+}
+.nspFs110 {
+    font-size: 110%
+}
+.nspFs120 {
+    font-size: 120%
+}
+.nspFs130 {
+    font-size: 130%
+}
+.nspFs140 {
+    font-size: 140%
+}
+.nspFs150 {
+    font-size: 150%
+}
+.nspFs160 {
+    font-size: 160%
+}
+.nspFs170 {
+    font-size: 170%
+}
+.nspFs180 {
+    font-size: 180%
+}
+.nspFs190 {
+    font-size: 190%
+}
+.nspFs200 {
+    font-size: 200%
+}

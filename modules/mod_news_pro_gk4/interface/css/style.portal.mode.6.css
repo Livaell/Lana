@@ -1,0 +1,186 @@
+.nspMainPortalMode6 {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -15px;
+}
+
+.nspMainPortalMode6 .nspSpeakers {
+	margin: 0 auto;
+	max-width: 864px;
+	position: relative;
+}
+
+.nspMainPortalMode6 .nspRestSpeakers {
+	left: -9999px;
+	position: absolute;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig {
+	background: transparent url('../images/speaker_big_bg.png') no-repeat 0 0;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 296px;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig > div {
+	-webkit-border-radius: 50%!important;
+	   -moz-border-radius: 50%!important;
+	     -o-border-radius: 50%!important;
+	        border-radius: 50%!important;
+	display: block;
+	height: 272px;
+	margin: 10px 0 0 11px;
+	overflow: hidden;
+	width: 272px;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig > div a,
+.nspMainPortalMode6 .nspSpeakerSmall > div a {
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	    -ms-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig > div img,
+.nspMainPortalMode6 .nspSpeakerSmall > div img {
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	     -o-border-radius: 50%;
+	        border-radius: 50%;
+	opacity: 1;
+	-webkit-transform: scale(1.0);
+	   -moz-transform: scale(1.0);
+	    -ms-transform: scale(1.0);
+	     -o-transform: scale(1.0);
+	   	    transform: scale(1.0);
+	-webkit-transition: -webkit-transform 0.3s cubic-bezier(.71,.23,.03,.79), opacity 0.3s ease-out;
+	   -moz-transition:    -moz-transform 0.3s cubic-bezier(.71,.23,.03,.79), opacity 0.3s ease-out;
+	    -ms-transition:     -ms-transform 0.3s cubic-bezier(.71,.23,.03,.79), opacity 0.3s ease-out;
+	     -o-transition:      -o-transform 0.3s cubic-bezier(.71,.23,.03,.79), opacity 0.3s ease-out;
+	        transition:         transform 0.3s cubic-bezier(.71,.23,.03,.79), opacity 0.3s ease-out;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig > div:hover img,
+.nspMainPortalMode6 .nspSpeakerSmall > div:hover img {
+	opacity: 0.92;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig.speakerHide > div img,
+.nspMainPortalMode6 .nspSpeakerSmall.speakerHide > div img {
+	-webkit-transform: scale(0);
+	   -moz-transform: scale(0);
+	    -ms-transform: scale(0);
+	     -o-transform: scale(0);
+	   	    transform: scale(0);
+}
+
+.nspMainPortalMode6 .nspSpeakerSmall {
+	background: transparent url('../images/speaker_small_bg.png') no-repeat 0 0;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 119px;
+}
+
+.nspMainPortalMode6 .nspSpeakerSmall > div {
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	     -o-border-radius: 50%;
+	        border-radius: 50%;
+	display: block;
+	height: 104px;
+	margin: 8px 0 0 8px;
+	overflow: hidden;
+	width: 104px;
+}
+
+.nspMainPortalMode6 .nspSpeakersSmallRight {
+	position: absolute;
+	right: 0;
+	top: 101px;
+}
+
+.nspMainPortalMode6 .nspSpeakersSmallLeft {
+	left: 0;
+	position: absolute;
+	top: 101px;
+}
+
+.nspMainPortalMode6 .nspSpeakerSmall {
+	float: left;
+}
+
+.nspMainPortalMode6 .nspSpeakersSmallLeft .nspSpeakerSmall:first-child,
+.nspMainPortalMode6 .nspSpeakersSmallRight .nspSpeakerSmall:first-child {
+	margin-right: 14px;
+}
+
+
+.nspMainPortalMode6 .nspSpeakerSmall .nspHeader {
+	color: #1d1a1a;
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 34px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	top: 0;
+}
+
+.nspMainPortalMode6 .nspSpeakerSmall .nspHeader a {
+	color: #1d1a1a;
+}
+
+.nspMainPortalMode6 .nspSpeakerSmall .nspHeader a:hover {
+	color: #666;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig {
+	text-align: center;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig .nspHeader {
+	background: #e89e44;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	color: #fff;
+	display: inline-block;
+	float: none!important;
+	font-weight: 600;
+	line-height: 51px;
+	margin: -20px auto 0 auto!important;
+	min-height: 50px;
+	min-width: 190px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	top: -20px;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig .nspHeader a {
+	color: #fff;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig .nspHeader a:hover {
+	color: #eee;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig .nspHeader {
+	-webkit-transition: opacity 0.75s cubic-bezier(.71,.23,.03,.79), top 0.5s cubic-bezier(.71,.23,.03,.79);
+	   -moz-transition: opacity 0.75s cubic-bezier(.71,.23,.03,.79), top 0.5s cubic-bezier(.71,.23,.03,.79);
+	        transition: opacity 0.75s cubic-bezier(.71,.23,.03,.79), top 0.5s cubic-bezier(.71,.23,.03,.79);
+	opacity: 1;
+}
+.nspMainPortalMode6 .nspSpeakerSmall .nspHeader {
+	-webkit-transition: opacity 0.3s cubic-bezier(.71,.23,.03,.79), top 0.3s cubic-bezier(.71,.23,.03,.79);
+	   -moz-transition: opacity 0.3s cubic-bezier(.71,.23,.03,.79), top 0.3s cubic-bezier(.71,.23,.03,.79);
+	        transition: opacity 0.3s cubic-bezier(.71,.23,.03,.79), top 0.3s cubic-bezier(.71,.23,.03,.79);
+	opacity: 1;
+}
+
+.nspMainPortalMode6 .nspSpeakerBig.speakerHide .nspHeader,
+.nspMainPortalMode6 .nspSpeakerSmall.speakerHide .nspHeader {
+	opacity: 0;
+	top: 30px;
+}
