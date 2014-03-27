@@ -109,7 +109,8 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/javascript/
 							<?php echo htmlspecialchars($config->get('sitename'));?>
 						<?php endif; ?>
 						<span class="header1">
-						<?php echo htmlspecialchars($templateparams->get('sitedescription'));?>
+                        	<?php echo htmlspecialchars($templateparams->get('sitedescription'));?>
+                        	
 						</span>
                         	<div id="mylogo" style="display:block; width:150px; float:right; text-align:left" >
                             	<div style="height:20px">Телефон:</div>

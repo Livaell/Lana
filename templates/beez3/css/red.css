@@ -6,7 +6,16 @@ body{
 	/*background-size:100%;*/
 	background-size:cover;
 }
-h3{color:#555}h2 a{text-decoration:none}h2,.moduletable h3,.items-leading h2{border-bottom:solid 1px #ddd}.items-row h2{border-top:solid 1px #ddd;border-bottom:solid 1px #ddd}a:link,a:visited{color:#c00}a:hover,a:active,a:focus{background:#c00;color:#FFF}
+h3{color:#555}
+h2 a{text-decoration:none}
+h2,.moduletable h3,.items-leading h2{
+	border-bottom:solid 1px #ddd;
+}
+.items-row h2{
+	/*border-top:solid 1px #ddd;
+	border-bottom:solid 1px #ddd;*/
+}
+a:link,a:visited{color:#c00}a:hover,a:active,a:focus{background:#c00;color:#FFF}
 .logoheader{
 	/*visibility:hidden;
 	display:none;

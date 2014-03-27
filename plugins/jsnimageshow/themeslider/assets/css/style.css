@@ -1,0 +1,302 @@
+/**
+ * @author JoomlaShine.com Team
+ * @copyright JoomlaShine.com
+ * @link joomlashine.com
+ * @package JSN ImageShow - Theme Classic
+ * @version $Id: style.css 16788 2012-10-09 02:42:51Z giangnd $
+ * @license GNU/GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/*----- Show case settings -----*/
+.jsn-showcase-theme-settings {
+	padding: 10px;
+	margin-top: 15px;
+	width: 100%;
+	height: 390px;
+}
+
+.jsn-showcase-theme-settings td#jsn-theme-preview-wrapper {
+	width: 570px;
+	vertical-align: top;
+}
+
+.jsn-showcase-theme-settings td#jsn-theme-preview-wrapper>div {
+	position: relative;
+}
+
+.jsn-showcase-theme-settings td#jsn-theme-parameters-wrapper {
+	vertical-align: top;
+}
+
+@media ( max-width :1024px) {
+	#jsn-theme-preview-wrapper {
+		display: inline;
+		padding: 10px;
+	}
+	#jsn-theme-parameters-wrapper {
+		display: inline;
+	}
+}
+/*================================= FRONT END =======================================*/
+.jsn-themeslider-gallery {
+	margin: 0 auto;
+	outline: none;
+}
+
+.jsn-themeslider-seocontent {
+	display: none;
+}
+
+.jsn-themeslider-msgnonflash {
+	text-align: center !important;
+}
+/*============================== BACK END ================================================*/
+#jsn-slider-preview .jsn-slider-preview-wrapper {
+	width: 550px;
+	margin: 0 auto;
+	padding: 10px;
+	height: 340px;
+	background-color: #000;
+}
+
+#jsn-slider-preview .jsn-slider-preview-container {
+	height: 340px;
+	width: 550px;
+	position: relative;
+}
+
+#jsn-slider-preview .jsn-slider-preview-background {
+	background: url(../images/preview.jpg) 0 0 no-repeat;
+	height: 339px;
+	width: 549px;
+	position: absolute;
+	border: 1px solid #606060;
+	z-index: 9;
+}
+
+#jsn-slider-preview .jsn-slider-preview-container:hover {
+	cursor: pointer;
+}
+
+#jsn-slider-preview .slider-caption {
+	background: none repeat scroll 0 0 #000000;
+	color: #FFFFFF;
+	display: block;
+	opacity: 0.75;
+	position: absolute;
+	border: 2px solid #000;
+	z-index: 990;
+	width: 546px;
+}
+#jsn-slider-preview .slider-caption.top {
+	top: 0;	
+}
+#jsn-slider-preview .slider-caption.bottom {
+	bottom: 0;	
+}
+#jsn-slider-preview .slider-caption:hover {
+	border: 2px solid #ffcd3f;
+}
+
+#jsn-slider-preview .slider-caption .slider-title {
+	font-weight: bold;
+	padding: 5px;
+	margin: 0;
+}
+
+#jsn-slider-preview .slider-caption .slider-description {
+	padding: 5px;
+	margin: 0;
+}
+
+#jsn-slider-preview .slider-caption .slider-link {
+	padding: 5px;
+	margin: 0;
+}
+
+#jsn-slider-preview .slider-control .play_pause_button {
+	background: url("../images/skitter/pause-button.png") no-repeat scroll
+		left top #000;
+	margin-top: -25px;
+	height: 42px;
+	width: 42px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 0.75;
+	border: 2px solid #000;
+	z-index: 989;
+	margin-left: -21px;
+}
+
+#jsn-slider-preview .slider-control .play_pause_button:hover {
+	border: 2px solid #ffcd3f;
+	cursor: pointer;
+}
+
+#jsn-slider-preview .paginations .info_slide_dots {
+	background: none repeat scroll 0 0 #000000;
+	opacity: 0.75;
+	border-radius: 50px 50px 50px 50px;
+	padding: 5px 0 5px 5px;
+	position: absolute;
+	z-index: 991;
+	border: 2px solid #000000;
+}
+#jsn-slider-preview .paginations .info_slide_dots.top {
+	top: 15px; 
+}
+#jsn-slider-preview .paginations .info_slide_dots.bottom {
+	bottom: 15px; 
+}
+#jsn-slider-preview .paginations .info_slide_dots:hover {
+	border: 2px solid #ffcd3f;
+	cursor: pointer;
+}
+
+#jsn-slider-preview .paginations .info_slide_dots .image_number {
+	background: none repeat scroll 0 0 #333333;
+	border-radius: 50px 50px 50px 50px;
+	cursor: pointer;
+	float: left;
+	height: 18px;
+	margin: 0 5px 0 0;
+	overflow: hidden;
+	text-indent: -9999em;
+	width: 18px;
+}
+
+#jsn-slider-preview .paginations .info_slide_dots .image_number_select {
+	background: none repeat scroll 0 0 #CC0000;
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+#jsn-slider-preview .paginations .info_slide_dots .preview_slide ul {
+	margin: 0;
+}
+
+#jsn-slider-preview .paginations .info_slide_dots .preview_slide ul li {
+	float: left;
+	position: relative;
+}
+
+#jsn-slider-preview .paginations .info_slide_dots .preview_slide ul li img
+	{
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+#jsn-slider-preview .paginations .info_slide_dots .preview_slide {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 2px solid #222222;
+	bottom: 35px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+	display: block;
+	height: 100px;
+	left: 30px;
+	overflow: hidden;
+	position: absolute;
+	width: 100px;
+	z-index: 991;
+}
+
+#jsn-slider-preview .paginations .info_slide {
+	background: none repeat scroll 0 0 #000000;
+	border-radius: 5px 5px 5px 5px;
+	color: #FFFFFF;
+	font: bold 11px arial;
+	opacity: 0.75;
+	padding: 5px 0 5px 5px;
+	position: absolute;
+	z-index: 10;
+	border: 2px solid #000000;
+}
+#jsn-slider-preview .paginations .info_slide.top {
+	top: 15px; 
+}
+#jsn-slider-preview .paginations .info_slide.bottom {
+	bottom: 15px; 
+}
+#jsn-slider-preview .paginations .info_slide:hover {
+	border: 2px solid #ffcd3f;
+	cursor: pointer;
+}
+
+#jsn-slider-preview .paginations .info_slide .image_number {
+	background: none repeat scroll 0 0 #333333;
+	border-radius: 2px 2px 2px 2px;
+	cursor: pointer;
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 2px 10px;
+}
+
+#jsn-slider-preview .paginations .info_slide .image_number_select {
+	background: none repeat scroll 0 0 #CC0000;
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 2px 10px;
+}
+
+#jsn-slider-preview .next_button {
+	background: url("../images/skitter/next.png") no-repeat scroll left top
+		#000000;
+	border: 2px solid #000000;
+	height: 42px;
+	right: 35px;
+	margin-top: -25px;
+	opacity: 0.75;
+	position: absolute;
+	top: 50%;
+	width: 42px;
+	z-index: 988;
+}
+
+#jsn-slider-preview .prev_button {
+	background: url("../images/skitter/prev.png") no-repeat scroll left top
+		#000000;
+	border: 2px solid #000000;
+	height: 42px;
+	left: 35px;
+	margin-top: -25px;
+	opacity: 0.75;
+	position: absolute;
+	top: 50%;
+	width: 42px;
+	z-index: 988;
+}
+
+#jsn-slider-preview .prev_button:hover,#jsn-slider-preview .next_button:hover
+	{
+	border: 2px solid #ffcd3f;
+}
+
+#themeslider-thumbnail-tab .color-selector {
+	position: relative;
+	width: 36px;
+	height: 36px;
+	background: url(../images/select.png);
+	float: left;
+	top: -2px;
+	left: 10px;
+	cursor: pointer;
+}
+
+#themeslider-thumbnail-tab .color-selector div {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+	background: url(../images/select.png) center;
+}
+
+#themeslider-thumbnail-tab #thumbnail_active_state_color {
+	float: left;
+}
+
+#jsn-is-themeslider .form-horizontal .control-group {
+	margin-bottom: 10px;
+}

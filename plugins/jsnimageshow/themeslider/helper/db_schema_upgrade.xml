@@ -1,0 +1,58 @@
+<product name="Theme Slider" type="plugin">
+	<version number="1.0.0">
+		<release_date>5/6/2011</release_date>
+		<tables>
+			<table id="1" status="ADDED" name="#__imageshow_theme_slider">
+				<field id="1" status="ADDED" name="theme_id" type="int(11) unsigned"
+					primary_key="yes" />
+				<field id="2" status="ADDED" name="img_transition_effect"
+					type="char(30)" />
+				<field id="3" status="ADDED" name="toolbar_navigation_arrows_presentation"
+					type="char(30)" />
+				<field id="4" status="ADDED" name="toolbar_slideshow_player_presentation"
+					type="char(30)" />
+				<field id="5" status="ADDED" name="caption_show_caption" type="char(30)" />
+				<field id="6" status="ADDED" name="caption_title_css" type="text" />
+				<field id="7" status="ADDED" name="caption_description_css"
+					type="text" />
+				<field id="8" status="ADDED" name="caption_link_css" type="text" />
+				<field id="9" status="ADDED" name="caption_caption_opacity"
+					type="char(30)" />
+				<field id="10" status="ADDED" name="caption_title_show" type="char(30)" />
+				<field id="11" status="ADDED" name="caption_description_show"
+					type="char(30)" />
+				<field id="12" status="ADDED" name="caption_link_show" type="char(30)" />
+				<field id="13" status="ADDED" name="slideshow_slide_timming"
+					type="int(11)" />
+				<field id="14" status="ADDED" name="slideshow_pause_on_mouseover"
+					type="char(30)" />
+				<field id="15" status="ADDED" name="slideshow_auto_play" type="char(30)" />
+				<field id="16" status="ADDED" name="thumnail_panel_position"
+					type="char(30)" />
+				<field id="17" status="ADDED" name="thumbnail_panel_presentation"
+					type="char(30)" />
+				<field id="18" status="ADDED" name="thumbnail_presentation_mode"
+					type="char(30)" />
+				<field id="19" status="ADDED" name="thumbnail_active_state_color"
+					type="char(30)" />
+			</table>
+		</tables>
+	</version>
+	<version number="1.1.1">
+		<release_date>5/6/2011</release_date>
+		<tables>
+			<table id="1" status="CHANGED" name="#__imageshow_theme_slider">
+				<field id="20" status="ADDED" name="caption_position" type="char(30)"/>										
+			</table>							
+		</tables>
+	</version>
+	<version number="1.1.3">
+		<release_date>5/6/2011</release_date>
+		<tables>
+			<table id="1" status="CHANGED" name="#__imageshow_theme_slider">
+				<field id="21" status="ADDED" name="click_action" type="char(150)" not_null="yes" default_value="no_action"/>										
+				<field id="22" status="ADDED" name="open_link_in" type="char(150)" not_null="yes" default_value="current_browser"/>										
+			</table>							
+		</tables>
+	</version>
+</product>

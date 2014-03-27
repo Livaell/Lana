@@ -264,7 +264,7 @@ body {
 .left {
     padding-top: 0;
     float: left;
-    margin: 10px 0 10px 0;
+    margin: 4px 0 10px 0;
     width: 22%;
     position: relative;
 
@@ -364,13 +364,21 @@ body {
 	float:left;
 	width:300px;
 	vertical-align:middle;
-	margin: 35px 0px 0px 85px;
+	margin: 10px 0px 0px 105px;
 	font-family: "Century Gothic", Helvetica, sans-serif;
-	/*font-weight:bold;*/
+	font-weight: 600;
+	height: 50px;
+	line-height: 1.3;
+	
 }
 #mylogo{
-	font-size:0.3em;
+	font-size:0.35em;
+	font-family: "Century Gothic", Helvetica, sans-serif;
 	
+}
+#mylogo div{
+	margin: 0 0 5px 0px;
+
 }
 
 .logoheader {
@@ -398,6 +406,11 @@ body {
     min-width: 40em
 
 }
+.jsn-container {
+	margin: 0 0 10px 0;
+	
+}
+
 
 #fontsize,
 #line .search {
@@ -471,6 +484,10 @@ button.btn.hasTooltip{
 /* ###################### main ###################### */
 
 /* ++++++++++++++  position  ++++++++++++++ */
+#nav{
+	padding: 0px 0px 0px 10px;
+	
+}
 
 .blog-featured {
     padding: 0;
@@ -505,6 +522,11 @@ button.btn.hasTooltip{
 }
 
 /* ++++++++++++++  blog  ++++++++++++++ */
+
+.blog div article h2{
+	margin: 0 auto;
+	border-bottom: none;
+}
 
 .cols-1 {
     display: block;
@@ -603,8 +625,12 @@ button.btn.hasTooltip{
 img {
     border: 0 none;
     max-width: 100%;
-	margin: 0px 10px 10px 10px;
 }
+
+.blog img{
+	margin: 0px 10px 10px 0px;
+}
+
 
 /* hide the mobile menu button */
 #mobile_select {
