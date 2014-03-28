@@ -546,12 +546,37 @@ fieldset.filters {
 /*#login-form fieldset {
 	background: #f5f5f5
 }*/
+#form-login-username{
+	margin: 0 auto;
+	height: 30px;
+	margin: 0 0 15px 0;
+}
+
+#form-login-username label{
+	float:left;
+	margin: 9px 0 0 0;	
+}
 
 #modlgn-username{
-	margin: 0 0 15px 25px;
+	float:right;
+	/*margin: 0 0 15px 25px;*/
 }
+
+#form-login-password{
+	margin: 0 auto;
+	height: 30px;
+	margin: 0 0 15px 0;
+}
+
+#form-login-password label{
+	float:left;
+	margin: 9px 0 0 0;	
+
+}
+
 #modlgn-passwd{
-	margin: 0 0 15px 16px;
+	float:right;
+	/*margin: 0 0 15px 16px;*/
 }
 
 

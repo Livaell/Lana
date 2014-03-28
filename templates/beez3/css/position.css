@@ -523,6 +523,9 @@ button.btn.hasTooltip{
 
 /* ++++++++++++++  blog  ++++++++++++++ */
 
+.blog div{
+}
+
 .blog div article h2{
 	margin: 0 auto;
 	border-bottom: none;
@@ -569,6 +572,9 @@ button.btn.hasTooltip{
 .items-row {
     overflow: hidden;
     margin-bottom: 10px !important;
+	margin-top: -12px !important;
+	height: 400px;	
+
 }
 
 .column-1,
@@ -591,6 +597,10 @@ button.btn.hasTooltip{
 }
 
 /* ++++++++++++++  footer  ++++++++++++++ */
+.moduletable a:hover{
+	text-decoration: none;
+	
+}
 
 #bottom {
     overflow: hidden
