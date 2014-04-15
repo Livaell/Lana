@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extensionset name="JoomlaShine Extensions" description="JoomlaShine Extensions Updates">
+	<extension name="JSN ImageShow FREE" element="com_imageshow" type="component" client="administrator" version="4.8.4" detailsurl="" />
+</extensionset>
